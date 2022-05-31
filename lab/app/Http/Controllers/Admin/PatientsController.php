@@ -13,6 +13,8 @@ use App\Models\Patient;
 use Str;
 use DataTables;
 use Excel;
+use Mpdf\Tag\Dd;
+
 class PatientsController extends Controller
 {
     /**
