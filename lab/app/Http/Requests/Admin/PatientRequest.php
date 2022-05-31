@@ -120,7 +120,7 @@ class PatientRequest extends FormRequest
                 'address'=>'nullable'
             ];
         }
-        
+
     }
 
     /**

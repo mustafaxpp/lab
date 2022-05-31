@@ -69,7 +69,7 @@ class AjaxController extends Controller
         return response()->json($patients);
 
     }
-    
+
     /**
     * get patient by name select2
     *
@@ -94,7 +94,7 @@ class AjaxController extends Controller
         return response()->json($patients);
 
     }
-    
+
     /**
     * create patient
     *
@@ -170,7 +170,7 @@ class AjaxController extends Controller
 
         return response()->json($patient);
     }
-    
+
 
     /**
     * get doctors select2
@@ -237,7 +237,7 @@ class AjaxController extends Controller
         return response()->json($cultures);
     }
 
-    
+
 
     /**
     * create doctor
@@ -247,8 +247,8 @@ class AjaxController extends Controller
     */
 
     public function create_doctor(DoctorRequest $request)
-    {   
-        
+    {
+
         $attr = $request->except('_token' , 'password');
 
         $attr['password'] = bcrypt($request['password']);
@@ -258,7 +258,7 @@ class AjaxController extends Controller
         $doctor->roles()->create([
             'role_id' => 6
         ]);
-        
+
         doctor_code($doctor['id']);
 
         $doctor=User::find($doctor['id']);
@@ -368,7 +368,7 @@ class AjaxController extends Controller
     {
         $visit=Visit::where('branch_id',session('branch_id'))
                     ->findOrFail($id);
-        
+
         $visit->update([
             'read'=>true,
             'status'=>($visit['status'])?false:true,
@@ -386,7 +386,7 @@ class AjaxController extends Controller
     public function change_lang_status($id)
     {
         $lang=Language::find($id);
-        
+
         $lang->update([
             'active'=>($lang['active'])?false:true,
         ]);
@@ -397,7 +397,7 @@ class AjaxController extends Controller
 
     /**
     * create expenses category
-    * 
+    *
     * @access public
     * @var  @Request $request
     */
@@ -413,20 +413,20 @@ class AjaxController extends Controller
 
     /**
     * get unread mesasges
-    * 
+    *
     * @access public
     * @var  @Request $request
     */
     public function get_unread_messages(Request $request)
     {
         $messages=Chat::with('from_user')->where('to',auth()->guard('admin')->user()['id'])->where('read',false)->get();
-      
+
         return response()->json($messages);
     }
 
     /**
     * get unread mesasges count
-    * 
+    *
     * @access public
     * @var  @Request $request
     */
@@ -439,7 +439,7 @@ class AjaxController extends Controller
 
     /**
     * load more messages
-    * 
+    *
     * @access public
     * @var  @Request $request
     */
@@ -458,8 +458,8 @@ class AjaxController extends Controller
     }
 
     /**
-    * get my messages to user 
-    * 
+    * get my messages to user
+    *
     * @access public
     * @var  @Request $request
     */
@@ -472,7 +472,7 @@ class AjaxController extends Controller
 
     /**
     * get new visits
-    * 
+    *
     * @access public
     * @var  @Request $request
     */
@@ -490,14 +490,14 @@ class AjaxController extends Controller
 
     /**
     * get current patient
-    * 
+    *
     * @access public
     * @var  @Request $request
     */
     public function get_current_patient()
     {
         $patient=Patient::where('id',auth()->guard('patient')->user()['id'])->first();
-        
+
         return response()->json($patient);
     }
 
@@ -625,7 +625,7 @@ class AjaxController extends Controller
                 'required'
             ],
         ]);
-        
+
         $payment_method=PaymentMethod::create([
             'name'=>$request['name']
         ]);
@@ -641,7 +641,7 @@ class AjaxController extends Controller
         $to=date('Y-m-d 23:59:59',strtotime($date[1]));
 
         $data=[];
-        
+
         //general statistics
         $tests_count=Test::where(function($query){
                                 return $query->where('parent_id',0)
@@ -665,7 +665,7 @@ class AjaxController extends Controller
         $contracts_count=Contract::query();
         $contracts_count=($from==$to)?$contracts_count->whereDate('created_at',$from)->count():$contracts_count->whereBetween('created_at',[$from,$to])->count();
         $data['contracts_count']=$contracts_count;
-       
+
         //tests statistics
         $group_tests_count=GroupTest::whereHas('group',function($query){
                                         return $query->where('branch_id',session('branch_id'));
@@ -720,7 +720,7 @@ class AjaxController extends Controller
         $visits_count=($from==$to)?$visits_count->whereDate('visit_date',$from)->count():$visits_count->whereBetween('visit_date',[$from,$to])->count();
 
         $data['visits_count']=$visits_count;
-       
+
         return response()->json($data);
     }
 
@@ -816,7 +816,7 @@ class AjaxController extends Controller
         return response()->json('');
     }
 
-    
+
     /**
     * select2 branches
     *
@@ -897,26 +897,26 @@ class AjaxController extends Controller
     {
         $alerts=\DB::select(\DB::raw('
         SELECT branches.id, branch_id , branches.name , product_name , Qty  , stock_alert
-        FROM 
+        FROM
         (
         SELECT branch_products.branch_id , branch_products.product_id ,products.name product_name , sum(A.quantity) AS Qty  ,branch_products.alert_quantity  As stock_alert
         FROM
         (
             SELECT branch_id , product_id , initial_quantity as quantity
             FROM branch_products
-            UNION ALL 
+            UNION ALL
             SELECT branch_id , product_id , quantity
-            FROM purchase_products                                     
-            UNION ALL 
+            FROM purchase_products
+            UNION ALL
             SELECT branch_id , product_id , quantity*-1
             FROM product_consumptions
-            UNION ALL 
+            UNION ALL
             SELECT from_branch_id , product_id , quantity*-1
             FROM transfer_products
             UNION ALL
             SELECT to_branch_id , product_id , quantity
             FROM transfer_products
-            UNION ALL  
+            UNION ALL
             SELECT branch_id , product_id , CASE WHEN type = 1  THEN quantity ELSE quantity *-1  END AS quantity
             FROM adjustment_products
         ) AS A JOIN products ON products.id = A.product_id
@@ -927,7 +927,7 @@ class AjaxController extends Controller
         ) AS B LEFT JOIN branches ON B.branch_id = branches.id
         WHERE branches.deleted_at IS NULL
         '));
-        
+
         return response()->json($alerts);
     }
 
@@ -1043,7 +1043,7 @@ class AjaxController extends Controller
             ],
             'font_color'=>(auth()->guard('admin')->user()->theme=='dark')?'#d0d2d6':'black'
         ]);
-        
+
     }
 
     /**
@@ -1099,7 +1099,7 @@ class AjaxController extends Controller
             ],
             'font_color'=>(auth()->guard('admin')->user()->theme=='dark')?'#d0d2d6':'black'
         ]);
-        
+
     }
 
 
@@ -1210,7 +1210,7 @@ class AjaxController extends Controller
     }
 
     /**
-    * get age from dob 
+    * get age from dob
     *
     * @access public
     * @var  @Request $request
@@ -1239,7 +1239,7 @@ class AjaxController extends Controller
 
 
     /**
-    * get dob from age 
+    * get dob from age
     *
     * @access public
     * @var  @Request $request
