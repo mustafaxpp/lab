@@ -1,6 +1,6 @@
 <div class="row">
 
-    
+
     <div class="col-lg-2">
 
         <div class="card card-primary">
@@ -35,7 +35,7 @@
                     <i class="fa fa-trash"></i>
                 </button>
             </div>
-            
+
         </div>
 
     </div>
@@ -128,7 +128,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="col-lg-4">
                 <div class="form-group">
                     <div class="form-group">
@@ -186,9 +186,9 @@
                         </div>
                     </div>
                 </div>
-                
+
             </div>
-            
+
             <div class="col-lg-4">
                 <div class="form-group">
                     <div class="form-group">
@@ -217,7 +217,7 @@
                         @if(isset($patient)&&isset($patient['contract']))
                             <option value="{{$patient['contract_id']}}" selected>{{$patient['contract']['title']}}</option>
                         @elseif(old('contract_id'))
-                            @php 
+                            @php
                                 $contract=\App\Models\Contract::find(old('contract_id'));
                             @endphp
                             <option value="{{old('contract_id')}}" selected>{{$contract['title']}}</option>
@@ -226,6 +226,72 @@
                 </div>
                 </div>
             </div>
+            <div class="col-lg-3"></div>
+                    {{-- Start Questions --}}
+                    {{-- Fluid Patient --}}
+                    <div class="col-lg-2">
+                        <div class="form-group">
+                            <div class="input-group mb-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" name="fluid" id="fluid"  type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                    {{__('Fluid Patient')}}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {{-- Diabetic --}}
+                    <div class="col-lg-2">
+                        <div class="form-group">
+                            <div class="input-group mb-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" name="diabetic" id="diabetic"  type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                    {{__('Diabetic')}}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {{-- Liver Patient --}}
+                    <div class="col-lg-2">
+                        <div class="form-group">
+                            <div class="input-group mb-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" name="liver" id="liver"  type="checkbox" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                    {{__('Liver Patient')}}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {{-- Pregnant --}}
+                    <div class="col-lg-2">
+                        <div class="form-group">
+                            <div class="input-group mb-3">
+                                <div class="form-check">
+                                    <input class="form-check-input  name="pregnant" id="pregnant" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                    {{__('Pregnant')}}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {{-- Other --}}
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <div class="form-floating">
+                                <textarea class="form-control" placeholder="{{__('Other')}}" id="floatingTextarea2" style="height: 50px"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                {{-- End   Questions --}}
         </div>
 
     </div>

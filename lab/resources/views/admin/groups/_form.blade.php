@@ -50,7 +50,7 @@
                                     <option value="{{$group['patient']['id']}}" selected>{{$group['patient']['code']}}</option>
                                 @endif
                             </select>
-                        </div> 
+                        </div>
                     </div>
                     <div class="col-lg-3">
                         <div class="form-group">
@@ -60,65 +60,65 @@
                                     <option value="{{$group['patient']['id']}}" selected>{{$group['patient']['name']}}</option>
                                 @endif
                             </select>
-                        </div> 
+                        </div>
                     </div>
                     <div class="col-lg-3">
                         <div class="form-group">
                             <label>{{__('Nationality')}}</label>
                             <input class="form-control" id="nationality" @if(isset($group)&&isset($group['patient'])) value=" {{$group['patient']['country']['nationality'] ?? '' }} " @endif readonly>
-                        </div> 
+                        </div>
                     </div>
                     <div class="col-lg-3">
                         <div class="form-group">
                             <label>{{__('National ID')}}</label>
                             <input class="form-control" id="national_id" @if(isset($group)&&isset($group['patient'])) value="{{$group['patient']['national_id']}}" @endif readonly>
-                        </div> 
+                        </div>
                     </div>
                     <div class="col-lg-3">
                         <div class="form-group">
                             <label>{{__('Passport No.')}}</label>
                             <input class="form-control" id="passport_no" @if(isset($group)&&isset($group['patient'])) value="{{$group['patient']['passport_no']}}" @endif readonly>
-                        </div> 
+                        </div>
                     </div>
                     <div class="col-lg-3">
                         <div class="form-group">
                             <label>{{__('Date of birth')}}</label>
                             <input class="form-control" id="dob" @if(isset($group)&&isset($group['patient'])) value="{{$group['patient']['dob']}}" @endif readonly>
-                        </div> 
+                        </div>
                     </div>
                     <div class="col-lg-3">
                         <div class="form-group">
                             <label>{{__('Age')}}</label>
                             <input class="form-control" id="age" @if(isset($group)&&isset($group['patient'])) value="{{$group['patient']['age']}}" @endif readonly>
-                        </div> 
+                        </div>
                     </div>
                     <div class="col-lg-3">
                         <div class="form-group">
                             <label>{{__('Phone')}}</label>
                             <input class="form-control" id="phone" @if(isset($group)&&isset($group['patient'])) value="{{$group['patient']['phone']}}" @endif  readonly>
-                        </div> 
+                        </div>
                     </div>
                     <div class="col-lg-3">
                         <div class="form-group">
                             <label>{{__('Email')}}</label>
                             <input class="form-control" id="email" @if(isset($group)&&isset($group['patient'])) value="{{$group['patient']['email']}}" @endif readonly>
-                        </div> 
+                        </div>
                     </div>
                     <div class="col-lg-3">
                         <div class="form-group">
                             <label>{{__('Gender')}}</label>
                             <input class="form-control" id="gender" @if(isset($group)&&isset($group['patient'])) value="{{$group['patient']['gender']}}" @endif readonly>
-                        </div> 
+                        </div>
                     </div>
                     <div class="col-lg-3">
                         <div class="form-group">
                             <label>{{__('Address')}}</label>
                             <input class="form-control" id="address" @if(isset($group)&&isset($group['patient'])) value="{{$group['patient']['address']}}" @endif readonly>
-                        </div> 
+                        </div>
                     </div>
                     <div class="col-lg-3">
                         <div class="form-group">
-                            <label>{{__('Doctor')}}</label> 
+                            <label>{{__('Doctor')}}</label>
                             @can('create_doctor')
                                 <button type="button" class="btn btn-primary btn-sm float-right"  data-toggle="modal" data-target="#doctor_modal"><i class="fa fa-exclamation-triangle"></i> {{__('Not Listed ?')}}</button>
                             @endcan
@@ -127,7 +127,7 @@
                                     <option value="{{$group['doctor']['id']}}" selected>{{$group['doctor']['name']}}</option>
                                 @endif
                             </select>
-                        </div> 
+                        </div>
                     </div>
                     <div class="col-lg-3">
                         <div class="form-group">
@@ -140,25 +140,92 @@
                             </button>
                             <input type="hidden" name="contract_id" id="contract_id" @if(isset($group)&&isset($group['contract'])&&!$group->contract->trashed()) value="{{$group['contract']['id']}}" @endif readonly>
                             <input type="text" class="form-control" id="contract_title" @if(isset($group)&&isset($group['contract'])&&!$group->contract->trashed()) value="{{$group['contract']['title']}}" @endif readonly>
-                        </div> 
+                        </div>
                     </div>
                     <div class="col-lg-3">
                         <div class="form-group">
                             <label>{{__('Sample collection date')}}</label>
-                    
+
                             <input type="text" class="form-control flatpickr" name="sample_collection_date" id="sample_collection_date" @if(isset($group)) value="{{$group['sample_collection_date']}}" @else value="{{get_system_date()}}" @endif>
-                        </div> 
+                        </div>
                     </div>
-                    
-                    
+
+
                     <div class="col-lg-3">
                         <div class="form-group">
                             <label> Branch </label>
-                    
+
                             <input type="text" class="form-control" name="" id=""  value="{{session('branch_name')}}" disabled>
-                        </div> 
+                        </div>
                     </div>
-                    
+
+                    <div class="col-lg-3"></div>
+                    {{-- Start Questions --}}
+                    {{-- Fluid Patient --}}
+                    <div class="col-lg-2">
+                        <div class="form-group">
+                            <div class="input-group mb-3">
+                                <div class="form-check">
+                                    <input class="form-check-input @if(isset($group)&&isset($group['patient'])) checked @endif" name="fluid" id="fluid"  type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                    {{__('Fluid Patient')}}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {{-- Diabetic --}}
+                    <div class="col-lg-2">
+                        <div class="form-group">
+                            <div class="input-group mb-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" name="diabetic" id="diabetic"  type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                    {{__('Diabetic')}}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {{-- Liver Patient --}}
+                    <div class="col-lg-2">
+                        <div class="form-group">
+                            <div class="input-group mb-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" name="liver" id="liver"  type="checkbox" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                    {{__('Liver Patient')}}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {{-- Pregnant --}}
+                    <div class="col-lg-2">
+                        <div class="form-group">
+                            <div class="input-group mb-3">
+                                <div class="form-check">
+                                    <input class="form-check-input @if(isset($group)&&isset($group['pregnant'])) checked @endif" name="pregnant" id="pregnant" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                    {{__('Pregnant')}}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {{-- Other --}}
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <div class="form-floating">
+                                <textarea class="form-control" placeholder="{{__('Other')}}" @if(isset($group)&&isset($group['patient']['other'])) value="{{$group['patient']['other']}}" @endif id="floatingTextarea2" style="height: 50px"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                {{-- End   Questions --}}
+
                 </div>
             </div>
         </div>
@@ -354,10 +421,10 @@
                         @foreach($tests as $test)
                             <tr>
                                 <td class="order">
-                                    
+
                                 </td>
                                 <td>
-                                    <input type="checkbox"  class="test" id="test_{{$test['id']}}" value="{{$test['id']}}" price="{{$test['test_price']['price']}}" default_price="{{$test['test_price']['price']}}"> 
+                                    <input type="checkbox"  class="test" id="test_{{$test['id']}}" value="{{$test['id']}}" price="{{$test['test_price']['price']}}" default_price="{{$test['test_price']['price']}}">
                                 </td>
                                 <td>
                                     <label for="test_{{$test['id']}}">{{$test['name']}}</label>
@@ -368,7 +435,7 @@
                                 <td class="table_price">
                                     {{formated_price($test['test_price']['price'])}}
                                 </td>
-                                
+
                             </tr>
                         @endforeach
                     </tbody>
@@ -399,10 +466,10 @@
                         @foreach($cultures as $culture)
                             <tr>
                                 <td class="order">
-                                    
+
                                 </td>
                                 <td>
-                                    <input type="checkbox" class="culture" id="culture_{{$culture['id']}}" value="{{$culture['id']}}" price="{{$culture['culture_price']['price']}}" default_price="{{$culture['culture_price']['price']}}"> 
+                                    <input type="checkbox" class="culture" id="culture_{{$culture['id']}}" value="{{$culture['id']}}" price="{{$culture['culture_price']['price']}}" default_price="{{$culture['culture_price']['price']}}">
                                 </td>
                                 <td>
                                     <label for="culture_{{$culture['id']}}">{{$culture['name']}}</label>
@@ -442,10 +509,10 @@
                          @foreach($packages as $package)
                              <tr>
                                 <td class="order">
-                                
+
                                 </td>
                                 <td>
-                                    <input type="checkbox" class="package" id="package_{{$package['id']}}" value="{{$package['id']}}" price="{{$package['package_price']['price']}}" default_price="{{$package['package_price']['price']}}"> 
+                                    <input type="checkbox" class="package" id="package_{{$package['id']}}" value="{{$package['id']}}" price="{{$package['package_price']['price']}}" default_price="{{$package['package_price']['price']}}">
                                 </td>
                                 <td>
                                     <label for="package_{{$package['id']}}">{{$package['name']}}</label>
@@ -460,7 +527,7 @@
             </div>
         </div>
     </div>
- </div>  
+ </div>
 <!-- \End test --> --}}
 
 <div class="row">
@@ -501,7 +568,7 @@
                                         <input type="number" class="form-control" id="discount_value" name="discount_value"  @if(isset($group)) value="{{$group['discount_value']}}" @else value="0"  @endif>
                                     </td>
                                 </tr>
-                                
+
                                 <tr>
                                     <td>{{__('Total')}}</td>
                                     <td>
@@ -532,7 +599,7 @@
                             </tbody>
                         </table>
                     </div>
-                </div>  
+                </div>
             </div>
         </div>
         <!-- \Receipt -->
@@ -562,7 +629,7 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-lg-12 table-responsive">
-                        @php 
+                        @php
                             $payments_count=0;
                         @endphp
                         <table class="table table-striped table-bordered" id="payments_table">
@@ -582,7 +649,7 @@
                                         <td>
                                             <input type="number" class="form-control amount" name="payments[{{$payments_count}}][amount]" value="{{$payment['amount']}}" id="" required>
                                         </td>
-                                        <td> 
+                                        <td>
                                             <select name="payments[{{$payments_count}}][payment_method_id]" id="" class="form-control payment_method_id" required>
                                                 <option value="" disabled selected>{{__('Select payment method')}}</option>
                                                 <option value="{{$payment['payment_method_id']}}" selected>{{$payment['payment_method']['name']}}</option>
@@ -594,7 +661,7 @@
                                             </button>
                                         </td>
                                     </tr>
-                                    @php 
+                                    @php
                                         $payments_count++;
                                     @endphp
                                     @endforeach
@@ -608,7 +675,7 @@
         </div>
         <!--\Payments -->
     </div>
-    
+
 </div>
 
 
