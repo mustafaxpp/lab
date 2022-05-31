@@ -263,11 +263,11 @@ var antibiotic_count = $('#antibiotic_count').val();
     $('.culture_form').on('submit', function() {
         var count_antibiotics = $(this).find('.antibiotics tr').length;
 
-        if (count_antibiotics == 0) {
-            toastr.error(trans('Please select at least one antibiotic'), trans('Failed'));
+        // if (count_antibiotics == 0) {
+        //     toastr.error(trans('Please select at least one antibiotic'), trans('Failed'));
 
-            return false;
-        }
+        //     return false;
+        // }
 
     });
 
@@ -661,7 +661,7 @@ function add_antibiotic(antibiotics, el) {
                             <option value="" disabled selected>` + trans("Select Sensitivity") + `</option>
                             <option value="High">` + trans("High") + `</option>
                             <option value="Moderate">` + trans("Moderate") + `</option>
-                            <option value="Resident">` + trans("Resident") + `</option>
+                            <option value="Resistant">` + trans("Resistant") + `</option>
                         </select>
                     </div>
                 </td>

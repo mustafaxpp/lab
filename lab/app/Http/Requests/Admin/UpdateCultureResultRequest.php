@@ -24,7 +24,7 @@ class UpdateCultureResultRequest extends FormRequest
     public function rules()
     {
         return [
-            'antibiotic'=>'required'
+            // 'antibiotic'=>'required'
         ];
     }
 
