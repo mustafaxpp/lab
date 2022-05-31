@@ -274,11 +274,11 @@
                   @endforeach
                   <tr>
                     <td colspan="5">
-                
-                      <textarea name="comment" id="" cols="30" rows="3" placeholder="{{__('Comment')}}" class="form-control comment">{{$test['comment']}}</textarea>      
-                     
+
+                      <textarea name="comment" id="" cols="30" rows="3" placeholder="{{__('Comment')}}" class="form-control comment">{{$test['comment']}}</textarea>
+
                       <button type="button" class="btn btn-primary btn-block btn-add-comment" data-id="{{ $test['test']['id'] }}" data-url="{{ route('admin.medical_report.add_comment') }}" data-test-id="{{$test['id']}}">{{__('Add comment')}}</button>
-                      
+
                       {{--<select id="select_comment_test_{{$test['id']}}" class="form-control select_comment">
                         <option value="" disabled selected>{{__('Select comment')}}</option>
                         @foreach($test['test']['comments'] as $comment)
@@ -298,7 +298,7 @@
               </table>
 
             </form>
-            @else 
+            @else
               <div class="alert alert-warning">{{__('Check Test First')}}</div>
             @endif
           </div>
@@ -415,7 +415,7 @@
                                     </option>
                                     <option value="{{__('Moderate')}}" @if($antibiotic['sensitivity']==__('Moderate')) selected @endif>{{__('Moderate')}}
                                     </option>
-                                    <option value="{{__('Resident')}}" @if($antibiotic['sensitivity']==__('Resident')) selected @endif>{{__('Resident')}}
+                                    <option value="{{__('Resistant')}}" @if($antibiotic['sensitivity']==__('Resistant')) selected @endif>{{__('Resistant')}}
                                     </option>
                                   </select>
                                 </td>
@@ -519,9 +519,9 @@
       var hct = $('.hct').val();
 
       var Hemoglobin = $('.Hemoglobin').val();
-      
+
       var num = (hct / $(this).val()) * 10;
-      var num2 = Hemoglobin / $(this).val() * 10 
+      var num2 = Hemoglobin / $(this).val() * 10
 
       $('.mcv').val(num.toFixed(2));
       $('.mch').val(num2.toFixed(2));
@@ -532,7 +532,7 @@
 
       var rpcs = $('.rpcs').val();
       var Hemoglobin = $('.Hemoglobin').val();
-      
+
       var num = ($(this).val() / rpcs) * 10 ;
       var num2 = Hemoglobin / $(this).val() * 100 ;
 
@@ -545,10 +545,10 @@
 
       var rpcs = $('.rpcs').val();
       var hct = $('.hct').val();
-      
+
       var num = rpcs / $(this).val() * 10 ;
       var num2 = $(this).val() / hct * 100;
-      
+
       $('.mch').val(num.toFixed(2));
       $('.mchc').val(num.toFixed(2));
   });
@@ -578,9 +578,9 @@
 
     var cho = $('.cho').val();
     var hdl = (parseInt($('.hdl').val()) + parseInt($(this).val())) / 5;
-    
+
     var num = parseInt(cho) - hdl;
-    
+
     $('.ldl').val(num.toFixed(2));
 
   });
@@ -589,15 +589,15 @@
 
     var cho = parseInt($('.cho').val());
     var Triglycerides = (parseInt($(this).val()) + parseInt($('.Triglycerides').val())) / 5;
-    
+
     var num = cho - Triglycerides
 
     $('.ldl').val(num.toFixed(2));
 
     var ldl = $('.ldl').val();
-    
+
     var num = cho / $(this).val();
-    
+
     var num2 = ldl / $(this).val();
 
     $('.Risk1').val(num.toFixed(2));
