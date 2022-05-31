@@ -23,10 +23,10 @@
             @page {
                 header: page-header;
                 footer: page-footer;
-                
+
                 margin-left: {{$reports_settings['margin-left']}}px;
                 margin-right: {{$reports_settings['margin-right']}}px;
-                
+
                 margin-top: {{$reports_settings['content-margin-top']}}px;
                 margin-header: {{$reports_settings['margin-top']}}px;
 
@@ -54,7 +54,7 @@
         .table-bordered thead th,
         .table-bordered thead td {
             border-bottom-width: 2px;
-        }  
+        }
 
         .table-bordered th,
         .table-bordered td {
@@ -122,14 +122,14 @@
 
     @if($type!==3&&$type!==4&&$type!==5&&$type!==6&&$type!==7)
         <htmlpageheader name="page-header">
-            
+
             @if($reports_settings['show_header']&&isset($group['branch']))
                 @if($group['branch']['show_header_image'])
-                    <table width="100%" style="padding:0px; text-direction:right; direction: rtl; float:right;">
+                    <table width="100%" style="padding:0px;">
                         <tbody>
                             <tr>
                                 <td align="center" style="padding:0px">
-                                    <img src="{{url('uploads/branches/'.$group['branch']['header_image'])}}" alt="" max-height="100">
+                                    <img src="{{url('uploads/branches/'.$group['branch']['header_image'])}}" alt="" max-height="300" min-height="300">
                                 </td>
                             </tr>
                         </tbody>
@@ -152,13 +152,13 @@
                                     @endif
                                 </p>
                                 <p class="branch_info">
-                                    <img src="{{url('img/report_address.png')}}" width="16px" alt=""> 
+                                    <img src="{{url('img/report_address.png')}}" width="16px" alt="">
                                     @if(isset($group['branch']))
                                         {{$group['branch']['address'] }}
                                     @endif
                                 </p>
                                 <p class="branch_info">
-                                    <img src="{{url('img/report_email.png')}}" width="16px" alt=""> 
+                                    <img src="{{url('img/report_email.png')}}" width="16px" alt="">
                                     {{$info_settings['email']}}
                                 </p>
                                 <p class="branch_info">
@@ -179,49 +179,50 @@
             @endif
 
             @if(isset($group['patient']))
-            <table width="100%" class="table table-bordered pdf-header" style="text-direction:right; direction: rtl; float:right;">
+            <table width="100%" class="table table-bordered pdf-header">
 
                     <tbody>
-<tr>
-    <td rowspan="3">
-                                @if(isset($group['patient']))
-                                    <img src="https://chart.googleapis.com/chart?chs={{$reports_settings['qrcode-dimension']}}x{{$reports_settings['qrcode-dimension']}}&cht=qr&chl={{url('patient/login/'.$group['patient']['code'])}}&choe=UTF-8" title="Link to Google.com" />
-                                @endif
-  </td>
-    <td>
-      <span class="title">التاريخ : </span> <span class="data"> {{ date('d-m-Y H:i',strtotime($group['created_at'])) }} </span>
-  </td>
-    <td>
-     <span class="title">اسم المريض : </span> <span class="data"> @if(isset($group['patient'])){{ $group['patient']['name'] }} @endif </span>
-  </td>
-   </tr>
-   <tr>
-    <td>
-   <span class="title">تاريخ الميلاد :</span><span class="data">@if(isset($group['patient'])) {{$group['patient']['dob']}}@endif</span>
-  </td>
-    <td>
-   <span class="title"> النوع : </span> <span class="data"> @if(isset($group['patient'])) {{ __($group['patient']['gender']) }}  @endif</span></td>  </tr>
-  <tr>
-      <td>
-<span class="title">الطبيب :</span> <span class="data">
-@if(isset($group['doctor'])) {{ $group['doctor']['name'] }}
+    <tr>
+<td rowspan="3">
+@if(isset($group['patient']))
+<img src="https://chart.googleapis.com/chart?chs={{$reports_settings['qrcode-dimension']}}x{{$reports_settings['qrcode-dimension']}}&cht=qr&chl={{url('patient/login/'.$group['patient']['code'])}}&choe=UTF-8" title="Link to Google.com" />
 @endif
-</span>
+
 </td>
- <td>
-   <span class="title">كود المريض :</span> <span class="data"> @if(isset($group['patient'])) {{ __($group['patient']['code']) }}  @endif</span></td>
-</tr>
+<td>
+      <span class="title">{{__('Requested Date')}}: </span> <span class="data"> {{ date('d-m-Y H:i',strtotime($group['created_at'])) }} </span>
+</td>
+<td>
+      <span class="title">{{__('Patient Code')}}:</span> <span class="data"> @if(isset($group['patient'])) {{ __($group['patient']['code']) }}  @endif</span></td>
+</td>
+    </tr>
+    <tr>
+<span class="title">{{__('Name')}}: </span> <span class="data"> @if(isset($group['patient'])){{ $group['patient']['name'] }} @endif </span>
+</td>
+<td>
+<span class="title">{{__('Age')}}:</span><span class="data">@if(isset($group['patient'])) {{$group['patient']['age']}}@endif</span>
+</td>
 
-
-                    </tbody>
+<td>
+<span class="title">{{__('Gender')}}: </span> <span class="data"> @if(isset($group['patient'])) {{ __($group['patient']['gender']) }}  @endif</span>
+</td>
+   <tr>
+<td>
+<span class="title">{{__('Name')}}:</span> <span class="data"> @if(isset($group['patient'])){{ $group['patient']['name'] }} @endif </span>
+</td>
+<td>
+<span class="title">{{__('Prof')}}:</span> <span class="data">@if(isset($group['doctor'])) {{ $group['doctor']['name'] }}@endif</span>
+</td>
+ </tr>
+ </tbody>
                 </table>
             @endif
 
         </htmlpageheader>
     @endif
-    
+
     @yield('content')
-   
+
     <htmlpagefooter name="page-footer" class="page-footer">
         @if($type==1)
             @if($reports_settings['show_signature']||$reports_settings['show_qrcode'])
@@ -270,7 +271,7 @@
                             <tr>
                                 <td class="footer">
                                     {!! str_replace(["\r\n", "\n\r", "\r", "\n"], "<br>", $group['branch']['report_footer'])!!}
-                                </td>   
+                                </td>
                             </tr>
                         </tbody>
                     </table>

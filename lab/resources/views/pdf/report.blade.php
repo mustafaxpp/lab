@@ -9,31 +9,29 @@
 
 table.blueTable1 {
   font-family: Arial, Helvetica, sans-serif;
-  border: 1px solid #1C6EA4;
-  background-color: #EEEEEE;
+  border: 1px solid #8a8a8a;
+  background-color: rgba(255, 255, 255, 0.11);
   width: 100%;
   text-align: left;
   border-collapse: collapse;
 }
 table.blueTable1 td, table.blueTable1 th {
-  border: 1px solid #AAAAAA;
+    border: 1px solid #8a8a8a;
   padding: 6px 6px;
 }
 table.blueTable1 tbody td {
   font-size: 13px;
 }
 table.blueTable1 thead {
-  background: #1C6EA4;
-  background: -moz-linear-gradient(top, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
-  background: -webkit-linear-gradient(top, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
-  background: linear-gradient(to bottom, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
-  border-bottom: 2px solid #444444;
+  background: rgba(255, 255, 255, 0.11);
+
+  border-bottom: 2px solid #8a8a8a;
 }
 table.blueTable1 thead th {
   font-size: 15px;
   font-weight: bold;
-  color: #FFFFFF;
-  border-left: 2px solid #D0E4F5;
+  color: rgba(255, 255, 255, 0.11)FFF;
+  border-left: 2px solid #8a8a8a;
 }
 table.blueTable1 thead th:first-child {
   border-left: none;
@@ -47,8 +45,8 @@ table.blueTable1 tfoot .links {
 }
 table.blueTable1 tfoot .links a{
   display: inline-block;
-  background: #1C6EA4;
-  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.11);
+  color: rgba(255, 255, 255, 0.11)FFF;
   padding: 2px 8px;
   border-radius: 5px;
 }
@@ -58,7 +56,7 @@ table.blueTable1 tfoot .links a{
 
 table.blueTable2 {
   font-family: Arial, Helvetica, sans-serif;
-  border: 1px solid #1C6EA4;
+  border: 1px solid #8a8a8a;
   background-color: #EEEEEE;
   width: 20%;
   text-align: left;
@@ -72,17 +70,14 @@ table.blueTable2 tbody td {
   font-size: 13px;
 }
 table.blueTable2 thead {
-  background: #1C6EA4;
-  background: -moz-linear-gradient(top, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
-  background: -webkit-linear-gradient(top, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
-  background: linear-gradient(to bottom, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
-  border-bottom: 2px solid #444444;
+  background: rgba(255, 255, 255, 0.11);
+  border-bottom: 2px solid #8a8a8a;
 }
 table.blueTable2 thead th {
   font-size: 15px;
   font-weight: bold;
-  color: #FFFFFF;
-  border-left: 2px solid #D0E4F5;
+  color: rgba(255, 255, 255, 0.11)FFF;
+  border-left: 2px solid #8a8a8a;
 }
 table.blueTable2 thead th:first-child {
   border-left: none;
@@ -96,8 +91,8 @@ table.blueTable2 tfoot .links {
 }
 table.blueTable2 tfoot .links a{
   display: inline-block;
-  background: #1C6EA4;
-  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.11);
+  color: rgba(255, 255, 255, 0.11)FFF;
   padding: 2px 8px;
   border-radius: 5px;
 }
@@ -107,31 +102,28 @@ table.blueTable2 tfoot .links a{
 
 table.blueTable {
   font-family: Arial, Helvetica, sans-serif;
-  border: 1px solid #1C6EA4;
-  background-color: #EEEEEE;
+  border: 1px solid #8a8a8a;
+  background-color: rgba(255, 255, 255, 0.11);
   width: 20%;
   text-align: left;
   border-collapse: collapse;
 }
 table.blueTable td, table.blueTable th {
-  border: 1px solid #AAAAAA;
+  border: 1px solid #8a8a8a;
   padding: 6px 6px;
 }
 table.blueTable tbody td {
   font-size: 13px;
 }
 table.blueTable thead {
-  background: #1C6EA4;
-  background: -moz-linear-gradient(top, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
-  background: -webkit-linear-gradient(top, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
-  background: linear-gradient(to bottom, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
-  border-bottom: 2px solid #444444;
+  background: rgba(255, 255, 255, 0.11);
+  border-bottom: 2px solid #8a8a8a;
 }
 table.blueTable thead th {
   font-size: 15px;
   font-weight: bold;
-  color: #FFFFFF;
-  border-left: 2px solid #D0E4F5;
+  color: rgba(255, 255, 255, 0.11)FFF;
+  border-left: 2px solid #8a8a8a;
 }
 table.blueTable thead th:first-child {
   border-left: none;
@@ -145,8 +137,8 @@ table.blueTable tfoot .links {
 }
 table.blueTable tfoot .links a{
   display: inline-block;
-  background: #1C6EA4;
-  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.11);
+  color: rgba(255, 255, 255, 0.11)FFF;
   padding: 2px 8px;
   border-radius: 5px;
 }
@@ -154,7 +146,7 @@ table.blueTable tfoot .links a{
 
     .test_title{
         font-size: 20px;
-        background-color: #dddddd;
+        background-color: rgba(255, 255, 255, 0.11);
         border: 1px solid black!important;
     }
     .beak-page{
@@ -173,7 +165,7 @@ table.blueTable tfoot .links a{
         border-color: white;
     }
     .test_head td,th{
-        border: 1px solid #dee2e6;
+        border: 1px solid #8a8a8a;
     }
     .no-border{
         border-color: white;
@@ -263,7 +255,7 @@ table.blueTable tfoot .links a{
             @if(count($category['tests']))
                 @if( count( $category['tests'] ) > 1 )
 
-                        <table class="table test beak-page">
+                        <table class="blueTable test beak-page">
                             <thead>
 
                             <tr class="transparent">
@@ -341,15 +333,14 @@ table.blueTable tfoot .links a{
 
                         @if($test['test']['id'] == 473)
 
-                            <h3>Blood Picture</h3>
                             <table class="blueTable1">
                                 <thead>
                                     <tr>
-                                        <th style="color: #000000; font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 14px; text-align: center; background-color: #f3f2f7;">Test</th>
-                                        <th style="color: #000000; font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 14px; text-align: center; background-color: #f3f2f7;">Result</th>
-                                        <th style="color: #000000; font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 14px; text-align: center; background-color: #f3f2f7;">Unit</th>
-                                        <th style="color: #000000; font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 14px; text-align: center; background-color: #f3f2f7;">Normal Range</th>
-                                        <th><span style="color: #000000; font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 14px; text-align: center; background-color: #f3f2f7;">Status</span></th>
+                                        <th style="color: #000000; font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 14px; text-align: center; background-color: rgba(255, 255, 255, 0.11);">Test</th>
+                                        <th style="color: #000000; font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 14px; text-align: center; background-color: rgba(255, 255, 255, 0.11);">Result</th>
+                                        <th style="color: #000000; font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 14px; text-align: center; background-color: rgba(255, 255, 255, 0.11);">Unit</th>
+                                        <th style="color: #000000; font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 14px; text-align: center; background-color: rgba(255, 255, 255, 0.11);">Normal Range</th>
+                                        <th><span style="color: #000000; font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 14px; text-align: center; background-color: rgba(255, 255, 255, 0.11);">Status</span></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -373,20 +364,17 @@ table.blueTable tfoot .links a{
                                 </tbody>
                             </table>
 
-
-                            </br>
-                            <h3>WBCs Differential</h3>
                             <table width="100%" cellpadding="0" border="0">
                                 <tr>
                                     // Left side Table
                                     <td width="60%" style="margin: 0px;">
 
-                                        <table class="blueTable2" style="width: 100%;">
+                                        <table class="blueTable" style="width: 100%;">
                                             <thead>
                                                 <tr>
-                                                    <th style="color: #000000; font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 14px; text-align: center; background-color: #f3f2f7;">Test</th>
-                                                    <th style="color: #000000; font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 14px; text-align: center; background-color: #f3f2f7;">Relative Count %</th>
-                                                    <th style="color: #000000; font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 14px; text-align: center; background-color: #f3f2f7;">Normal Range</th>
+                                                    <th style="color: #000000; font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 14px; text-align: center; background-color: rgba(255, 255, 255, 0.11);">Test</th>
+                                                    <th style="color: #000000; font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 14px; text-align: center; background-color: rgba(255, 255, 255, 0.11);">Relative Count %</th>
+                                                    <th style="color: #000000; font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 14px; text-align: center; background-color: rgba(255, 255, 255, 0.11);">Normal Range</th>
 
                                                 </tr>
                                             </thead>
@@ -416,8 +404,8 @@ table.blueTable tfoot .links a{
                                         <table class="blueTable" style="width: 100%;">
                                             <thead>
                                                 <tr>
-                                                    <th style="color: #000000; font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 14px; text-align: center; background-color: #f3f2f7;">Absolute Count 10³/µl</th>
-                                                    <th style="color: #000000; font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 14px; text-align: center; background-color: #f3f2f7;">Normal Range</th>
+                                                    <th style="color: #000000; font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 14px; text-align: center; background-color: rgba(255, 255, 255, 0.11);">Absolute Count 10³/µl</th>
+                                                    <th style="color: #000000; font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 14px; text-align: center; background-color: rgba(255, 255, 255, 0.11);">Normal Range</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
