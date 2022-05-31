@@ -39,12 +39,12 @@
             <i class="fas fa-user-injured"></i> {{__('Patient info')}}
         </button>
         <a @if(isset($previous)) href="{{route('admin.medical_reports.show',$previous['id'])}}" @endif class="btn btn-info @if(!isset($previous)) disabled @endif">
-            <i class="fa fa-backward mr-2"></i> 
+            <i class="fa fa-backward mr-2"></i>
             {{__('Previous')}}
         </a>
         <a @if(isset($next)) href="{{route('admin.medical_reports.show',$next['id'])}}" @endif class="btn btn-success @if(!isset($next)) disabled @endif">
             {{__('Next')}}
-            <i class="fa fa-forward ml-2"></i> 
+            <i class="fa fa-forward ml-2"></i>
         </a>
     </div>
 </div>
@@ -54,7 +54,7 @@
     @csrf
     <!-- patient code -->
     <input type="hidden" id="patient_code" @if(isset($group['patient'])) value="{{$group['patient']['code']}}" @endif>
-    
+
     @if($group['uploaded_report'])
     <div class="row mb-3">
         <div class="col-lg-12">
@@ -64,7 +64,7 @@
             </a>
         </div>
     </div>
-    @else 
+    @else
     <div class="row mb-3">
         <div class="col-lg-6">
             <h6 class="text-info">
@@ -72,20 +72,20 @@
             </h6>
         </div>
         <div class="col-lg-6">
-          
+
             <button type="submit" class="btn btn-primary float-right d-inline">
                 <i class="fa fa-print"></i>
                 {{__('Print')}}
             </button>
-                
-                
-           
+
+
+
            <button type="button" id="withoutHeaders" data-action="{{route('admin.medical_reports.print_report_2',$group['id'])}}" class="btn btn-primary float-right d-inline" style="margin-right: 7px">
                 <i class="fa fa-print"></i>
-                {{ __('Print_WithoutHeaders') }}
+                طباعة بدون هيدر
             </button>
-           
-           
+
+
             <button type="button" class="btn btn-danger deselect_all float-right d-inline mr-2">
                 <i class="fa fa-times-circle"></i>
                 {{__('Deselect all')}}
@@ -110,7 +110,7 @@
                         <div class="col-lg-10">
                             <h3 class="card-title">{{__('Tests')}}</h3>
                         </div>
-                       
+
                     </div>
 
                 </div>
@@ -132,13 +132,13 @@
                                         <tr>
                                             <td>
                                                 <div class="card card-primary card-outline collapsed-card" id="card_{{$test['id']}}">
-        
+
                                                     <div class="card-header">
                                                         <h4 class="card-title">
                                                             @if(!$group['uploaded_report'])
-                                                            <input type="checkbox" class="analyses_select" id="test_{{$test['id']}}" name="tests[]" value="{{$test['id']}}">
+                                                            <input type="checkbox" class="analyses_select get_tests" id="test_{{$test['id']}}" name="tests[]" value="{{$test['id']}}">
                                                             @endif
-                                                            @if($test['done']) 
+                                                            @if($test['done'])
                                                                 <i class="fa fa-check text-success"></i>
                                                             @endif
                                                             <label for="test_{{$test['id']}}">@if(isset($test['test'])) {{$test['test']["name"]}} @endif</label>
@@ -150,7 +150,7 @@
                                                             </button>
                                                         </div>
                                                     </div>
-        
+
                                                     <div class="card-body p-0">
                                                         <table class="table table-striped table-bordered table-sm">
                                                             <thead>
@@ -204,12 +204,12 @@
                                                                                     </td>
                                                                                 </tr>
                                                                             </tbody>
-                                                                        </table>                                                                        
+                                                                        </table>
                                                                     </td>
                                                                 </tr>
                                                                 @endif
                                                             </tbody>
-        
+
                                                         </table>
                                                     </div>
 
@@ -240,7 +240,7 @@
                                                                             <td class="text-center">
                                                                             ({{$result["result"]}}) {{$result["component"]["unit"]}}  {!! $result["component"]["reference_range"] !!}
                                                                             </td>
-                                                                         
+
                                                                         </tr>
                                                                     @endif
                                                                     @endif
@@ -257,15 +257,15 @@
                                                                                     </td>
                                                                                 </tr>
                                                                             </tbody>
-                                                                        </table>                                                                        
+                                                                        </table>
                                                                     </td>
                                                                 </tr>
                                                                 @endif
                                                             </tbody>
-        
+
                                                         </table>
                                                     </div>
-                                                    
+
                                                     <div class="card-body p-0 col-lg-4">
                                                         <table class="table table-striped table-bordered table-sm">
                                                             <thead>
@@ -286,7 +286,7 @@
                                                                             <td class="text-center">
                                                                             ({{$result["result"]}}) {{$result["component"]["unit"]}}  {{ strip_tags($result["component"]["reference_range"]) }}
                                                                             </td>
-                                                                         
+
                                                                         </tr>
                                                                     @endif
                                                                     @endif
@@ -303,12 +303,12 @@
                                                                                     </td>
                                                                                 </tr>
                                                                             </tbody>
-                                                                        </table>                                                                        
+                                                                        </table>
                                                                     </td>
                                                                 </tr>
                                                                 @endif
                                                             </tbody>
-        
+
                                                         </table>
                                                     </div>
                                                     </div>
@@ -322,9 +322,9 @@
                                             </td>
                                         </tr>
                                         @endforeach
-        
+
                                     </tbody>
-        
+
                                 </table>
                             </div>
                         </div>
@@ -365,7 +365,7 @@
                                             @if(!$group['uploaded_report'])
                                             <input type="checkbox" class="analyses_select" id="culture_{{$culture['id']}}" name="cultures[]" value="{{$culture['id']}}">
                                             @endif
-                                            @if($culture['done']) 
+                                            @if($culture['done'])
                                                 <i class="fa fa-check text-success"></i>
                                             @endif
                                             <label for="culture_{{$culture['id']}}">
@@ -462,12 +462,12 @@
                                                     <td>{{$culture['comment']}}</td>
                                                 </tr>
                                             </tbody>
-                                        </table>     
+                                        </table>
                                         @endif
                                         <!-- /comment -->
                                     </div>
                                 </div>
-                                @endforeach                               
+                                @endforeach
                             </div>
                         </div>
                     </div>
@@ -488,7 +488,7 @@
                 </a>
             </div>
         </div>
-    @else 
+    @else
     <div class="row mb-3">
         <div class="col-lg-6">
             <h6 class="text-info">
@@ -496,13 +496,13 @@
             </h6>
         </div>
         <div class="col-lg-6">
-          
+
             <button type="submit" class="btn btn-primary float-right d-inline">
                 <i class="fa fa-print"></i>
                 {{__('Print')}}
             </button>
 
-           
+
             <button type="button" class="btn btn-danger deselect_all float-right d-inline mr-2">
                 <i class="fa fa-times-circle"></i>
                 {{__('Deselect all')}}
@@ -525,16 +525,16 @@
             <i class="fas fa-user-injured"></i> {{__('Patient info')}}
         </button>
         <a @if(isset($previous)) href="{{route('admin.medical_reports.show',$previous['id'])}}" @endif class="btn btn-info @if(!isset($previous)) disabled @endif">
-            <i class="fa fa-backward mr-2"></i> 
+            <i class="fa fa-backward mr-2"></i>
             {{__('Previous')}}
         </a>
         <a @if(isset($next)) href="{{route('admin.medical_reports.show',$next['id'])}}" @endif class="btn btn-success @if(!isset($next)) disabled @endif">
             {{__('Next')}}
-            <i class="fa fa-forward ml-2"></i> 
+            <i class="fa fa-forward ml-2"></i>
         </a>
     </div>
 </div>
-@endcan 
+@endcan
 
 @include('admin.medical_reports._patient_modal')
 
@@ -542,29 +542,30 @@
 @section('scripts')
     <script src="{{url('plugins/ekko-lightbox/ekko-lightbox.js')}}"></script>
     <script src="{{url('js/admin/medical_reports.js')}}"></script>
-    
-    
+
+
     <script>
 
         $('body').on('click', '#withoutHeaders', function (e) {
                 e.preventDefault();
-                console.log($(this));
-                let url         = this.getAttribute('data-action');
-                //window.location.href=url;
-                window.open(url, '_blank');
-                /*let xmlReq      = new XMLHttpRequest();
-                console.log(url);
-                xmlReq.onreadystatechange   = function (){
-                    if(xmlReq.readyState == 4 && xmlReq.status == 200){
-                        console.log(xmlReq.response);
-                    }
-                }
-                xmlReq.open('GET',url);
-                xmlReq.setRequestHeader('X-CSRF-TOKEN',"{{ csrf_token() }}");
-                xmlReq.send();*/
+                let url = this.getAttribute('data-action');
+
+                var tests = $('.get_tests:checked');
+
+                // get all selected tests
+                var tests_ids = [];
+                tests.each(function(index, element) {
+                    tests_ids.push(element.value);
+                });
+
+                // send tests with window open
+                window.open(url + '?tests_ids=' + tests_ids, '_blank');
+
+                //window.open(url, '_blank);
+
             });
 
 
-    </script>    
-    
+    </script>
+
 @endsection
