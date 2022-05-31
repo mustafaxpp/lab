@@ -45,7 +45,7 @@ class Group extends Model
 
     public function doctor()
     {
-        return $this->belongsTo(Doctor::class,'doctor_id','id')->withTrashed();
+        return $this->belongsTo(User::class,'doctor_id','id')->withTrashed();
     }
 
     public function branch()
