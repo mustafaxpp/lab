@@ -103,6 +103,7 @@ class MedicalReportsController extends Controller
                     'patient',
                     'tests',
                     'cultures',
+                    'branch',
                     'contract',
                     'signed_by_user',
                     'created_by_user'
@@ -769,6 +770,7 @@ class MedicalReportsController extends Controller
                 'signed_by' => auth()
                     ->guard('admin')
                     ->user()->id,
+                    'signed_date' => now()
             ]);
 
             //generate pdf

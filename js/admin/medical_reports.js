@@ -8,6 +8,17 @@ var antibiotic_count = $('#antibiotic_count').val();
 
     //active
     $('#medical_reports').addClass('active');
+    // val id filter today of selected date
+    var today = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth() + 1; //January is 0!
+    var yyyy = today.getFullYear();
+
+
+    setTimeout(() => {
+        $('#medical_reports_table').dataTable().fnFilter($('#filter_branch').val());
+    }, 1000);
+
 
     //Medical reports datatables
     table = $('#medical_reports_table').DataTable({
@@ -64,6 +75,7 @@ var antibiotic_count = $('#antibiotic_count').val();
         "columns": [
             { data: "bulk_checkbox", orderable: false, sortable: false },
             { data: "id", orderable: true, sortable: true },
+            { data: "branch.name", searchable: true, orderable: false, sortable: false },
             { data: "created_by_user.name", orderable: false, sortable: false },
             { data: "contract.title", orderable: false, sortable: false },
             { data: "barcode", orderable: false, sortable: false },
@@ -73,7 +85,7 @@ var antibiotic_count = $('#antibiotic_count').val();
             { data: "patient.age", searchable: false, orderable: false, sortable: false },
             { data: "patient.phone", orderable: false, sortable: false },
             { data: "tests", searchable: false, orderable: false, sortable: false },
-            { data: "created_at", searchable: false, orderable: true, sortable: true },
+            { data: "created_at", searchable: true, orderable: true, sortable: true },
             { data: "done", searchable: false, sortable: false, orderable: false },
             { data: "signed", searchable: false, sortable: false, orderable: false },
             { data: "signed_by_user.name", orderable: false, sortable: false },
@@ -99,6 +111,14 @@ var antibiotic_count = $('#antibiotic_count').val();
             },
         }
     });
+
+    $(document).on('change', '.filter_today_of_branch', function(e) {
+        e.preventDefault();
+
+        $('#medical_reports_table').dataTable().fnFilter(this.value);
+
+    })
+
 
     $('#filter_status').on('change', function() {
         table.draw();
