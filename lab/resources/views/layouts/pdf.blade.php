@@ -192,10 +192,10 @@
                 @foreach ($categories as $category)
                     @if (count($category['tests']))
                         @foreach ($category['tests'] as $test)
-                            //Covid PCR Header
+                            <!--Covid PCR Header-->
                             @if ($test['test']['id'] == 1207)
                                 @if (isset($group['patient']))
-                                    <table width="100%" class="table table-bordered pdf-header">
+                                    <table width="100%" class="table table-bordered pdf-header" padding-top="150px;">
 
                                         <tbody>
                                             <tr>
@@ -204,12 +204,7 @@
                                                         <img src="https://chart.googleapis.com/chart?chs={{ $reports_settings['qrcode-dimension'] }}x{{ $reports_settings['qrcode-dimension'] }}&cht=qr&chl={{ url('patient/login/' . $group['patient']['code']) }}&choe=UTF-8"
                                                             title="Link to Google.com" />
                                                     @endif
-                                                    <span class="title">{{ __('Patient Code') }}:</span>
-                                                    <span class="data">
-                                                        @if (isset($group['patient']))
-                                                            {{ __($group['patient']['code']) }}
-                                                        @endif
-                                                    </span>
+
                                                 </td>
                                                 <td rowspan="4">
                                                     @if (isset($group['patient']) && $reports_settings['show_avatar'])
@@ -230,7 +225,7 @@
 
                                                 <td>
 
-                                                    <span class="title">{{ __('Prof') }}:</span> <span
+                                                    <span class="title">{{ __('Referred By') }}:</span> <span
                                                         class="data">
                                                         @if (isset($group['doctor']))
                                                             {{ $group['doctor']['name'] }}
@@ -278,10 +273,10 @@
 
                                                 </td>
                                                 <td>
-                                                    <span class="title">{{ __('National ID') }}:</span>
+                                                  <span class="title">{{ __('Patient Code') }}:</span>
                                                     <span class="data">
                                                         @if (isset($group['patient']))
-                                                            {{ $group['patient']['national_id'] }}
+                                                            {{ __($group['patient']['code']) }}
                                                         @endif
                                                     </span>
 
