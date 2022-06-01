@@ -265,7 +265,6 @@ table.blueTable tfoot .links a{
 
                         <table class="table test beak-page">
                             <thead>
-
                             <tr class="transparent">
                                 <th colspan="5"></th>
                             </tr>

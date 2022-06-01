@@ -159,7 +159,7 @@
                                 </p>
                                 <p class="branch_info">
                                     <img src="{{url('img/report_email.png')}}" width="16px" alt=""> 
-                                    {{$info_settings['email']}}
+                                    {{$info_settings['email']}} 
                                 </p>
                                 <p class="branch_info">
                                     <img src="{{url('img/report_website.png')}}" width="16px" alt="">
@@ -188,13 +188,14 @@
                                     <img src="https://chart.googleapis.com/chart?chs={{$reports_settings['qrcode-dimension']}}x{{$reports_settings['qrcode-dimension']}}&cht=qr&chl={{url('patient/login/'.$group['patient']['code'])}}&choe=UTF-8" title="Link to Google.com" />
                                 @endif
   </td>
-    <td>
-      <span class="title">التاريخ : </span> <span class="data"> {{ date('d-m-Y H:i',strtotime($group['created_at'])) }} </span>
+   <td>
+   <span class="title">تاريخ التوقيع :</span><span class="data"> {{ date('d-m-Y H:i',strtotime($group['signed_date'])) }} </span>
   </td>
     <td>
      <span class="title">اسم المريض : </span> <span class="data"> @if(isset($group['patient'])){{ $group['patient']['name'] }} @endif </span>
   </td>
    </tr>
+
    <tr>
     <td>
    <span class="title">تاريخ الميلاد :</span><span class="data">@if(isset($group['patient'])) {{$group['patient']['dob']}}@endif</span>
@@ -202,6 +203,7 @@
     <td>
    <span class="title"> النوع : </span> <span class="data"> @if(isset($group['patient'])) {{ __($group['patient']['gender']) }}  @endif</span></td>  </tr>
   <tr>
+
       <td>
 <span class="title">الطبيب :</span> <span class="data">
 @if(isset($group['doctor'])) {{ $group['doctor']['name'] }}
@@ -211,6 +213,7 @@
  <td>
    <span class="title">كود المريض :</span> <span class="data"> @if(isset($group['patient'])) {{ __($group['patient']['code']) }}  @endif</span></td>
 </tr>
+
 
 
                     </tbody>

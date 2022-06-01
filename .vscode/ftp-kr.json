@@ -1,0 +1,16 @@
+{
+    "host": "176.9.24.56",
+    "username": "alm3mllab",
+    "password": "alma3mallab@$124",
+    "remotePath": "lab.alm3mllab.com/",
+    "protocol": "ftp",
+    "port": 0,
+    "fileNameEncoding": "utf8",
+    "autoUpload": false,
+    "autoDelete": false,
+    "autoDownload": false,
+    "ignore": [
+        ".git",
+        "/.vscode"
+    ]
+}

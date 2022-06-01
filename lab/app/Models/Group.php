@@ -11,6 +11,8 @@ class Group extends Model
 
     public $guarded=[];
 
+    protected $dates = ['signed_date'];
+
     public function all_tests()
     {
         return $this->hasMany(GroupTest::class,'group_id','id');
