@@ -450,6 +450,9 @@ table.blueTable tfoot .links a{
                                 <!-- /comment -->
                             </table>
 
+                        @elseif($test['test']['id'] == 0)
+
+                        @elseif($test['test']['id'] == 0)
                         @else
 
                             <table class="table test beak-page">
