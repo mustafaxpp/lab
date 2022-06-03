@@ -4,280 +4,241 @@
 @endsection
 @section('content')
     <style>
-        table.blueTable1 {
-            font-family: Arial, Helvetica, sans-serif;
-            border: 1px solid #8a8a8a;
-            background-color: rgba(255, 255, 255, 0.11);
-            width: 100%;
-            text-align: left;
-            border-collapse: collapse;
-        }
+table.blueTable1 {
+  font-family: Arial, Helvetica, sans-serif;
+  border: 1px solid #1C6EA4;
+  background-color: #EEEEEE;
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+}
+table.blueTable1 td, table.blueTable1 th {
+  border: 1px solid #AAAAAA;
+  padding: 6px 6px;
+}
+table.blueTable1 tbody td {
+  font-size: 13px;
+}
+table.blueTable1 thead {
+  background: #1C6EA4;
+  background: -moz-linear-gradient(top, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
+  background: -webkit-linear-gradient(top, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
+  background: linear-gradient(to bottom, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
+  border-bottom: 2px solid #444444;
+}
+table.blueTable1 thead th {
+  font-size: 15px;
+  font-weight: bold;
+  color: #FFFFFF;
+  border-left: 2px solid #D0E4F5;
+}
+table.blueTable1 thead th:first-child {
+  border-left: none;
+}
 
-        table.blueTable1 td,
-        table.blueTable1 th {
-            border: 1px solid #8a8a8a;
-            padding: 6px 6px;
-        }
-
-        table.blueTable1 tbody td {
-            font-size: 13px;
-        }
-
-        table.blueTable1 thead {
-            background: rgba(255, 255, 255, 0.11);
-
-            border-bottom: 2px solid #8a8a8a;
-        }
-
-        table.blueTable1 thead th {
-            font-size: 15px;
-            font-weight: bold;
-            color: rgba(255, 255, 255, 0.11)FFF;
-            border-left: 2px solid #8a8a8a;
-        }
-
-        table.blueTable1 thead th:first-child {
-            border-left: none;
-        }
-
-        table.blueTable1 tfoot td {
-            font-size: 14px;
-        }
-
-        table.blueTable1 tfoot .links {
-            text-align: right;
-        }
-
-        table.blueTable1 tfoot .links a {
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.11);
-            color: rgba(255, 255, 255, 0.11)FFF;
-            padding: 2px 8px;
-            border-radius: 5px;
-        }
+table.blueTable1 tfoot td {
+  font-size: 14px;
+}
+table.blueTable1 tfoot .links {
+  text-align: right;
+}
+table.blueTable1 tfoot .links a{
+  display: inline-block;
+  background: #1C6EA4;
+  color: #FFFFFF;
+  padding: 2px 8px;
+  border-radius: 5px;
+}
 
 
 
 
-        table.blueTable2 {
-            font-family: Arial, Helvetica, sans-serif;
-            border: 1px solid #8a8a8a;
-            background-color: #EEEEEE;
-            width: 20%;
-            text-align: left;
-            border-collapse: collapse;
-        }
+table.blueTable2 {
+  font-family: Arial, Helvetica, sans-serif;
+  border: 1px solid #1C6EA4;
+  background-color: #EEEEEE;
+  width: 20%;
+  text-align: left;
+  border-collapse: collapse;
+}
+table.blueTable2 td, table.blueTable2 th {
+  border: 1px solid #AAAAAA;
+  padding: 6px 6px;
+}
+table.blueTable2 tbody td {
+  font-size: 13px;
+}
+table.blueTable2 thead {
+  background: #1C6EA4;
+  background: -moz-linear-gradient(top, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
+  background: -webkit-linear-gradient(top, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
+  background: linear-gradient(to bottom, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
+  border-bottom: 2px solid #444444;
+}
+table.blueTable2 thead th {
+  font-size: 15px;
+  font-weight: bold;
+  color: #FFFFFF;
+  border-left: 2px solid #D0E4F5;
+}
+table.blueTable2 thead th:first-child {
+  border-left: none;
+}
 
-        table.blueTable2 td,
-        table.blueTable2 th {
-            border: 1px solid #AAAAAA;
-            padding: 6px 6px;
-        }
-
-        table.blueTable2 tbody td {
-            font-size: 13px;
-        }
-
-        table.blueTable2 thead {
-            background: rgba(255, 255, 255, 0.11);
-            border-bottom: 2px solid #8a8a8a;
-        }
-
-        table.blueTable2 thead th {
-            font-size: 15px;
-            font-weight: bold;
-            color: rgba(255, 255, 255, 0.11)FFF;
-            border-left: 2px solid #8a8a8a;
-        }
-
-        table.blueTable2 thead th:first-child {
-            border-left: none;
-        }
-
-        table.blueTable2 tfoot td {
-            font-size: 14px;
-        }
-
-        table.blueTable2 tfoot .links {
-            text-align: right;
-        }
-
-        table.blueTable2 tfoot .links a {
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.11);
-            color: rgba(255, 255, 255, 0.11)FFF;
-            padding: 2px 8px;
-            border-radius: 5px;
-        }
+table.blueTable2 tfoot td {
+  font-size: 14px;
+}
+table.blueTable2 tfoot .links {
+  text-align: right;
+}
+table.blueTable2 tfoot .links a{
+  display: inline-block;
+  background: #1C6EA4;
+  color: #FFFFFF;
+  padding: 2px 8px;
+  border-radius: 5px;
+}
 
 
 
 
-        table.blueTable {
-            font-family: Arial, Helvetica, sans-serif;
-            border: 1px solid #8a8a8a;
-            background-color: rgba(255, 255, 255, 0.11);
-            width: 20%;
-            text-align: left;
-            border-collapse: collapse;
-        }
+table.blueTable {
+  font-family: Arial, Helvetica, sans-serif;
+  border: 1px solid #1C6EA4;
+  background-color: #EEEEEE;
+  width: 20%;
+  text-align: left;
+  border-collapse: collapse;
+}
+table.blueTable td, table.blueTable th {
+  border: 1px solid #AAAAAA;
+  padding: 6px 6px;
+}
+table.blueTable tbody td {
+  font-size: 13px;
+}
+table.blueTable thead {
+  background: #1C6EA4;
+  background: -moz-linear-gradient(top, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
+  background: -webkit-linear-gradient(top, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
+  background: linear-gradient(to bottom, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
+  border-bottom: 2px solid #444444;
+}
+table.blueTable thead th {
+  font-size: 15px;
+  font-weight: bold;
+  color: #FFFFFF;
+  border-left: 2px solid #D0E4F5;
+}
+table.blueTable thead th:first-child {
+  border-left: none;
+}
 
-        table.blueTable td,
-        table.blueTable th {
-            border: 1px solid #8a8a8a;
-            padding: 6px 6px;
-        }
-
-        table.blueTable tbody td {
-            font-size: 13px;
-        }
-
-        table.blueTable thead {
-            background: rgba(255, 255, 255, 0.11);
-            border-bottom: 2px solid #8a8a8a;
-        }
-
-        table.blueTable thead th {
-            font-size: 15px;
-            font-weight: bold;
-            color: rgba(255, 255, 255, 0.11)FFF;
-            border-left: 2px solid #8a8a8a;
-        }
-
-        table.blueTable thead th:first-child {
-            border-left: none;
-        }
-
-        table.blueTable tfoot td {
-            font-size: 14px;
-        }
-
-        table.blueTable tfoot .links {
-            text-align: right;
-        }
-
-        table.blueTable tfoot .links a {
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.11);
-            color: rgba(255, 255, 255, 0.11)FFF;
-            padding: 2px 8px;
-            border-radius: 5px;
-        }
+table.blueTable tfoot td {
+  font-size: 14px;
+}
+table.blueTable tfoot .links {
+  text-align: right;
+}
+table.blueTable tfoot .links a{
+  display: inline-block;
+  background: #1C6EA4;
+  color: #FFFFFF;
+  padding: 2px 8px;
+  border-radius: 5px;
+}
 
 
-        .test_title {
-            font-size: 20px;
-            background-color: rgba(255, 255, 255, 0.11);
-            border: 1px solid black !important;
-        }
-
-        .beak-page {
-            page-break-inside: avoid !important;
-        }
-
-        .subtitle {
-            font-size: 15px;
-        }
-
-        .test {
-            margin-top: 5px;
-        }
-
-        .transparent {
-            border-color: white;
-        }
-
-        .transparent th {
-            border-color: white;
-        }
-
-        .test_head td,
-        th {
-            border: 1px solid #8a8a8a;
-        }
-
-        .no-border {
-            border-color: white;
-        }
-
-        .comment tr th,
-        .comment tr td {
-            border-color: white !important;
-            vertical-align: top !important;
-            text-align: left;
-            padding: 0px !important;
-        }
-
-        .sensitivity {
-            margin-top: 20px;
-        }
-
-        .test_title {
-            color: {{ $reports_settings['test_title']['color'] }} !important;
-            font-size: {{ $reports_settings['test_title']['font-size'] }}px !important;
-            font-family: {{ $reports_settings['test_title']['font-family'] }} !important;
-        }
-
-        .test_name {
-            color: {{ $reports_settings['test_name']['color'] }} !important;
-            font-size: {{ $reports_settings['test_name']['font-size'] }}px !important;
-            font-family: {{ $reports_settings['test_name']['font-family'] }} !important;
-        }
-
-        .test_head th {
-            color: {{ $reports_settings['test_head']['color'] }} !important;
-            font-size: {{ $reports_settings['test_head']['font-size'] }}px !important;
-            font-family: {{ $reports_settings['test_head']['font-family'] }} !important;
-        }
-
-        .unit {
-            color: {{ $reports_settings['unit']['color'] }} !important;
-            font-size: {{ $reports_settings['unit']['font-size'] }}px !important;
-            font-family: {{ $reports_settings['unit']['font-family'] }} !important;
-        }
-
-        .reference_range {
-            color: {{ $reports_settings['reference_range']['color'] }} !important;
-            font-size: {{ $reports_settings['reference_range']['font-size'] }}px !important;
-            font-family: {{ $reports_settings['reference_range']['font-family'] }} !important;
-        }
-
-        .result {
-            color: {{ $reports_settings['result']['color'] }} !important;
-            font-size: {{ $reports_settings['result']['font-size'] }}px !important;
-            font-family: {{ $reports_settings['result']['font-family'] }} !important;
-        }
-
-        .status {
-            color: {{ $reports_settings['status']['color'] }} !important;
-            font-size: {{ $reports_settings['status']['font-size'] }}px !important;
-            font-family: {{ $reports_settings['status']['font-family'] }} !important;
-        }
-
-        .comment th,
-        .comment td {
-            color: {{ $reports_settings['comment']['color'] }} !important;
-            font-size: {{ $reports_settings['comment']['font-size'] }}px !important;
-            font-family: {{ $reports_settings['comment']['font-family'] }} !important;
-        }
-
-        .antibiotic_name {
-            color: {{ $reports_settings['antibiotic_name']['color'] }} !important;
-            font-size: {{ $reports_settings['antibiotic_name']['font-size'] }}px !important;
-            font-family: {{ $reports_settings['antibiotic_name']['font-family'] }} !important;
-        }
-
-        .sensitivity {
-            color: {{ $reports_settings['sensitivity']['color'] }} !important;
-            font-size: {{ $reports_settings['sensitivity']['font-size'] }}px !important;
-            font-family: {{ $reports_settings['sensitivity']['font-family'] }} !important;
-        }
-
-        .commercial_name {
-            color: {{ $reports_settings['commercial_name']['color'] }} !important;
-            font-size: {{ $reports_settings['commercial_name']['font-size'] }}px !important;
-            font-family: {{ $reports_settings['commercial_name']['font-family'] }} !important;
-        }
+    .test_title{
+        font-size: 20px;
+        background-color: #dddddd;
+        border: 1px solid black!important;
+    }
+    .beak-page{
+        page-break-inside: avoid!important;
+    }
+    .subtitle{
+        font-size: 15px;
+    }
+   .test{
+       margin-top: 5px;
+    }
+    .transparent{
+        border-color: white;
+    }
+    .transparent th{
+        border-color: white;
+    }
+    .test_head td,th{
+        border: 1px solid #dee2e6;
+    }
+    .no-border{
+        border-color: white;
+    }
+    .comment tr th,.comment tr td{
+        border-color: white!important;
+        vertical-align: top!important;
+        text-align: left;
+        padding:0px!important;
+    }
+    .sensitivity{
+        margin-top: 20px;
+    }
+    .test_title{
+        color:{{$reports_settings['test_title']['color']}}!important;
+        font-size:{{$reports_settings['test_title']['font-size']}}px!important;
+        font-family:{{$reports_settings['test_title']['font-family']}}!important;
+    }
+    .test_name{
+        color:{{$reports_settings['test_name']['color']}}!important;
+        font-size:{{$reports_settings['test_name']['font-size']}}px!important;
+        font-family:{{$reports_settings['test_name']['font-family']}}!important;
+    }
+    .test_head th{
+        color:{{$reports_settings['test_head']['color']}}!important;
+        font-size:{{$reports_settings['test_head']['font-size']}}px!important;
+        font-family:{{$reports_settings['test_head']['font-family']}}!important;
+    }
+    .unit{
+        color:{{$reports_settings['unit']['color']}}!important;
+        font-size:{{$reports_settings['unit']['font-size']}}px!important;
+        font-family:{{$reports_settings['unit']['font-family']}}!important;
+    }
+    .reference_range{
+        color:{{$reports_settings['reference_range']['color']}}!important;
+        font-size:{{$reports_settings['reference_range']['font-size']}}px!important;
+        font-family:{{$reports_settings['reference_range']['font-family']}}!important;
+    }
+    .result{
+        color:{{$reports_settings['result']['color']}}!important;
+        font-size:{{$reports_settings['result']['font-size']}}px!important;
+        font-family:{{$reports_settings['result']['font-family']}}!important;
+    }
+    .status{
+        color:{{$reports_settings['status']['color']}}!important;
+        font-size:{{$reports_settings['status']['font-size']}}px!important;
+        font-family:{{$reports_settings['status']['font-family']}}!important;
+    }
+    .comment th,.comment td{
+        color:{{$reports_settings['comment']['color']}}!important;
+        font-size:{{$reports_settings['comment']['font-size']}}px!important;
+        font-family:{{$reports_settings['comment']['font-family']}}!important;
+    }
+    .antibiotic_name{
+        color:{{$reports_settings['antibiotic_name']['color']}}!important;
+        font-size:{{$reports_settings['antibiotic_name']['font-size']}}px!important;
+        font-family:{{$reports_settings['antibiotic_name']['font-family']}}!important;
+    }
+    .sensitivity{
+        color:{{$reports_settings['sensitivity']['color']}}!important;
+        font-size:{{$reports_settings['sensitivity']['font-size']}}px!important;
+        font-family:{{$reports_settings['sensitivity']['font-family']}}!important;
+    }
+    .commercial_name{
+        color:{{$reports_settings['commercial_name']['color']}}!important;
+        font-size:{{$reports_settings['commercial_name']['font-size']}}px!important;
+        font-family:{{$reports_settings['commercial_name']['font-family']}}!important;
+    }
 
 
 
@@ -332,90 +293,93 @@
 
     </style>
     <div class="printable">
-        @php
-            $count_categories = 0;
-        @endphp
-        @foreach ($categories as $category)
-            @if (count($category['tests']) || count($category['cultures']))
-                @php
-                    $count_categories++;
-                    $count = 0;
-                @endphp
-                <!--@if ($count_categories > 1)
-    <pagebreak>
-                                    </pagebreak>
-    @endif-->
-                <h4 class="test_title" align="center">
-                    {{ $category['name'] }}
-                </h4>
-                @if (count($category['tests']))
-                    @if (count($category['tests']) > 1)
-                        <table class="blueTable test beak-page">
+         @php
+        $count_categories=0
+    @endphp
+    @foreach($categories as $category)
+        @if(count($category['tests'])||count($category['cultures']))
+            @php
+                $count_categories++;
+                $count=0;
+            @endphp
+            @if($count_categories>1)
+                <pagebreak>
+                </pagebreak>
+            @endif
+            <h4 class="test_title" align="center">
+                {{$category['name']}}
+            </h4>
+            @if(count($category['tests']))
+                @if( count( $category['tests'] ) > 1 )
+
+
+                        <table class="table test beak-page">
                             <thead>
-                                <tr class="transparent">
-                                    <th colspan="5"></th>
-                                </tr>
-                                <tr class="test_head">
-                                    <th width="30%" class="text-left">Test</th>
-                                    <th width="17.5%">Result</th>
-                                    <th width="17.5%">Unit</th>
-                                    <th width="17.5%">Normal Range</th>
-                                    <th width="17.5%">Status</th>
-                                </tr>
+
+                            <tr class="transparent">
+                                <th colspan="5"></th>
+                            </tr>
+                            <tr class="test_head">
+                                <th width="30%" class="text-left">Test</th>
+                                <th width="20%">Result</th>
+                                <th width="20%">Unit</th>
+                                <th width="30%">Normal Range</th>
+                                <!--<th width="17.5%">Status</th>-->
+                            </tr>
                             </thead>
                             <tbody class="table-bordered">
 
-                                @foreach ($category['tests'] as $test)
-                                    @foreach ($test['results'] as $result)
-                                        <!-- Title -->
-                                        @if (isset($result['component']))
-                                            @if ($result['component']['title'])
-                                                <tr>
-                                                    <td colspan="5" class="component_title test_name">
-                                                        <b>{{ $result['component']['name'] }}</b>
-                                                    </td>
-                                                </tr>
-                                            @else
-                                                <tr>
-                                                    <td class="text-captitalize test_name">
-                                                        {{ $result['component']['name'] }}</td>
-                                                    <td align="center" class="result">{{ $result['result'] }}</td>
-                                                    <td align="center" class="unit">
-                                                        {{ $result['component']['unit'] }}</td>
-                                                    <td align="center" class="reference_range">
-                                                        {!! $result['component']['reference_range'] !!}
-                                                    </td>
-                                                    <td align="center" class="status">
-                                                        {{ $result['status'] }}
-                                                    </td>
-                                                </tr>
-                                            @endif
+                            @foreach($category['tests'] as $test)
+                                @foreach($test["results"] as $result)
+                                    <!-- Title -->
+                                    @if(isset($result['component']))
+                                        @if($result['component']['title'])
+                                            <tr>
+                                                <td colspan="5" class="component_title test_name">
+                                                    <b>{{$result['component']['name']}}</b>
+                                                </td>
+                                            </tr>
+                                        @else
+                                            <tr>
+                                                <td class="text-captitalize test_name">{{$result["component"]["name"]}}</td>
+                                                <td align="center" class="result">{{$result["result"]}}</td>
+                                                <td align="center" class="unit">{{$result["component"]["unit"]}}</td>
+                                                <td align="center" class="reference_range">
+                                                    {!! $result["component"]["reference_range"] !!}
+                                                </td>
+                                              <!--  <td align="center" class="status">
+                                                    {{$result['status']}}
+                                                </td>-->
+                                            </tr>
                                         @endif
-                                    @endforeach
+                                    @endif
                                 @endforeach
 
-                                <!-- Comment -->
-                                @if (isset($test['comment']))
-                                    <tr class="comment">
-                                        <td colspan="5">
-                                            <table class="comment">
-                                                <tbody>
-                                                    <tr>
-                                                        <th width="80px">
-                                                            <b>Comment :</b>
-                                                        </th>
-                                                        <td>
-                                                            {!! str_replace("\n", '<br />', $test['comment']) !!}
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </td>
-                                    </tr>
-                                @endif
-                                <!-- /comment -->
+                            @endforeach
+
+                            <!-- Comment -->
+                            @if(isset($test['comment']))
+                                <tr class="comment">
+                                    <td colspan="5">
+                                        <table class="comment">
+                                            <tbody>
+                                            <tr>
+                                                <th width="80px">
+                                                    <b>Comment :</b>
+                                                </th>
+                                                <td>
+                                                    {!! str_replace("\n", '<br />',  $test['comment']) !!}
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            @endif
+                            <!-- /comment -->
                             </tbody>
                         </table>
+
                     @else
                         @foreach ($category['tests'] as $test)
                             @php
@@ -438,9 +402,9 @@
                                             <th
                                                 style="color: #000000; font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 14px; text-align: center; background-color: rgba(255, 255, 255, 0.11);">
                                                 Normal Range</th>
-                                            <th><span
+                                            <<!--th><span
                                                     style="color: #000000; font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 14px; text-align: center; background-color: rgba(255, 255, 255, 0.11);">Status</span>
-                                            </th>
+                                            </th>-->
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -453,7 +417,7 @@
                                                         <td>{{ $result['result'] }}</td>
                                                         <td>{{ $result['component']['unit'] }}</td>
                                                         <td>{!! $result['component']['reference_range'] !!}</td>
-                                                        <td>{{ $result['status'] }}</td>
+                                                        <!--<td>{{ $result['status'] }}</td>-->
                                                     </tr>
                                                 @endif
                                             @endif
@@ -528,6 +492,91 @@
                                                     @endforeach
                                                 </tbody>
                                             </table>
+<br>
+                                        </td>
+                                    </tr>
+                                    <!-- Comment -->
+                                    @if (isset($test['comment']))
+                                        <tr class="comment">
+                                            <td colspan="5">
+                                                <table class="comment">
+                                                    <tbody>
+                                                        <tr>
+                                                            <th width="80px">
+                                                                <b>Comment :</b>
+                                                            </th>
+                                                            <td>
+                                                                {!! str_replace("\n", '<br />', $test['comment']) !!}
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+
+
+                                    @endif
+                                    <!-- /comment -->
+                                </table>
+                                <!--Stool analysis Report ID 1025-->
+                            @elseif($test['test']['id'] == 1025)
+                                <!--Stool analysis Report ID 1025-->
+
+                                <table class="table test beak-page">
+                                    <thead>
+
+                                        <tr>
+                                            <th width="40%" class="text-left">Test</th>
+                                            <th width="30%">Result</th>
+                                            <th width="30%">Normal Range</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach ($test['results'] as $result)
+                                            @if (isset($result['component']))
+                                                @if ($result['component']['title'])
+                                                    <tr>
+                                                        <td class="text-left">
+                                                            <b>{{ $result['component']['name'] }}</b>
+                                                        </td>
+                                                    </tr>
+                                                @else
+                                                    <tr>
+                                                        <td class="text-left">
+                                                            {{ $result['component']['name'] }}
+                                                        </td>
+                                                        <td align="center" class="result">{{ $result['result'] }}
+                                                        </td>
+                                                        <td align="center" class="reference_range">
+                                                            {!! $result['component']['reference_range'] !!}
+                                                        </td>
+
+                                                    </tr>
+                                                @endif
+                                            @endif
+                                        @endforeach
+                                        <!-- Comment -->
+                                        @if (isset($test['comment']))
+                                            <tr class="comment">
+                                                <td colspan="5">
+                                                    <table class="comment">
+                                                        <tbody>
+                                                            <tr>
+                                                                <th width="80px">
+                                                                    <b>Comment :</b>
+                                                                </th>
+                                                                <td>
+                                                                    {!! str_replace("\n", '<br />', $test['comment']) !!}
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        @endif
+                                        <!-- /comment -->
+                                    </tbody>
+                                </table>
 
                                         </td>
                                     </tr>
@@ -550,74 +599,15 @@
                                             </td>
                                         </tr>
                                     @endif
+
                                     <!-- /comment -->
-                                </table>
-
-                                <!--Stool analysis Report ID 1025-->
-                            @elseif($test['test']['id'] == 1025)
-                                <!--Stool analysis Report ID 1025-->
-                                <table class="table test beak-page">
-                                    <thead>
-
-                                        <tr>
-                                            <th width="40%" class="text-left" style="text-align:left;">Test</th>
-                                            <th width="30%">Result</th>
-                                            <th width="30%">Normal Range</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @foreach ($test['results'] as $result)
-                                            @if (isset($result['component']))
-                                                @if ($result['component']['title'])
-                                                    <tr>
-                                                        <td style="text-align:left;">
-                                                            <b>{{ $result['component']['name'] }}</b>
-                                                        </td>
-                                                    </tr>
-                                                @else
-                                                    <tr>
-                                                        <td style="text-align:left;">
-                                                            {{ $result['component']['name'] }}
-                                                        </td>
-                                                        <td align="center" class="result">{{ $result['result'] }}
-                                                        </td>
-                                                        <td align="center" class="reference_range">
-                                                            {!! $result['component']['reference_range'] !!}
-                                                        </td>
-
-                                                    </tr>
-                                                @endif
-                                            @endif
-                                        @endforeach
-                                        <!-- Comment -->
-                                        @if (isset($test['comment']))
-                                            <tr class="comment">
-                                                <td colspan="5">
-                                                    <table class="comment">
-                                                        <tbody>
-                                                            <tr>
-                                                                <th width="80px">
-                                                                    <b>Comment :</b>
-                                                                </th>
-                                                                <td>
-                                                                    {!! str_replace("\n", '<br />', $test['comment']) !!}
-                                                                </td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
-                                                </td>
-                                            </tr>
-                                        @endif
-                                        <!-- /comment -->
-                                    </tbody>
-                                </table>
                             @elseif($test['test']['id'] == 1203)
                                 <!--Urine analysis Report ID 1203-->
                                 <table class="table test beak-page">
                                     <thead>
 
                                         <tr>
-                                            <th width="40%" class="text-left" style="text-align:left;">Test</th>
+                                            <th width="40%" class="text-left">Test</th>
                                             <th width="30%">Result</th>
                                             <th width="30%">Normal Range</th>
                                         </tr>
@@ -627,14 +617,13 @@
                                             @if (isset($result['component']))
                                                 @if ($result['component']['title'])
                                                     <tr>
-                                                        <td style="text-align:left;">
-                                                            <b
-                                                                style="text-decoration: underline;">{{ $result['component']['name'] }}</b>
+                                                        <td class="text-left">
+                                                            <b>{{ $result['component']['name'] }}</b>
                                                         </td>
                                                     </tr>
                                                 @else
                                                     <tr>
-                                                        <td style="text-align:left;">
+                                                        <td class="text-left">
                                                             {{ $result['component']['name'] }}
                                                         </td>
                                                         <td align="center" class="result">{{ $result['result'] }}
@@ -669,13 +658,40 @@
                                         <!-- /comment -->
                                     </tbody>
                                 </table>
+
+                                        </td>
+                                    </tr>
+                                    <!-- Comment -->
+                                    @if (isset($test['comment']))
+                                        <tr class="comment">
+                                            <td colspan="5">
+                                                <table class="comment">
+                                                    <tbody>
+                                                        <tr>
+                                                            <th width="80px">
+                                                                <b>Comment :</b>
+                                                            </th>
+                                                            <td>
+                                                                {!! str_replace("\n", '<br />', $test['comment']) !!}
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    @endif
+
+                                    <!-- /comment -->
+
                             @elseif($test['test']['id'] == 829)
-                                <table class="BHCG">
+                                  <table class="BHCG">
                                     <thead>
 
                                         <tr>
-                                            <th class="BHCG" width="50%" style="text-align:left;">Test</th>
-                                            <th class="BHCG" width="50%" style="text-align:left;">Patient Result</th>
+                                            <th class="BHCG" width="20%">Test</th>
+                                             <th class="BHCG" width="60%">Normal Range</th>
+                                            <th class="BHCG" width="20%">Patient Result</th>
+
                                         </tr>
                                     </thead>
                                     <tbody class="BHCG">
@@ -683,80 +699,50 @@
                                             @if (isset($result['component']))
                                                 @if ($result['component']['title'])
                                                     <tr>
-                                                        <td class="BHCG" style="text-align:left;">
-                                                            <b
-                                                                style="text-decoration: underline;">{{ $result['component']['name'] }}</b>
+                                                        <td class="BHCG">
+                                                            <b>{{ $result['component']['name'] }}</b>
                                                         </td>
                                                     </tr>
                                                 @else
                                                     <tr>
-                                                        <td class="BHCG" style="text-align:left;">
+                                                        <td class="BHCG">
                                                             {{ $result['component']['name'] }}
                                                         </td>
-                                                        <td  class="BHCG" style="text-align:left;">
+                                                        <td  class="BHCG" align="center">
+                                                            {!! $result['component']['reference_range'] !!}
+                                                        </td>
+                                                        <td  class="BHCG" align="left">
                                                             {{ $result['result'] }}
                                                         </td>
 
                                                     </tr>
-                                    </tbody>
-                                </table>
+
+
                             @endif
-                            <br><br>
-                            <h3 style="text-decoration: underline;"> Reference Ranges</h3>
-                            <table class="BHCG">
-                                <thead>
-                                    <tr class="BHCG">
-                                        <th class="BHCG">Age</th>
-                                        <th class="BHCG">Normal Range</th>
-                                        <th class="BHCG">Unit</th>
+
+                                        </td>
                                     </tr>
-                                </thead>
-                                <tbody>
-                                    <tr class="BHCG">
-                                        <th class="BHCG">&nbsp;Male</td>
-                                        <th class="BHCG">&nbsp;0 - 2.5</td>
-                                        <th class="BHCG">&nbsp;mIU/ml</td>
-                                    </tr>
-                                    <tr class="BHCG">
-                                        <th class="BHCG">&nbsp;Non pregnant</td>
-                                        <th class="BHCG">&nbsp;Up to 5.0</td>
-                                        <th class="BHCG">&nbsp;mIU/ml</td>
-                                    </tr>
-                                    <tr class="BHCG">
-                                        <th class="BHCG">&nbsp;0.2 -1 Weeks<br></td>
-                                        <th class="BHCG">&nbsp;5 - 50</td>
-                                        <th class="BHCG">&nbsp;mIU/ml</td>
-                                    </tr>
-                                    <tr class="BHCG">
-                                        <th class="BHCG">&nbsp;1-2 Weeks<br></td>
-                                        <th class="BHCG">&nbsp;50 - 500</td>
-                                        <th class="BHCG">&nbsp;mIU/ml</td>
-                                    </tr>
-                                    <tr class="BHCG">
-                                        <th class="BHCG">&nbsp;2-3&nbsp;Weeks</td>
-                                        <th class="BHCG">&nbsp;500 - 10000</td>
-                                        <th class="BHCG">&nbsp;mIU/ml</td>
-                                    </tr>
-                                    <tr class="BHCG">
-                                        <th class="BHCG">&nbsp;3-4<span
-                                                style="font-style: normal; font-weight: 400;">&nbsp;Weeks</span></td>
-                                        <th class="BHCG">&nbsp;1000 - 50000</td>
-                                        <th class="BHCG">&nbsp;mIU/ml</td>
-                                    </tr>
-                                    <tr class="BHCG">
-                                        <th class="BHCG">&nbsp;4-5<span
-                                                style="font-style: normal; font-weight: 400;">&nbsp;Weeks</span></td>
-                                        <th class="BHCG">&nbsp;10000 - 100000</td>
-                                        <th class="BHCG">&nbsp;mIU/ml</td>
-                                    </tr>
-                                    <tr class="BHCG">
-                                        <th class="BHCG">&nbsp;6-8&nbsp;<span
-                                                style="font-style: normal; font-weight: 400;">Weeks</span></td>
-                                        <th class="BHCG">&nbsp;15000 - 200000</td>
-                                        <th class="BHCG">&nbsp;mIU/ml</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                                    <!-- Comment -->
+                                    @if (isset($test['comment']))
+                                        <tr class="comment">
+                                            <td colspan="5">
+                                                <table class="comment">
+                                                    <tbody>
+                                                        <tr>
+                                                            <th width="80px">
+                                                                <b>Comment :</b>
+                                                            </th>
+                                                            <td>
+                                                                {!! str_replace("\n", '<br />', $test['comment']) !!}
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        @endif
+                                    <!-- /comment -->
+
                         @endif
                     @endforeach
                     <br><br>
@@ -786,7 +772,7 @@
                     </table>
                 @elseif($test['test']['id'] == 0)
 
-                @elseif($test['test']['id'] == 0)
+
                 @else
                     <table class="table test beak-page">
                         <thead>
@@ -800,10 +786,10 @@
                             </tr>
                             <tr class="test_head">
                                 <th width="30%" class="text-left">Test</th>
-                                <th width="17.5%">Result</th>
-                                <th width="17.5%">Unit</th>
-                                <th width="17.5%">Normal Range</th>
-                                <th width="17.5%">Status</th>
+                                <th width="20%">Result</th>
+                                <th width="20%">Unit</th>
+                                <th width="30%">Normal Range</th>
+                                <!--<th width="17.5%">Status</th>-->
                             </tr>
                         </thead>
                         <tbody class="table-bordered">
@@ -827,9 +813,9 @@
                                             <td align="center" class="reference_range">
                                                 {!! $result['component']['reference_range'] !!}
                                             </td>
-                                            <td align="center" class="status">
+                                            <!--<td align="center" class="status">
                                                 {{ $result['status'] }}
-                                            </td>
+                                            </td>-->
                                         </tr>
                                     @endif
                                 @endif
