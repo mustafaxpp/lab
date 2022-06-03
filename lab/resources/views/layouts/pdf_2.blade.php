@@ -27,11 +27,11 @@
                 margin-left: {{$reports_settings['margin-left']}}px;
                 margin-right: {{$reports_settings['margin-right']}}px;
 
-                margin-top: 260px;
-                margin-header: 125px;
+                margin-top: 270px;
+                margin-header: 150px;
 
-                margin-bottom: 100px;
-                margin-footer: {{$reports_settings['margin-bottom']}}px;
+                margin-bottom: 140px;
+                margin-footer: 0px;
 
 
             }
@@ -60,9 +60,12 @@
         table{
             width: 100%;
             border-collapse: collapse;
+            height:2px;
+            padding: 1px;
         }
         table td,th{
-            padding: 5px;
+            padding: 1px;
+            height:2px;
         }
         .title{
             background-color: #ddd;
@@ -122,41 +125,77 @@
 
 @if(isset($group['patient']))
             <table width="100%" class="table table-bordered pdf-header">
-                    <tbody>
-    <tr>
-<td rowspan="3">
-@if(isset($group['patient']))
-<img src="https://chart.googleapis.com/chart?chs={{$reports_settings['qrcode-dimension']}}x{{$reports_settings['qrcode-dimension']}}&cht=qr&chl={{url('patient/login/'.$group['patient']['code'])}}&choe=UTF-8" title="Link to Google.com" />
-@endif
 
-</td>
-<td>
-      <span class="title">{{__('Requested Date')}}: </span> <span class="data"> {{ date('d-m-Y H:i',strtotime($group['created_at'])) }} </span>
-</td>
-<td>
-      <span class="title">{{__('Patient Code')}}:</span> <span class="data"> @if(isset($group['patient'])) {{ __($group['patient']['code']) }}  @endif</span></td>
-</td>
-    </tr>
-    <tr>
-<span class="title">{{__('Name')}}: </span> <span class="data"> @if(isset($group['patient'])){{ $group['patient']['name'] }} @endif </span>
-</td>
-<td>
-<span class="title">{{__('Age')}}:</span><span class="data">@if(isset($group['patient'])) {{$group['patient']['age']}}@endif</span>
-</td>
+                                        <tbody>
+                                            <tr>
+                                                <td rowspan="3">
+                                                    @if (isset($group['patient']))
+                                                        <img src="https://chart.googleapis.com/chart?chs={{ $reports_settings['qrcode-dimension'] }}x{{ $reports_settings['qrcode-dimension'] }}&cht=qr&chl={{ url('patient/login/' . $group['patient']['code']) }}&choe=UTF-8"
+                                                            title="Link to Google.com" />
+                                                    @endif
 
-<td>
-<span class="title">{{__('Gender')}}: </span> <span class="data"> @if(isset($group['patient'])) {{ __($group['patient']['gender']) }}  @endif</span>
-</td>
-   <tr>
-<td>
-<span class="title">{{__('Name')}}:</span> <span class="data"> @if(isset($group['patient'])){{ $group['patient']['name'] }} @endif </span>
-</td>
-<td>
-<span class="title">{{__('Prof')}}:</span> <span class="data">@if(isset($group['doctor'])) {{ $group['doctor']['name'] }}@endif</span>
-</td>
- </tr>
- </tbody>
-                </table>
+                                                </td>
+                                                <td>
+                                                    <span class="title">{{ __('Requested Date') }}: </span>
+                                                    <span class="data">
+                                                        {{ date('d-m-Y H:i', strtotime($group['created_at'])) }}
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span class="title">{{ __('Patient Code') }}:</span>
+                                                    <span class="data">
+                                                        @if (isset($group['patient']))
+                                                            {{ __($group['patient']['code']) }}
+                                                        @endif
+                                                    </span>
+                                                </td>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <span class="title">{{ __('Name') }}: </span> <span
+                                                    class="data">
+                                                    @if (isset($group['patient']))
+                                                        {{ $group['patient']['name'] }}
+                                                    @endif
+                                                </span>
+                                                </td>
+                                                <td>
+                                                    <span class="title">{{ __('Age') }}:</span><span
+                                                        class="data">
+                                                        @if (isset($group['patient']))
+                                                            {{ $group['patient']['age'] }}
+                                                        @endif
+                                                    </span>
+                                                </td>
+
+                                                <td>
+                                                    <span class="title">{{ __('Gender') }}: </span> <span
+                                                        class="data">
+                                                        @if (isset($group['patient']))
+                                                            {{ __($group['patient']['gender']) }}
+                                                        @endif
+                                                    </span>
+                                                </td>
+                                            <tr>
+                                                <td>
+                                                    <span class="title">{{ __('Name') }}:</span> <span
+                                                        class="data">
+                                                        @if (isset($group['patient']))
+                                                            {{ $group['patient']['name'] }}
+                                                        @endif
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span class="title">{{ __('Prof') }}:</span> <span
+                                                        class="data">
+                                                        @if (isset($group['doctor']))
+                                                            {{ $group['doctor']['name'] }}
+                                                        @endif
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
             @endif
 
         </htmlpageheader>
