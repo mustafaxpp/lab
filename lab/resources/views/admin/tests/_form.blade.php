@@ -3,7 +3,7 @@
         <div class="form-group">
             <label for="">{{__('Category')}}</label>
             <select name="category_id" class="form-control" id="category" required>
-                @if(isset($test)&&isset($test['category']))
+                @if(isset($test) && $test['category'])
                     <option value="{{$test['category_id']}}" selected>{{$test['category']['name']}}</option>
                 @endif
             </select>
@@ -301,9 +301,9 @@
                                     <th>{{__('Component')}}</th>
                                     <th>{{__('Case')}}</th>
                                     <th width="10px">
-                                        @if($test->id == 473)
+                                        @if(isset($test) && $test->id == 473)
                                         @else
-                                        <button type="button" class="btn btn-primary float-right add_comment" data-id="{{ $test->id }}" data-url="{{ route('admin.get_component') }}">
+                                        <button type="button" class="btn btn-primary float-right add_comment" data-id="{{ isset($test) ? $test->id : '' }}" data-url="{{ route('admin.get_component') }}">
                                             <i class="fa fa-plus"></i>
                                         </button>
                                         @endif
@@ -345,7 +345,7 @@
                                             </tr>
                                             <hr>
                                             @endforeach
-                                            @if($test->id == 473)
+                                            @if(isset($test) && $test->id == 473)
                                             @else
                                             <td>
                                                 <button type="button" class="btn btn-danger btn-sm delete_comment">
@@ -369,9 +369,9 @@
                                     <th>{{__('Component')}}</th>
                                     <th>{{__('Case')}}</th>                                    
                                     <th width="10px">
-                                        @if($test->id == 473)
+                                        @if(isset($test) && $test->id == 473)
                                         @else
-                                        <button type="button" class="btn btn-primary float-right add_comment" data-id="{{ $test->id }}" data-url="{{ route('admin.get_component') }}">
+                                        <button type="button" class="btn btn-primary float-right add_comment" data-id="{{ isset($test) ? $test->id : '' }}" data-url="{{ route('admin.get_component') }}">
                                             <i class="fa fa-plus"></i>
                                         </button>
                                         @endif
