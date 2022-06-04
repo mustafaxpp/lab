@@ -1,4 +1,7 @@
 {
+    "Referred By":"الطبيب المعالج",
+    "Passport No":"رقم جواز السفر",
+    "Requested Date":"تاريخ النتيجه",
     "Login Patient": "تسجيل دخول المريض",
     "Patient Code": "كود المريض",
     "Remember Me": "تذكرنى",
@@ -567,7 +570,7 @@
     "Purchases": "المشتريات",
     "Medical reports": "التقارير الطبية",
     "Medical reports table": "قائمة التقارير الطبية",
-    "Sample collection date": "تاريخ جمع العينة",
+    "Sample collection date": "تاريخ سحب العينة",
     "Apply": "تطبيق",
     "Edit medical report": "تحرير التقرير الطبي",
     "Show medical report": "إظهار التقرير الطبي",

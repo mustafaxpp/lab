@@ -51,7 +51,14 @@ table.blueTable1 tfoot .links a{
 }
 
 
-
+        text-left-a {
+          text-decoration: underline;
+          text-align:left;
+        }
+        .text-left-a {
+          text-decoration: underline;
+          text-align:left;
+          }
 
 table.blueTable2 {
   font-family: Arial, Helvetica, sans-serif;
@@ -607,9 +614,9 @@ table.blueTable tfoot .links a{
                                     <thead>
 
                                         <tr>
-                                            <th width="40%" class="text-left">Test</th>
-                                            <th width="30%">Result</th>
-                                            <th width="30%">Normal Range</th>
+                                            <th width="40%" class="text-left" align="left">Test</th>
+                                            <th width="30%" align="left">Result</th>
+                                            <th width="30%" align="left">Normal Range</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -617,18 +624,18 @@ table.blueTable tfoot .links a{
                                             @if (isset($result['component']))
                                                 @if ($result['component']['title'])
                                                     <tr>
-                                                        <td class="text-left">
+                                                        <td class="text-left-a" align="left">
                                                             <b>{{ $result['component']['name'] }}</b>
                                                         </td>
                                                     </tr>
                                                 @else
                                                     <tr>
-                                                        <td class="text-left">
+                                                        <td class="text-left" align="left">
                                                             {{ $result['component']['name'] }}
                                                         </td>
-                                                        <td align="center" class="result">{{ $result['result'] }}
+                                                        <td align="left" class="result">{{ $result['result'] }}
                                                         </td>
-                                                        <td align="center" class="reference_range">
+                                                        <td align="left" class="reference_range">
                                                             {!! $result['component']['reference_range'] !!}
                                                         </td>
 
