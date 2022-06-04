@@ -34,6 +34,27 @@
         }
 
     </style>
+    <div class="receipt_title">
+    @php
+    $num_date = '';
+    $created_at_report = '';
+    // get num_date from relationship tests
+    foreach ($group['tests'] as $test) {
+        $num_date = $test->test->orderby('num_day_receive', 'desc')->first();
+        $created_at_report = $test;
+    }
+
+    // get created_at and add day use carbon
+    $created_at = $created_at_report ? $created_at_report->created_at : '';
+    if ($created_at) {
+        $created_at = \Carbon\Carbon::parse($created_at);
+        $diff = $created_at->addDays($num_date->num_day_receive);
+    }
+@endphp
+
+<div class="receipt_title" align="center"> {{ $diff->format('Y-m-d') }} {{ __('Test Duration') }} : <b></b>
+</div>
+
 
     <div class="invoice">
 
@@ -46,26 +67,6 @@
             </thead>
             <tbody>
 
-
-                @php
-                    $num_date = '';
-                    $created_at_report = '';
-                    // get num_date from relationship tests
-                    foreach ($group['tests'] as $test) {
-                        $num_date = $test->test->orderby('num_day_receive', 'desc')->first();
-                        $created_at_report = $test;
-                    }
-                    
-                    // get created_at and add day use carbon
-                    $created_at = $created_at_report ? $created_at_report->created_at : '';
-                    if ($created_at) {
-                        $created_at = \Carbon\Carbon::parse($created_at);
-                        $diff = $created_at->addDays($num_date->num_day_receive);
-                    }
-                @endphp
-
-                <div class="test_title" align="center"> {{ $diff->format('Y-m-d') }} : <b>تاريخ الاستلام</b>
-                </div>
 
 
 
