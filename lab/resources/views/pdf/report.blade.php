@@ -303,7 +303,7 @@ table.blueTable tfoot .links a{
          @php
         $count_categories=0
     @endphp
-    @foreach($categories as $category)
+    @foreach($categories as $key => $category)
         @if(count($category['tests'])||count($category['cultures']))
             @php
                 $count_categories++;
@@ -313,6 +313,31 @@ table.blueTable tfoot .links a{
                 <pagebreak>
                 </pagebreak>
             @endif
+
+                @php
+                    $num_date = '';
+                    $created_at_report = '';
+                    // get num_date from relationship tests
+                    foreach ($category->tests as $test) {
+                        $num_date = $test->test->orderby('num_day_receive', 'desc')->first();
+                        $created_at_report = $test;
+                    }
+                    
+                    // get created_at and add day use carbon
+                    $created_at = $created_at_report ? $created_at_report->created_at : '';
+                    if ($created_at) {
+                        $created_at = \Carbon\Carbon::parse($created_at);
+                        $diff = $created_at->addDays($num_date->num_day_receive);
+                    }
+                @endphp
+                @if ($num_date)
+                    @if ($key == 0)
+                        <div class="test_title" align="center"> {{ $diff->format('Y-m-d') }} : <b>تاريخ الاستلام</b>
+                        </div>
+                    @endif
+                @endif
+
+
             <h4 class="test_title" align="center">
                 {{$category['name']}}
             </h4>
@@ -363,6 +388,7 @@ table.blueTable tfoot .links a{
                                 @endforeach
 
                             @endforeach
+
 
                             <!-- Comment -->
                             @if(isset($test['comment']))

@@ -180,7 +180,7 @@
                                 <div class="card-tools">
                                     <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i>
                                     </button>
-                                    <button type="button" class="btn btn-tool delete-reference" data-card-widget="remove" data-reference="{!! $result['component']['reference_range'] !!}"><i class="fas fa-times"></i>
+                                    <button type="button" class="btn btn-tool delete-reference" data-url="{{ route('admin.medical_report.save.reference.range') }}" data-component="{{$result['component']['id']}}" data-card-widget="remove" data-reference="{!! $result['component']['reference_range'] !!}"><i class="fas fa-times"></i>
                                     </button>
                                 </div>
                               </div>

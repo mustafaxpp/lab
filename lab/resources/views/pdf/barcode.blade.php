@@ -63,6 +63,13 @@
             </td>
 
         </tr>
+        <tr>
+
+            <td align="center">
+                {{$group['all_tests'][$i]['test']['sample_type'] }}
+            </td>
+
+        </tr>
     </table>
     @if($i>0)
     </pagebreak>
