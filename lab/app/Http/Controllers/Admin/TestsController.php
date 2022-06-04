@@ -95,7 +95,9 @@ class TestsController extends Controller
             'sample_type'=>$request['sample_type'],
             'price'=>$request['price'],
             'precautions'=>$request['precautions'],
-            'parent_id'=>0
+            'parent_id'=>0,
+            'num_day_receive' => $request['num_day_receive'],
+
         ]);
 
         //create test price
@@ -321,7 +323,8 @@ class TestsController extends Controller
             'sample_type'=>$request['sample_type'],
             'price'=>$request['price'],
             'precautions'=>$request['precautions'],
-            'parent_id'=>0
+            'parent_id'=>0,
+            'num_day_receive' => $request['num_day_receive'],
         ]);
 
         //update contracts

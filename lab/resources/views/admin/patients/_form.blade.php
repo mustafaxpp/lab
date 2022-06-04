@@ -235,7 +235,7 @@
                                 <div class="form-check">
                                     <input class="form-check-input check_ask" name="fluid_patient" value="{{ isset($patient) && $patient->fluid_patient ? 1 : 0 }}" id="fluid_patient" {{ isset($patient) && $patient->fluid_patient == 1 ? 'checked' : '' }}  type="checkbox" value="" id="flexCheckDefault">
                                     <label class="form-check-label" for="flexCheckDefault">
-                                    {{__('Fluid Patient')}}
+                                    {{__('Hemophilia')}}
                                     </label>
                                 </div>
                             </div>

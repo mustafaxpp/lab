@@ -1,7 +1,7 @@
 {
-    "Referred By":"الطبيب المعالج",
-    "Passport No":"رقم جواز السفر",
-    "Requested Date":"تاريخ النتيجه",
+    "Referred By": "الطبيب المعالج",
+    "Passport No": "رقم جواز السفر",
+    "Requested Date": "تاريخ النتيجه",
     "Login Patient": "تسجيل دخول المريض",
     "Patient Code": "كود المريض",
     "Remember Me": "تذكرنى",
@@ -304,10 +304,10 @@
     "Create Patient": "انشاء المريض",
     "Edit patient": "تعديل بيانات المريض",
     "Fluid Patient": "مريض سيولة",
-    "Diabetic":"مريض سكر",
-    "Liver Patient":"مريض كبد",
-    "Pregnant":"حامل",
-    "Other":"اخري",
+    "Diabetic": "مريض سكر",
+    "Liver Patient": "مريض كبد",
+    "Pregnant": "حامل",
+    "Other": "اخري",
     "Patients Table": "قائمة المرضى",
     "Price List": "قائمة الاسعار",
     "Cultures Price List": "قائمة أسعار المزارع",
@@ -675,6 +675,7 @@
     "Lab updated successfully": "تم تعديل المعمل بنجاح",
     "Choose Contract": "اختر التعاقد",
     "Login Admin Or Lab": "تسجيل دخول المدير او المعمل",
-    "Lab deleted successfully": "تم حذف المعمل بنجاح"
+    "Lab deleted successfully": "تم حذف المعمل بنجاح",
+    "Num Day Receive": "عدد ايام الاستلام"
 
 }

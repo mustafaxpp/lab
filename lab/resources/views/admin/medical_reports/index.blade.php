@@ -94,6 +94,7 @@
                 </div>
             </div>
             <!-- \filter -->
+            @if (auth()->guard('admin')->user()->roles[0]->role_id != 6)
             <div class="row">
                 <div class="col-lg-6">
                     <select name="filter_today" id="filter_today" class="filter_today_of_branch form-control btn btn-primary mb-5">
@@ -124,11 +125,12 @@
                         <option value="" selected>اختر الفرع</option>
                         <option value="{{session('branch_name')}}" selected>{{session('branch_name')}}</option>
                         @foreach ($user_branches as $branch)
-                            <option value="{{$branch['branch']['name']}}" {{ $branch['branch']['id'] == 1 ? 'selected' : '' }}>{{$branch['branch']['name']}}</option>
+                            <option value="{{$branch['branch']['name']}}" >{{$branch['branch']['name']}}</option>
                         @endforeach
                     </select>
                 </div>
             </div>
+            @endif
             <div class="row">
                 <div class="col-lg-12 table-responsive">
                     <table id="medical_reports_table" class="table table-striped table-bordered" width="100%">

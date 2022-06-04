@@ -40,6 +40,14 @@
             </div>
        </div>
     </div>
+    <div class="col-lg-3">
+       <div class="form-group">
+            <label for="num_day_receive">{{__('Num Day Receive')}}</label>
+            <div class="input-group form-group mb-3">
+                <input type="number" class="form-control" name="num_day_receive" min="1" step="1" id="num_day_receive" value="{{isset($test) ? $test->num_day_receive : 1 }}" required>
+            </div>
+       </div>
+    </div>
     <div class="col-lg-12">
         <div class="form-group">
              <label for="precautions">{{__('Precautions')}}</label>

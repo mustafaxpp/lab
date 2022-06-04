@@ -168,7 +168,7 @@
                                 <div class="form-check">
                                     <input class="form-check-input @if(isset($group)&&isset($group['patient'])) checked @endif" name="fluid_patient" id="fluid_patient"  type="checkbox" value="" id="flexCheckDefault">
                                     <label class="form-check-label" for="flexCheckDefault">
-                                    {{__('Fluid Patient')}}
+                                    {{__('Hemophilia')}}
                                     </label>
                                 </div>
                             </div>

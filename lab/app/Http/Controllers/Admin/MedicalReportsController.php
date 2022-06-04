@@ -395,9 +395,9 @@ class MedicalReportsController extends Controller
         return redirect($pdf); //return pdf url
     }
 
-    public function print_report_2(Request $request , $id)
+    public function print_report_2(Request $request, $id)
     {
-
+        // dd($request->all());
         $group = Group::findOrFail($id);
 
         if (!$group->signed_by) {
@@ -419,7 +419,7 @@ class MedicalReportsController extends Controller
                 return $query->where('category_id', $category['id']);
             })
                 ->where('group_id', $group['id'])
-                ->whereIn('id', explode(',', $request['tests_ids']))
+                ->whereIn('id', explode(',', $request['tests']))
                 ->get();
 
             $category['tests'] = $tests->sortBy(function ($test) {
@@ -432,16 +432,20 @@ class MedicalReportsController extends Controller
                 return $query->where('category_id', $category['id']);
             })
                 ->where('group_id', $group['id'])
+                ->whereIn('id', explode(',', $request['cultures']))
                 ->get();
         }
 
-        // explode(',', $request['tests_ids'])
+        // explode(',', $request['tests'])
 
         //find group
         $group = Group::with([
             'all_tests' => function ($q) use ($request) {
-                return $q->whereIn('id', explode(',', $request['tests_ids']));
-            }
+                return $q->whereIn('id', explode(',', $request['tests']));
+            },
+            'all_cultures' => function ($q) use ($request) {
+                return $q->whereIn('id', explode(',', $request['cultures']));
+            },
         ])
             ->where('id', $id)
             ->first();
@@ -501,10 +505,10 @@ class MedicalReportsController extends Controller
                             )
                             ->first();
                         if ($db !== null) {
-                            $results['component']->update([
-                                'reference_range' =>
-                                    $db->normal_from . ':' . $db->normal_to,
-                            ]);
+                            // $results['component']->update([
+                            //     'reference_range' =>
+                            //         $db->normal_from . ':' . $db->normal_to,
+                            // ]);
                         }
                     } else {
                         $db = $result
@@ -521,10 +525,10 @@ class MedicalReportsController extends Controller
                             )
                             ->first();
                         if ($db !== null) {
-                            $results['component']->update([
-                                'reference_range' =>
-                                    $db->normal_from . ':' . $db->normal_to,
-                            ]);
+                            // $results['component']->update([
+                            //     'reference_range' =>
+                            //         $db->normal_from . ':' . $db->normal_to,
+                            // ]);
                         }
                     }
                     //}
@@ -770,7 +774,7 @@ class MedicalReportsController extends Controller
                 'signed_by' => auth()
                     ->guard('admin')
                     ->user()->id,
-                    'signed_date' => now()
+                'signed_date' => now(),
             ]);
 
             //generate pdf
@@ -1164,6 +1168,26 @@ class MedicalReportsController extends Controller
 
         return response()->json([
             'comments' => $comments,
+        ]);
+    }
+
+    // saveReferenceRange
+    public function saveReferenceRange(Request $request)
+    {
+     
+        // dd($request->all());
+        $test = Test::find($request['component_id']);
+
+        // save reference range 
+        $test->update([
+            "reference_range" => $request->reference,
+        ]);
+
+        // falsh message
+        session()->flash('success', __('Reference range saved successfully'));
+
+        return response()->json([
+            'status' => 'success',
         ]);
     }
 }

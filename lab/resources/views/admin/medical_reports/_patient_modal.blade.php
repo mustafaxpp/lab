@@ -85,7 +85,7 @@
                             @if(isset($group['patient']) && $group['patient']['fluid_patient'] == 1)
                             <li>
                                 <h5>
-                                    <b>{{__('Fluid Patient')}} : </b> {{__('Yes')}}
+                                    <b>{{__('Hemophilia')}} : </b> {{__('Yes')}}
                                 </h5>
                             </li>
                             @endif

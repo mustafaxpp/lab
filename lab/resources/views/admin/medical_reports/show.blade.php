@@ -363,7 +363,7 @@
                                     <div class="card-header">
                                         <div class="card-title">
                                             @if(!$group['uploaded_report'])
-                                            <input type="checkbox" class="analyses_select" id="culture_{{$culture['id']}}" name="cultures[]" value="{{$culture['id']}}">
+                                            <input type="checkbox" class="analyses_select get_cultures" id="culture_{{$culture['id']}}" name="cultures[]" value="{{$culture['id']}}">
                                             @endif
                                             @if($culture['done'])
                                                 <i class="fa fa-check text-success"></i>
@@ -551,6 +551,7 @@
                 let url = this.getAttribute('data-action');
 
                 var tests = $('.get_tests:checked');
+                var cultures = $('.get_cultures:checked');
 
                 // get all selected tests
                 var tests_ids = [];
@@ -558,8 +559,14 @@
                     tests_ids.push(element.value);
                 });
 
-                // send tests with window open
-                window.open(url + '?tests_ids=' + tests_ids, '_blank');
+                // get all selected cultures
+                var cultures_ids = [];
+                cultures.each(function(index, element) {
+                    cultures_ids.push(element.value);
+                });
+
+                // send tests and cultures with window open
+                window.open(url + '?tests=' + tests_ids + '&cultures=' + cultures_ids, '_blank');
 
                 //window.open(url, '_blank);
 

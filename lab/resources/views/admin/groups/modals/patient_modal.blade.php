@@ -217,7 +217,7 @@
                                         <input class="form-check-input" name="fluid_patient" id="fluid_patient" type="checkbox"
                                              id="flexCheckDefault">
                                         <label class="form-check-label" for="flexCheckDefault">
-                                            {{ __('Fluid Patient') }}
+                                            {{ __('Hemophilia') }}
                                         </label>
                                     </div>
                                 </div>

@@ -8,15 +8,19 @@ var antibiotic_count = $('#antibiotic_count').val();
 
     //active
     $('#medical_reports').addClass('active');
-    // val id filter today of selected date
-    var today = new Date();
-    var dd = today.getDate();
-    var mm = today.getMonth() + 1; //January is 0!
-    var yyyy = today.getFullYear();
 
+    // get value from local storage
+    var filter_today_of_branch = localStorage.getItem('filter_today_of_branch');
+
+    var thisval = $('#filter_branch');
+
+    // selected option if thisval equal to filter_today_of_branch
+    if (filter_today_of_branch) {
+        thisval.val(filter_today_of_branch);
+    }
 
     setTimeout(() => {
-        $('#medical_reports_table').dataTable().fnFilter($('#filter_branch').val());
+        $('#medical_reports_table').dataTable().fnFilter(filter_today_of_branch ? filter_today_of_branch : $('#filter_branch').val());
     }, 1000);
 
 
@@ -114,6 +118,10 @@ var antibiotic_count = $('#antibiotic_count').val();
 
     $(document).on('change', '.filter_today_of_branch', function(e) {
         e.preventDefault();
+
+        var this_value = this.value;
+        // add value to local storage
+        localStorage.setItem('filter_today_of_branch', this_value);
 
         $('#medical_reports_table').dataTable().fnFilter(this.value);
 
@@ -385,16 +393,51 @@ var antibiotic_count = $('#antibiotic_count').val();
     // click
     $('.delete-reference').click(function() {
         var reference = $(this).data('reference');
+        var component_id = $(this).data('component');
+        var url = $(this).data('url');
 
-        var append = `<div class="form-group"> 
-                        <label class="col-md-12"></label>
-                        <div class="col-md-12">
-                            <input type="text" class="form-control" name="reference[]" value="` + reference + `" >
+        // get url without space
+        var url_without_space = url.replace(/\s/g, '');
+
+        var append = `<div class="col-lg-12"><div class="row">
+                            <div class="form-group"> 
+                                <input type="text" class="form-control reference_range_` +
+            component_id + `" name="reference[]" value="` + reference + `" >
+                            </div>
+                            <div class="form-group"> 
+                        
+                                <button type="button" style="margin-left: 34px;" class="btn btn-danger btn-sm save-reference" data-url=" ` +
+            url_without_space + ` " data-component="` + component_id + `"><i class="fa fa-plus"></i></button>
+                            </div>
                         </div>
-                    </div>`;
+                        </div>`;
 
 
         $(this).closest('td').html(append);
+
+    });
+
+    // click save reference
+    $(document).on('click', '.save-reference', function() {
+        var component_id = $(this).data('component');
+        var reference = $('.reference_range_' + component_id).val();
+        var url = $(this).data('url');
+        // get url without space
+        var url_without_space = url.replace(/\s/g, '');
+
+        // send ajax request
+        $.ajax({
+            url: url_without_space,
+            type: 'GET',
+            data: {
+                reference: reference,
+                component_id: component_id,
+            },
+            success: function(data) {
+                // reload page
+                location.reload();
+            }
+        });
 
     });
 

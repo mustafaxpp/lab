@@ -109,6 +109,7 @@ Route::group(['prefix'=>'admin','as'=>'admin.','namespace'=>'Admin','middleware'
     Route::post('medical_reports/bulk/send_report_mail','MedicalReportsController@bulk_send_report_mail')->name('groups.bulk_send_report_mail');
     Route::get('medical_report/get-comment','MedicalReportsController@getComment')->name('medical_report.get-comment');
     Route::get('medical_report/add_comment','MedicalReportsController@addComment')->name('medical_report.add_comment');
+    Route::get('medical_report/save/reference/range','MedicalReportsController@saveReferenceRange')->name('medical_report.save.reference.range');
     
     //doctors 
     Route::resource('doctors','DoctorsController');
