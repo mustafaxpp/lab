@@ -330,6 +330,16 @@
             color: #313030;
         }
 
+
+        text-left-a {
+          text-decoration: underline;
+          text-align:left;
+        }
+        .text-left-a {
+          text-decoration: underline;
+          text-align:left;
+          }
+
     </style>
     <div class="printable">
          @php
@@ -342,7 +352,8 @@
                 $count=0;
             @endphp
             @if($count_categories>1)
-            <pagebreak></pagebreak>
+                <pagebreak>
+                </pagebreak>
             @endif
             <h4 class="test_title" align="center">
                 {{$category['name']}}
@@ -645,9 +656,9 @@
                                     <thead>
 
                                         <tr>
-                                            <th width="40%" class="text-left">Test</th>
-                                            <th width="30%">Result</th>
-                                            <th width="30%">Normal Range</th>
+                                            <th width="40%" class="text-left" align="left">Test</th>
+                                            <th width="30%" align="left">Result</th>
+                                            <th width="30%" align="left">Normal Range</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -655,18 +666,18 @@
                                             @if (isset($result['component']))
                                                 @if ($result['component']['title'])
                                                     <tr>
-                                                        <td class="text-left">
+                                                        <td class="text-left-a" align="left">
                                                             <b>{{ $result['component']['name'] }}</b>
                                                         </td>
                                                     </tr>
                                                 @else
                                                     <tr>
-                                                        <td class="text-left">
+                                                        <td class="text-left" align="left">
                                                             {{ $result['component']['name'] }}
                                                         </td>
-                                                        <td align="center" class="result">{{ $result['result'] }}
+                                                        <td align="left" class="result">{{ $result['result'] }}
                                                         </td>
-                                                        <td align="center" class="reference_range">
+                                                        <td align="left" class="reference_range">
                                                             {!! $result['component']['reference_range'] !!}
                                                         </td>
 
