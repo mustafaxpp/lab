@@ -1,4 +1,9 @@
 {
+    "Fluid Patient": "Hemophilia",
+    "Diabetic":"Diabetic",
+    "Liver Patient":"Liver Patient",
+    "Pregnant":"Pregnant",
+    "Other":"Other",
     "Referred By":"Referred By",
     "Passport No":"Passport No",
     "Requested Date":"Requested Date",
