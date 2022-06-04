@@ -676,6 +676,7 @@
     "Choose Contract": "اختر التعاقد",
     "Login Admin Or Lab": "تسجيل دخول المدير او المعمل",
     "Lab deleted successfully": "تم حذف المعمل بنجاح",
-    "Num Day Receive": "عدد ايام الاستلام"
+    "Num Day Receive": "عدد ايام الاستلام",
+    "Include History": " سجل المريض"
 
 }

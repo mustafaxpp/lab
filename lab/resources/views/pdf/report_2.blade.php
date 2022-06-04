@@ -465,6 +465,27 @@
                                         </td>
                                     </tr>
                                 @endif
+                                    @if(session('history') == true)
+                                    @if($all_tests->where('test_id', $test['test']['id'])->first())
+                                        <tr class="comment">
+                                            <td colspan="5">
+                                                <table class="comment">
+                                                    <tbody>
+                                                        <tr>
+                                                            <th width="150px">
+                                                                <b>Patient History :</b>
+                                                            </th>
+                                                            <td>
+                                                                {!! str_replace("\n", '<br />', $all_tests->where('test_id', $test['test']['id'])->first() ? $all_tests->where('test_id', $test['test']['id'])->first()['comment'] : '') !!}
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    @endif
+                                    @endif
+                                    <!-- /comment -->                                
                                 <!-- /comment -->
                             </tbody>
                         </table>
@@ -618,6 +639,7 @@
                                             </td>
                                         </tr>
                                     @endif
+                                    @if(session('history') == true)
                                     @if($all_tests->where('test_id', $test['test']['id'])->first())
                                         <tr class="comment">
                                             <td colspan="5">
@@ -635,6 +657,7 @@
                                                 </table>
                                             </td>
                                         </tr>
+                                    @endif
                                     @endif
                                     <!-- /comment -->
                                 </table>
@@ -694,6 +717,27 @@
                                                 </td>
                                             </tr>
                                         @endif
+                                    @if(session('history') == true)
+                                    @if($all_tests->where('test_id', $test['test']['id'])->first())
+                                        <tr class="comment">
+                                            <td colspan="5">
+                                                <table class="comment">
+                                                    <tbody>
+                                                        <tr>
+                                                            <th width="150px">
+                                                                <b>Patient History :</b>
+                                                            </th>
+                                                            <td>
+                                                                {!! str_replace("\n", '<br />', $all_tests->where('test_id', $test['test']['id'])->first() ? $all_tests->where('test_id', $test['test']['id'])->first()['comment'] : '') !!}
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    @endif
+                                    @endif
+                                    <!-- /comment -->
                                         <!-- /comment -->
                                     </tbody>
                                 </table>
@@ -719,7 +763,27 @@
                                         </td>
                                     </tr>
                                 @endif
-
+                                @if(session('history') == true)
+                                @if($all_tests->where('test_id', $test['test']['id'])->first())
+                                    <tr class="comment">
+                                        <td colspan="5">
+                                            <table class="comment">
+                                                <tbody>
+                                                    <tr>
+                                                        <th width="150px">
+                                                            <b>Patient History :</b>
+                                                        </th>
+                                                        <td>
+                                                            {!! str_replace("\n", '<br />', $all_tests->where('test_id', $test['test']['id'])->first() ? $all_tests->where('test_id', $test['test']['id'])->first()['comment'] : '') !!}
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                @endif
+                                @endif
+                                <!-- /comment -->
                                 <!-- /comment -->
                             @elseif($test['test']['id'] == 1203)
                                 <!--Urine analysis Report ID 1203-->
@@ -775,6 +839,27 @@
                                                 </td>
                                             </tr>
                                         @endif
+                                    @if(session('history') == true)
+                                    @if($all_tests->where('test_id', $test['test']['id'])->first())
+                                        <tr class="comment">
+                                            <td colspan="5">
+                                                <table class="comment">
+                                                    <tbody>
+                                                        <tr>
+                                                            <th width="150px">
+                                                                <b>Patient History :</b>
+                                                            </th>
+                                                            <td>
+                                                                {!! str_replace("\n", '<br />', $all_tests->where('test_id', $test['test']['id'])->first() ? $all_tests->where('test_id', $test['test']['id'])->first()['comment'] : '') !!}
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    @endif
+                                    @endif
+                                    <!-- /comment -->                                        
                                         <!-- /comment -->
                                     </tbody>
                                 </table>
@@ -800,7 +885,27 @@
                                         </td>
                                     </tr>
                                 @endif
-
+                                    @if(session('history') == true)
+                                    @if($all_tests->where('test_id', $test['test']['id'])->first())
+                                        <tr class="comment">
+                                            <td colspan="5">
+                                                <table class="comment">
+                                                    <tbody>
+                                                        <tr>
+                                                            <th width="150px">
+                                                                <b>Patient History :</b>
+                                                            </th>
+                                                            <td>
+                                                                {!! str_replace("\n", '<br />', $all_tests->where('test_id', $test['test']['id'])->first() ? $all_tests->where('test_id', $test['test']['id'])->first()['comment'] : '') !!}
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    @endif
+                                    @endif
+                                    <!-- /comment -->
                                 <!-- /comment -->
                             @elseif($test['test']['id'] == 829)
                                 <table class="BHCG">
@@ -859,6 +964,27 @@
                                                     </tr>
                                                 @endif
                                                 <!-- /comment -->
+                                            @if(session('history') == true)
+                                            @if($all_tests->where('test_id', $test['test']['id'])->first())
+                                                <tr class="comment">
+                                                    <td colspan="5">
+                                                        <table class="comment">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <th width="150px">
+                                                                        <b>Patient History :</b>
+                                                                    </th>
+                                                                    <td>
+                                                                        {!! str_replace("\n", '<br />', $all_tests->where('test_id', $test['test']['id'])->first() ? $all_tests->where('test_id', $test['test']['id'])->first()['comment'] : '') !!}
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            @endif
+                                            @endif
+                                            <!-- /comment -->
                                             @endif
                                         @endforeach
                                         <br><br>
@@ -883,6 +1009,27 @@
                                                         </td>
                                                     </tr>
                                         @endif
+                                    @if(session('history') == true)
+                                    @if($all_tests->where('test_id', $test['test']['id'])->first())
+                                        <tr class="comment">
+                                            <td colspan="5">
+                                                <table class="comment">
+                                                    <tbody>
+                                                        <tr>
+                                                            <th width="150px">
+                                                                <b>Patient History :</b>
+                                                            </th>
+                                                            <td>
+                                                                {!! str_replace("\n", '<br />', $all_tests->where('test_id', $test['test']['id'])->first() ? $all_tests->where('test_id', $test['test']['id'])->first()['comment'] : '') !!}
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    @endif
+                                    @endif
+                                    <!-- /comment -->                                        
                                         <!-- /comment -->
                                     </tbody>
                                 </table>

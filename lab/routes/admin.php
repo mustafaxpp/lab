@@ -110,6 +110,7 @@ Route::group(['prefix'=>'admin','as'=>'admin.','namespace'=>'Admin','middleware'
     Route::get('medical_report/get-comment','MedicalReportsController@getComment')->name('medical_report.get-comment');
     Route::get('medical_report/add_comment','MedicalReportsController@addComment')->name('medical_report.add_comment');
     Route::get('medical_report/save/reference/range','MedicalReportsController@saveReferenceRange')->name('medical_report.save.reference.range');
+    Route::get('medical_report/include/history','MedicalReportsController@includeHistory')->name('medical_report.include.history');
     
     //doctors 
     Route::resource('doctors','DoctorsController');

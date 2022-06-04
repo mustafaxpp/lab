@@ -1174,13 +1174,12 @@ class MedicalReportsController extends Controller
     // saveReferenceRange
     public function saveReferenceRange(Request $request)
     {
-     
         // dd($request->all());
         $test = Test::find($request['component_id']);
 
-        // save reference range 
+        // save reference range
         $test->update([
-            "reference_range" => $request->reference,
+            'reference_range' => $request->reference,
         ]);
 
         // falsh message
@@ -1189,5 +1188,24 @@ class MedicalReportsController extends Controller
         return response()->json([
             'status' => 'success',
         ]);
+    }
+
+    // includeHistory
+    public function includeHistory(Request $request)
+    {
+        // settion get
+        $session = session()->get('history');
+        // session put
+        if (isset($session) && $session == true) {
+            session()->put('history', false);
+            return response()->json([
+                'message' => 'تم حذف سجل المريض بنجاح',
+            ]);
+        } else {
+            session()->put('history', true);
+            return response()->json([
+                'message' => 'تم اضافة سجل المريض بنجاح',
+            ]);
+        }
     }
 }
