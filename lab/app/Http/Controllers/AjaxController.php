@@ -103,7 +103,15 @@ class AjaxController extends Controller
     */
     public function create_patient(PatientRequest $request)
     {
-        $patient=Patient::create($request->except('_token','avatar','age','age_unit'));
+        // dd($request->all());
+        $attr = $request->except('_token','avatar','age','age_unit' , 'fluid_patient' , 'diabetic' , 'liver_patient' , 'pregnant' , 'answer_other');
+        $attr['fluid_patient'] = $request->fluid_patient ? 1 : 0;
+        $attr['diabetic'] = $request->diabetic ? 1 : 0;
+        $attr['liver_patient'] = $request->liver_patient ? 1 : 0;
+        $attr['pregnant'] = $request->pregnant ? 1 : 0;
+        $attr['answer_other'] = $request->answer_other ? $request->answer_other : null;
+
+        $patient=Patient::create($attr);
 
         patient_code($patient['id']);
 
@@ -149,6 +157,11 @@ class AjaxController extends Controller
                     'country_id'=>$request['country_id'],
                     'national_id'=>$request['national_id'],
                     'passport_no'=>$request['passport_no'],
+                    'fluid_patient' => $request->fluid_patient == 1 ? 1 : 0,
+                    'diabetic' => $request->diabetic == 1 ? 1 : 0,
+                    'liver_patient' => $request->liver_patient == 1 ? 1 : 0,
+                    'pregnant' => $request->pregnant == 1 ? 1 : 0,
+                    'answer_other' => $request->answer_other ? $request->answer_other : null,
                 ]);
 
         if($request->has('avatar')&&!empty($request['avatar']))
@@ -170,7 +183,6 @@ class AjaxController extends Controller
 
         return response()->json($patient);
     }
-
 
     /**
     * get doctors select2
@@ -236,8 +248,6 @@ class AjaxController extends Controller
 
         return response()->json($cultures);
     }
-
-
 
     /**
     * create doctor

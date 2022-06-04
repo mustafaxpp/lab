@@ -82,6 +82,42 @@
                                     <b>{{__('Address')}} : </b> {{$group['patient']['address']}}
                                 </h5>
                             </li>
+                            @if(isset($group['patient']) && $group['patient']['fluid_patient'] == 1)
+                            <li>
+                                <h5>
+                                    <b>{{__('Fluid Patient')}} : </b> {{__('Yes')}}
+                                </h5>
+                            </li>
+                            @endif
+                            @if(isset($group['patient']) && $group['patient']['diabetic'] == 1)
+                            <li>
+                                <h5>
+                                    <b>{{__('Diabetic')}} : </b> {{__('Yes')}}
+                                </h5>
+                            </li>
+                            @endif
+                            @if(isset($group['patient']) && $group['patient']['liver_patient'] == 1)
+                            <li>
+                                <h5>
+                                    <b>{{__('Liver Patient')}} : </b> {{__('Yes')}}
+                                </h5>
+                            </li>
+                            @endif
+                            @if(isset($group['patient']) && $group['patient']['pregnant'] == 1)
+                            <li>
+                                <h5>
+                                    <b>{{__('Pregnant')}} : </b> {{__('Yes')}}
+                                </h5>
+                            </li>
+                            @endif
+                            @if(isset($group['patient']) && $group['patient']['answer_other'])
+                            <li>
+                                <h5>
+                                    <b>{{__('Other')}} : </b> {{$group['patient']['answer_other']}}
+                                </h5>
+                            </li>
+                            @endif
+
                         </ul>
                     </div>
                 </div>

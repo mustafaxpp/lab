@@ -214,8 +214,8 @@
                             <div class="form-group">
                                 <div class="input-group mb-3">
                                     <div class="form-check">
-                                        <input class="form-check-input" name="fluid" id="fluid" type="checkbox"
-                                            value="" id="flexCheckDefault">
+                                        <input class="form-check-input" name="fluid_patient" id="fluid_patient" type="checkbox"
+                                             id="flexCheckDefault">
                                         <label class="form-check-label" for="flexCheckDefault">
                                             {{ __('Fluid Patient') }}
                                         </label>
@@ -230,8 +230,8 @@
                                 <div class="input-group mb-3">
                                     <div class="form-check">
                                         <input class="form-check-input" name="diabetic" id="diabetic" type="checkbox"
-                                            value="" id="flexCheckDefault">
-                                        <label class="form-check-label" for="flexCheckDefault">
+                                             id="flexCheckDefault1">
+                                        <label class="form-check-label" for="flexCheckDefault1">
                                             {{ __('Diabetic') }}
                                         </label>
                                     </div>
@@ -244,9 +244,9 @@
                             <div class="form-group">
                                 <div class="input-group mb-3">
                                     <div class="form-check">
-                                        <input class="form-check-input" name="liver" id="liver" type="checkbox"
-                                            id="flexCheckDefault">
-                                        <label class="form-check-label" for="flexCheckDefault">
+                                        <input class="form-check-input" name="liver_patient" id="liver_patient" type="checkbox"
+                                            id="flexCheckDefault2">
+                                        <label class="form-check-label" for="flexCheckDefault2">
                                             {{ __('Liver Patient') }}
                                         </label>
                                     </div>
@@ -259,9 +259,9 @@
                             <div class="form-group">
                                 <div class="input-group mb-3">
                                     <div class="form-check">
-                                        <input class="form-check-input  name=" pregnant" id="pregnant" type="checkbox"
-                                            value="" id="flexCheckDefault">
-                                        <label class="form-check-label" for="flexCheckDefault">
+                                        <input class="form-check-input"  name="pregnant" id="pregnant" type="checkbox"
+                                             id="flexCheckDefault3">
+                                        <label class="form-check-label" for="flexCheckDefault3">
                                             {{ __('Pregnant') }}
                                         </label>
                                     </div>
@@ -272,7 +272,7 @@
                         <div class="col-lg-4">
                             <div class="form-group">
                                 <div class="form-floating">
-                                    <textarea class="form-control" placeholder="{{ __('Other') }}" id="floatingTextarea2"
+                                    <textarea class="form-control" name="answer_other" placeholder="{{ __('Other') }}" id="floatingTextarea2"
                                         style="height: 50px"></textarea>
                                 </div>
                             </div>

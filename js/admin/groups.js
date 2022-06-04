@@ -544,6 +544,27 @@ var current_date = $('#system_date').val();
                 $("#national_id").val(patient.national_id);
                 $("#passport_no").val(patient.passport_no);
                 $('#contract_id').val(patient.contract_id).trigger('change');
+                if (patient.fluid_patient == 1) {
+                    $('#fluid_patient').prop('checked', true);
+                } else {
+                    $('#fluid_patient').prop('checked', false);
+                }
+                if (patient.diabetic == 1) {
+                    $('#diabetic').prop('checked', true);
+                } else {
+                    $('#diabetic').prop('checked', false);
+                }
+                if (patient.liver_patient == 1) {
+                    $('#liver_patient').prop('checked', true);
+                } else {
+                    $('#liver_patient').prop('checked', false);
+                }
+                if (patient.pregnant == 1) {
+                    $('#pregnant').prop('checked', true);
+                } else {
+                    $('#pregnant').prop('checked', false);
+                }
+                $('#answer_other').val(patient.answer_other);
                 //contract
                 if (patient.contract !== null) {
                     $('#contract_title').val(patient.contract.title);
@@ -740,6 +761,20 @@ var current_date = $('#system_date').val();
                     $('.loader').show();
                 },
                 success: function(data) {
+                    console.log(data);
+                    if (data.fluid_patient == 1) {
+                        $('#fluid_patient').prop('checked', true);
+                    }
+                    if (data.diabetic == 1) {
+                        $('#diabetic').prop('checked', true);
+                    }
+                    if (data.liver_patient == 1) {
+                        $('#liver_patient').prop('checked', true);
+                    }
+                    if (data.pregnant == 1) {
+                        $('#pregnant').prop('checked', true);
+                    }
+                    $('#answer_other').val(data.answer_other);
                     $('#name').append(`<option value="` + data.id + `">` + data.name + `</option>`);
                     $('#name').val(data.id);
                     $('#name').trigger({
@@ -1112,6 +1147,35 @@ var current_date = $('#system_date').val();
                     $('#edit_address').val(patient.address);
                     $('#edit_age').val(patient.age_splited.age);
                     $('#edit_age_unit').val(patient.age_splited.age_unit);
+                    if (patient.fluid_patient == 1) {
+                        $('#edit_fluid_patient').val(1);
+                        $('#edit_fluid_patient').prop('checked', true);
+                    } else {
+                        $('#edit_fluid_patient').val(0);
+                        $('#edit_fluid_patient').prop('checked', false);
+                    }
+                    if (patient.diabetic == 1) {
+                        $('#edit_diabetic').val(1);
+                        $('#edit_diabetic').prop('checked', true);
+                    } else {
+                        $('#edit_diabetic').val(0);
+                        $('#edit_diabetic').prop('checked', false);
+                    }
+                    if (patient.liver_patient == 1) {
+                        $('#edit_liver_patient').val(1);
+                        $('#edit_liver_patient').prop('checked', true);
+                    } else {
+                        $('#edit_liver_patient').val(0);
+                        $('#edit_liver_patient').prop('checked', false);
+                    }
+                    if (patient.pregnant == 1) {
+                        $('#edit_pregnant').val(1);
+                        $('#edit_pregnant').prop('checked', true);
+                    } else {
+                        $('#edit_pregnant').val(0);
+                        $('#edit_pregnant').prop('checked', false);
+                    }
+                    $('#edit_answer_other').val(patient.answer_other);
                     //contract
                     if (patient.contract !== null) {
                         $('#edit_patient_contract_id').append(`

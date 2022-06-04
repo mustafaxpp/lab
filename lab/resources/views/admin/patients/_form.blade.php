@@ -233,7 +233,7 @@
                         <div class="form-group">
                             <div class="input-group mb-3">
                                 <div class="form-check">
-                                    <input class="form-check-input" name="fluid" id="fluid"  type="checkbox" value="" id="flexCheckDefault">
+                                    <input class="form-check-input check_ask" name="fluid_patient" value="{{ isset($patient) && $patient->fluid_patient ? 1 : 0 }}" id="fluid_patient" {{ isset($patient) && $patient->fluid_patient == 1 ? 'checked' : '' }}  type="checkbox" value="" id="flexCheckDefault">
                                     <label class="form-check-label" for="flexCheckDefault">
                                     {{__('Fluid Patient')}}
                                     </label>
@@ -247,8 +247,8 @@
                         <div class="form-group">
                             <div class="input-group mb-3">
                                 <div class="form-check">
-                                    <input class="form-check-input" name="diabetic" id="diabetic"  type="checkbox" value="" id="flexCheckDefault">
-                                    <label class="form-check-label" for="flexCheckDefault">
+                                    <input class="form-check-input check_ask" name="diabetic" id="diabetic" value="{{ isset($patient) && $patient->diabetic ? 1 : 0 }}" {{ isset($patient) && $patient->diabetic == 1 ? 'checked' : '' }}  type="checkbox" value="" id="flexCheckDefault1">
+                                    <label class="form-check-label" for="flexCheckDefault1">
                                     {{__('Diabetic')}}
                                     </label>
                                 </div>
@@ -261,8 +261,8 @@
                         <div class="form-group">
                             <div class="input-group mb-3">
                                 <div class="form-check">
-                                    <input class="form-check-input" name="liver" id="liver"  type="checkbox" id="flexCheckDefault">
-                                    <label class="form-check-label" for="flexCheckDefault">
+                                    <input class="form-check-input check_ask" name="liver_patient" id="liver_patient" value="{{ isset($patient) && $patient->liver_patient ? 1 : 0 }}" {{ isset($patient) && $patient->liver_patient == 1 ? 'checked' : '' }}  type="checkbox" id="flexCheckDefault2">
+                                    <label class="form-check-label" for="flexCheckDefault2">
                                     {{__('Liver Patient')}}
                                     </label>
                                 </div>
@@ -275,8 +275,8 @@
                         <div class="form-group">
                             <div class="input-group mb-3">
                                 <div class="form-check">
-                                    <input class="form-check-input  name="pregnant" id="pregnant" type="checkbox" value="" id="flexCheckDefault">
-                                    <label class="form-check-label" for="flexCheckDefault">
+                                    <input class="form-check-input check_ask"  name="pregnant" id="pregnant" value="{{ isset($patient) && $patient->pregnant ? 1 : 0 }}" {{ isset($patient) && $patient->pregnant == 1 ? 'checked' : '' }} type="checkbox" value="" id="flexCheckDefault3">
+                                    <label class="form-check-label" for="flexCheckDefault3">
                                     {{__('Pregnant')}}
                                     </label>
                                 </div>
@@ -287,7 +287,7 @@
                     <div class="col-lg-4">
                         <div class="form-group">
                             <div class="form-floating">
-                                <textarea class="form-control" placeholder="{{__('Other')}}" id="floatingTextarea2" style="height: 50px"></textarea>
+                                <textarea class="form-control" name="answer_other" placeholder="{{__('Other')}}" id="floatingTextarea2" style="height: 50px">{{ isset($patient) && $patient->answer_other ? $patient->answer_other : '' }}</textarea>
                             </div>
                         </div>
                     </div>

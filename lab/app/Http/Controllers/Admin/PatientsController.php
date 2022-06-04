@@ -93,7 +93,16 @@ class PatientsController extends Controller
      */
     public function store(PatientRequest $request)
     {
-        $patient=Patient::create($request->except('token','age','age_unit','avatar'));
+
+        $attr = $request->except('token','age','age_unit','avatar' , 'fluid_patient' , 'diabetic' , 'liver_patient' , 'pregnant' , 'answer_other');
+        // dd($request->all());
+        $attr['fluid_patient'] = $request->fluid_patient == "0" ? 1 : 0;
+        $attr['diabetic'] = $request->diabetic == "0" ? 1 : 0;
+        $attr['liver_patient'] = $request->liver_patient == "0" ? 1 : 0;
+        $attr['pregnant'] = $request->pregnant == "0" ? 1 : 0;
+        $attr['answer_other'] = $request->answer_other ? $request->answer_other : null;
+
+        $patient=Patient::create($attr);
 
         $patient->update([
             'contract_id'=>(isset($request['contract_id']))?$request['contract_id']:null,
@@ -153,7 +162,20 @@ class PatientsController extends Controller
     public function update(PatientRequest $request, $id)
     {
         $patient=Patient::findOrFail($id);
-        $patient->update($request->except('_token','age','age_unit','avatar'));
+
+        // dd($request->all());
+        $attr = $request->except('_token','age','age_unit','avatar' , 'fluid_patient' , 'diabetic' , 'liver_patient' , 'pregnant' , 'answer_other');
+
+        $attr['fluid_patient'] = $request->fluid_patient == 1 ? 1 : 0;
+        $attr['diabetic'] = $request->diabetic == 1 ? 1 : 0;
+        $attr['liver_patient'] = $request->liver_patient == 1 ? 1 : 0;
+        $attr['pregnant'] = $request->pregnant == 1 ? 1 : 0;
+        $attr['answer_other'] = $request->answer_other ? $request->answer_other : null;
+
+        $patient->update($attr);
+
+
+
         $patient->update([
             'contract_id'=>(isset($request['contract_id']))?$request['contract_id']:null,
             'country_id'=>(isset($request['country_id']))?$request['country_id']:null,

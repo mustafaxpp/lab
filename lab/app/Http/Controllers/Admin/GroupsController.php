@@ -135,7 +135,7 @@ class GroupsController extends Controller
      */
     public function store(GroupRequest $request)
     {
-       $group=Group::create($request->except('_token','tests','cultures','packages','payments','DataTables_Table_0_length','DataTables_Table_1_length','DataTables_Table_2_length'));
+       $group=Group::create($request->except('_token','tests','cultures','packages','payments','DataTables_Table_0_length','DataTables_Table_1_length','DataTables_Table_2_length' , 'diabetic' , 'fluid_patient' , 'liver_patient' , 'pregnant' , 'answer_other'));
        
        $group->update([
            'branch_id'=>session('branch_id'),
@@ -324,7 +324,8 @@ class GroupsController extends Controller
                                         'payments',
                                         'DataTables_Table_0_length',
                                         'DataTables_Table_1_length',
-                                        'DataTables_Table_2_length'
+                                        'DataTables_Table_2_length',
+                                        'diabetic' , 'fluid_patient' , 'liver_patient' , 'pregnant' , 'answer_other'
                                     ));
 
         $group->update([

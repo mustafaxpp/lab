@@ -119,5 +119,23 @@
 
   })
 
+
 </script>
+
+
+    <script>
+        // change button
+        $('.check_ask').on('change', function() {
+
+            if ($(this).is(':checked')) {
+                $(this).val(1);
+                // this checked
+                $(this).prop('checked', true);
+            } else {
+                $(this).val(0);
+                // this unchecked
+                $(this).prop('checked', false);
+            }
+        });
+    </script>
 @endsection

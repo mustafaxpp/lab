@@ -166,7 +166,7 @@
                         <div class="form-group">
                             <div class="input-group mb-3">
                                 <div class="form-check">
-                                    <input class="form-check-input @if(isset($group)&&isset($group['patient'])) checked @endif" name="fluid" id="fluid"  type="checkbox" value="" id="flexCheckDefault">
+                                    <input class="form-check-input @if(isset($group)&&isset($group['patient'])) checked @endif" name="fluid_patient" id="fluid_patient"  type="checkbox" value="" id="flexCheckDefault">
                                     <label class="form-check-label" for="flexCheckDefault">
                                     {{__('Fluid Patient')}}
                                     </label>
@@ -180,7 +180,7 @@
                         <div class="form-group">
                             <div class="input-group mb-3">
                                 <div class="form-check">
-                                    <input class="form-check-input" name="diabetic" id="diabetic"  type="checkbox" value="" id="flexCheckDefault">
+                                    <input class="form-check-input" name="diabetic" id="diabetic" {{ isset($group['patient']) && $group['patient']['diabetic'] == 1 ? 'checked' : '' }}  type="checkbox" value="" id="flexCheckDefault">
                                     <label class="form-check-label" for="flexCheckDefault">
                                     {{__('Diabetic')}}
                                     </label>
@@ -194,7 +194,7 @@
                         <div class="form-group">
                             <div class="input-group mb-3">
                                 <div class="form-check">
-                                    <input class="form-check-input" name="liver" id="liver"  type="checkbox" id="flexCheckDefault">
+                                    <input class="form-check-input" name="liver_patient" id="liver_patient" {{ isset($group['patient']) && $group['patient']['liver_patient'] == 1 ? 'checked' : '' }}  type="checkbox" id="flexCheckDefault">
                                     <label class="form-check-label" for="flexCheckDefault">
                                     {{__('Liver Patient')}}
                                     </label>
@@ -208,7 +208,7 @@
                         <div class="form-group">
                             <div class="input-group mb-3">
                                 <div class="form-check">
-                                    <input class="form-check-input @if(isset($group)&&isset($group['pregnant'])) checked @endif" name="pregnant" id="pregnant" type="checkbox" value="" id="flexCheckDefault">
+                                    <input class="form-check-input" name="pregnant" {{ isset($group['patient']) && $group['patient']['pregnant'] == 1 ? 'checked' : '' }} id="pregnant" type="checkbox" value="" id="flexCheckDefault">
                                     <label class="form-check-label" for="flexCheckDefault">
                                     {{__('Pregnant')}}
                                     </label>
@@ -220,7 +220,7 @@
                     <div class="col-lg-4">
                         <div class="form-group">
                             <div class="form-floating">
-                                <textarea class="form-control" placeholder="{{__('Other')}}" @if(isset($group)&&isset($group['patient']['other'])) value="{{$group['patient']['other']}}" @endif id="floatingTextarea2" style="height: 50px"></textarea>
+                                <textarea class="form-control" placeholder="{{__('Other')}}" @if(isset($group)&&isset($group['patient']['answer_other'])) value="{{$group['patient']['answer_other']}}" @endif id="answer_other" style="height: 50px">{{ isset($group['patient']) && $group['patient']['answer_other'] ? $group['patient']['answer_other'] : '' }}</textarea>
                             </div>
                         </div>
                     </div>
