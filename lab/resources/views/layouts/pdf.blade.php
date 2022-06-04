@@ -275,7 +275,7 @@
                         <tr>
                             <td>
 
-                                <span class="title">{{ __('Sample collection') }}:</span>
+                                <span class="title">{{ __('Sample collection date') }}:</span>
                                 <span class="data">{{ $group['sample_collection_date'] }}
                                 </span>
 
