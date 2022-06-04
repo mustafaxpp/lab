@@ -27,8 +27,8 @@
             margin-left: {{ $reports_settings['margin-left'] }}px;
             margin-right: {{ $reports_settings['margin-right'] }}px;
 
-            margin-top: 320px;
-            margin-header: 190px;
+            margin-top: 250px;
+            margin-header: 100px;
 
             margin-bottom: 115px;
 
