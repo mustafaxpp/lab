@@ -236,6 +236,19 @@ Route::group(['prefix'=>'admin','as'=>'admin.','namespace'=>'Admin','middleware'
         Route::get('branch_products','ReportsController@branch_products')->name('branch_products');
     });
 
+    // tips and offers module
+    Route::resource('tips','TipsController');
+    Route::get('tip/get_tips','TipsController@ajax')->name('get_tips');
+    // route bulk/delete
+    Route::post('tips/bulk/delete','TipsController@bulk_delete')->name('tips.bulk_delete');
+
+    // staticPages
+    Route::resource('static_pages','StaticPagesController');
+    // sliders
+    Route::resource('sliders','SlidersController');
+    Route::get('slider/get_sliders','SlidersController@ajax')->name('get_sliders');
+    Route::post('sliders/bulk/delete','SlidersController@bulk_delete')->name('sliders.bulk_delete');
+
     //translations
     Route::resource('translations','TranslationsController');
 });

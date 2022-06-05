@@ -15,11 +15,11 @@ class AlterTablePatients extends Migration
     {
         Schema::table('patients', function(Blueprint $table)
 		{
-			$table->boolean('fluid_patient')->nullable();
-            $table->boolean('diabetic')->nullable();
-            $table->boolean('liver_patient')->nullable();
-            $table->boolean('pregnant')->nullable();
-            $table->text('other')->nullable();
+			// $table->boolean('fluid_patient')->nullable();
+            // $table->boolean('diabetic')->nullable();
+            // $table->boolean('liver_patient')->nullable();
+            // $table->boolean('pregnant')->nullable();
+            // $table->text('other')->nullable();
 		});
 
     }
@@ -33,11 +33,11 @@ class AlterTablePatients extends Migration
     {
         Schema::table('patients', function(Blueprint $table)
 		{
-			$table->boolean('fluid_patient')->nullable();
-            $table->boolean('diabetic')->nullable();
-            $table->boolean('liver_patient')->nullable();
-            $table->boolean('pregnant')->nullable();
-            $table->text('other')->nullable();
+			// $table->boolean('fluid_patient')->nullable();
+            // $table->boolean('diabetic')->nullable();
+            // $table->boolean('liver_patient')->nullable();
+            // $table->boolean('pregnant')->nullable();
+            // $table->text('other')->nullable();
 		});
     }
 }
