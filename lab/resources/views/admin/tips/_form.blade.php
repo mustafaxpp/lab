@@ -19,20 +19,38 @@
                 </div>
             </div>
 
-            <div class="col-lg-12">
+            <div class="col-lg-6">
                 <div class="form-group">
-                    <label for="">{{__('Title')}}</label>
+                    <label for="">{{__('Title AR')}}</label>
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="{{__('Title')}}" name="title" id="title" @if(isset($tip)) value="{{$tip->title}}" @elseif(old('title')) value="{{old('title')}}" @endif>
+                        <input type="text" class="form-control" placeholder="{{__('Title AR')}}" name="title_ar" id="title_ar" @if(isset($tip)) value="{{$tip->title_ar}}" @elseif(old('title_ar')) value="{{old('title_ar')}}" @endif>
                     </div>
                 </div>
             </div>
 
-            <div class="col-lg-12">
+            <div class="col-lg-6">
                 <div class="form-group">
-                    <label for="">{{__('Description')}}</label>
+                    <label for="">{{__('Title EN')}}</label>
                     <div class="input-group mb-3">
-                        <textarea class="form-control" placeholder="{{__('Description')}}" name="description" id="description">@if(isset($tip)) {{$tip->description}} @elseif(old('description')) {{old('description')}} @endif</textarea>
+                        <input type="text" class="form-control" placeholder="{{__('Title EN')}}" name="title_en" id="title_en" @if(isset($tip)) value="{{$tip->title_en}}" @elseif(old('title_en')) value="{{old('title_en')}}" @endif>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <label for="">{{__('Description AR')}}</label>
+                    <div class="input-group mb-3">
+                        <textarea class="form-control" placeholder="{{__('Description AR')}}" name="description_ar" id="description_ar">@if(isset($tip)) {{$tip->description_ar}} @elseif(old('description_ar')) {{old('description_ar')}} @endif</textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <label for="">{{__('Description EN')}}</label>
+                    <div class="input-group mb-3">
+                        <textarea class="form-control" placeholder="{{__('Description AR')}}" name="description_en" id="description_en">@if(isset($tip)) {{$tip->description_en}} @elseif(old('description_en')) {{old('description_en')}} @endif</textarea>
                     </div>
                 </div>
             </div>

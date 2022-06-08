@@ -19,7 +19,15 @@ use Illuminate\Support\Facades\Route;
 Route::post('register','Auth\ApiController@register')->name('register');
 Route::post('login','Auth\ApiController@login')->name('login');
 Route::post('forget_code','Auth\ApiController@forget_code');
-Route::get('static-pages','StaticPageController@static-pages');
+Route::get('static-pages','Api\StaticPageController@index');
+// route sliders
+Route::get('sliders','Api\SliderController@index');
+// route offers
+Route::get('offers','Api\OfferController@index');
+// route introduction
+Route::get('introduction','Api\StaticPageController@intro');
+// route tips
+Route::get('tips','Api\TipController@index');
 //patient dashboard
 Route::group(['namespace'=>'Api','prefix'=>'patient','middleware'=>'auth:api'],function(){
     Route::get('dashboard','ProfileController@dashboard');

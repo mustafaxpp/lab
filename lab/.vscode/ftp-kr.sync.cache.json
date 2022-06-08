@@ -201,9 +201,9 @@
                 },
                 "MedicalReportsController.php": {
                   "type": "-",
-                  "size": 37583,
+                  "size": 37241,
                   "lmtime": 1654349023246,
-                  "modified": false
+                  "modified": true
                 },
                 "PackagesController.php": {
                   "type": "-",
@@ -213,9 +213,9 @@
                 },
                 "PatientsController.php": {
                   "type": "-",
-                  "size": 8408,
+                  "size": 8130,
                   "lmtime": 1654300553304,
-                  "modified": false
+                  "modified": true
                 },
                 "PaymentMethodsController.php": {
                   "type": "-",
@@ -253,10 +253,28 @@
                   "lmtime": 0,
                   "modified": false
                 },
+                "SlidersController.php": {
+                  "type": "-",
+                  "size": 3252,
+                  "lmtime": 1654722096274,
+                  "modified": false
+                },
+                "StaticPagesController.php": {
+                  "type": "-",
+                  "size": 3030,
+                  "lmtime": 0,
+                  "modified": false
+                },
                 "TestsController.php": {
                   "type": "-",
-                  "size": 27774,
+                  "size": 27901,
                   "lmtime": 1653498090598,
+                  "modified": true
+                },
+                "TipsController.php": {
+                  "type": "-",
+                  "size": 3782,
+                  "lmtime": 1654722134583,
                   "modified": false
                 },
                 "TranslationsController.php": {
@@ -285,6 +303,60 @@
                 "modified": false
               },
               "Api": {
+                "BranchesController.php": {
+                  "type": "-",
+                  "size": 398,
+                  "lmtime": 0,
+                  "modified": false
+                },
+                "GroupTestsController.php": {
+                  "type": "-",
+                  "size": 701,
+                  "lmtime": 0,
+                  "modified": false
+                },
+                "HomeController.php": {
+                  "type": "-",
+                  "size": 565,
+                  "lmtime": 0,
+                  "modified": false
+                },
+                "OfferController.php": {
+                  "type": "-",
+                  "size": 364,
+                  "lmtime": 1654717454048,
+                  "modified": false
+                },
+                "ProfileController.php": {
+                  "type": "-",
+                  "size": 3223,
+                  "lmtime": 0,
+                  "modified": false
+                },
+                "Response.php": {
+                  "type": "-",
+                  "size": 760,
+                  "lmtime": 0,
+                  "modified": false
+                },
+                "SliderController.php": {
+                  "type": "-",
+                  "size": 328,
+                  "lmtime": 1654718406731,
+                  "modified": false
+                },
+                "StaticPageController.php": {
+                  "type": "-",
+                  "size": 1589,
+                  "lmtime": 1654716739687,
+                  "modified": false
+                },
+                "TestsLibraryController.php": {
+                  "type": "-",
+                  "size": 1417,
+                  "lmtime": 0,
+                  "modified": false
+                },
                 "VisitsController.php": {
                   "type": "-",
                   "size": 6605,
@@ -670,9 +742,9 @@
             },
             "Group.php": {
               "type": "-",
-              "size": 1969,
+              "size": 2008,
               "lmtime": 0,
-              "modified": false
+              "modified": true
             },
             "GroupCulture.php": {
               "type": "-",
@@ -812,6 +884,18 @@
               "lmtime": 0,
               "modified": false
             },
+            "Slider.php": {
+              "type": "-",
+              "size": 218,
+              "lmtime": 1654720923358,
+              "modified": false
+            },
+            "StaticPage.php": {
+              "type": "-",
+              "size": 214,
+              "lmtime": 0,
+              "modified": false
+            },
             "Supplier.php": {
               "type": "-",
               "size": 613,
@@ -858,6 +942,12 @@
               "type": "-",
               "size": 128,
               "lmtime": 0,
+              "modified": false
+            },
+            "TipsAndOffer.php": {
+              "type": "-",
+              "size": 311,
+              "lmtime": 1654719190051,
               "modified": false
             },
             "Transfer.php": {
@@ -946,7 +1036,586 @@
           "modified": false
         },
         "config": {},
-        "database": {},
+        "database": {
+          "migrations": {
+            "2016_06_01_000001_create_oauth_auth_codes_table.php": {
+              "type": "-",
+              "size": 1391,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2016_06_01_000002_create_oauth_access_tokens_table.php": {
+              "type": "-",
+              "size": 1494,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2016_06_01_000003_create_oauth_refresh_tokens_table.php": {
+              "type": "-",
+              "size": 1303,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2016_06_01_000004_create_oauth_clients_table.php": {
+              "type": "-",
+              "size": 1547,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2016_06_01_000005_create_oauth_personal_access_clients_table.php": {
+              "type": "-",
+              "size": 1250,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2020_06_291_023147_create_patients_table.php": {
+              "type": "-",
+              "size": 791,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2020_06_29_0231471_create_group_tests_table.php": {
+              "type": "-",
+              "size": 801,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2020_06_29_0231471_create_groups_table.php": {
+              "type": "-",
+              "size": 1048,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2020_06_29_023147_create_antibiotics_table.php": {
+              "type": "-",
+              "size": 646,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2020_06_29_023147_create_cultures_table.php": {
+              "type": "-",
+              "size": 663,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2020_06_29_023147_create_currencies_table.php": {
+              "type": "-",
+              "size": 588,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2020_06_29_023147_create_doctors_table.php": {
+              "type": "-",
+              "size": 670,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2020_06_29_023147_create_failed_jobs_table.php": {
+              "type": "-",
+              "size": 658,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2020_06_29_023147_create_group_culture_results_table.php": {
+              "type": "-",
+              "size": 670,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2020_06_29_023147_create_group_cultures_table.php": {
+              "type": "-",
+              "size": 716,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2020_06_29_023147_create_group_test_results_table.php": {
+              "type": "-",
+              "size": 692,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2020_06_29_023147_create_password_resets_table.php": {
+              "type": "-",
+              "size": 546,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2020_06_29_023147_create_permissions_table.php": {
+              "type": "-",
+              "size": 617,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2020_06_29_023147_create_role_permissions_table.php": {
+              "type": "-",
+              "size": 601,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2020_06_29_023147_create_roles_table.php": {
+              "type": "-",
+              "size": 516,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2020_06_29_023147_create_settings_table.php": {
+              "type": "-",
+              "size": 557,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2020_06_29_023147_create_user_roles_table.php": {
+              "type": "-",
+              "size": 577,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2020_06_29_023147_create_users_table.php": {
+              "type": "-",
+              "size": 733,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2020_07_14_164944_create_chats_table.php": {
+              "type": "-",
+              "size": 779,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2020_07_19_0402311212_create_visits_table.php": {
+              "type": "-",
+              "size": 983,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2020_07_23_00134911_create_branches_table.php": {
+              "type": "-",
+              "size": 911,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2020_07_25_0846441_create_contracts_table.php": {
+              "type": "-",
+              "size": 727,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2020_07_26_174857_create_expenses_table.php": {
+              "type": "-",
+              "size": 856,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2020_07_26_180427_create_expense_categories_table.php": {
+              "type": "-",
+              "size": 695,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2020_09_19_01584112_create_component_options_table.php": {
+              "type": "-",
+              "size": 739,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2020_09_21_081815_create_tests_table.php": {
+              "type": "-",
+              "size": 1030,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2020_09_21_090444_create_culture_options_table.php": {
+              "type": "-",
+              "size": 738,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2020_09_22_000304_create_activity_log_table.php": {
+              "type": "-",
+              "size": 1018,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2020_09_23_06421111_create_group_culture_options.php": {
+              "type": "-",
+              "size": 799,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2020_09_28_005305_create_modules_table.php": {
+              "type": "-",
+              "size": 628,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2020_10_13_163657_create_languages_table.php": {
+              "type": "-",
+              "size": 675,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2021_01_07_055724_add_direction_to_languages_table.php": {
+              "type": "-",
+              "size": 630,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2021_03_11_152345_add_barcode_to_groups_table.php": {
+              "type": "-",
+              "size": 622,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2021_03_12_112340_add_commission_to_doctors.php": {
+              "type": "-",
+              "size": 626,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2021_03_12_120501_add_doctor_commission_to_groups_table.php": {
+              "type": "-",
+              "size": 641,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2021_03_12_121735_add_doctor_id_to_expenses_table.php": {
+              "type": "-",
+              "size": 632,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2021_03_13_032624_add_code_to_doctors_table.php": {
+              "type": "-",
+              "size": 632,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2021_03_13_175226_add_signature_to_users_table.php": {
+              "type": "-",
+              "size": 621,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2021_05_12_193953_add_package_id_to_group_tests_table.php": {
+              "type": "-",
+              "size": 642,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2021_05_12_194042_add_package_id_to_group_cultures_table.php": {
+              "type": "-",
+              "size": 651,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2021_05_28_105728_create_user_branches_table.php": {
+              "type": "-",
+              "size": 703,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2021_05_28_113458_create_test_prices_table.php": {
+              "type": "-",
+              "size": 745,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2021_05_28_113529_create_culture_prices_table.php": {
+              "type": "-",
+              "size": 757,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2021_05_28_125253_add_branch_id_to_visits_table.php": {
+              "type": "-",
+              "size": 626,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2021_05_28_142427_add_branch_id_to_expenses_table.php": {
+              "type": "-",
+              "size": 632,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2021_06_12_075326_create_test_reference_ranges_table.php": {
+              "type": "-",
+              "size": 1220,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2021_06_12_184639_create_categories_table.php": {
+              "type": "-",
+              "size": 637,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2021_06_12_184720_add_category_id_to_tests_table.php": {
+              "type": "-",
+              "size": 627,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2021_06_12_184727_add_category_id_to_cultures_table.php": {
+              "type": "-",
+              "size": 636,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2021_06_13_171408_add_contract_id_to_patients_table.php": {
+              "type": "-",
+              "size": 636,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2021_06_13_184314_create_payment_methods_table.php": {
+              "type": "-",
+              "size": 686,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2021_06_13_184337_create_group_payments_table.php": {
+              "type": "-",
+              "size": 813,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2021_06_14_072123_create_packages_table.php": {
+              "type": "-",
+              "size": 784,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2021_06_14_072131_create_package_tests_table.php": {
+              "type": "-",
+              "size": 692,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2021_06_14_072309_create_group_packages_table.php": {
+              "type": "-",
+              "size": 860,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2021_06_14_080139_create_package_prices_table.php": {
+              "type": "-",
+              "size": 757,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2021_06_15_035744_create_visit_tests_table.php": {
+              "type": "-",
+              "size": 684,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2021_06_16_183823_add_uploaded_report_to_groups_table.php": {
+              "type": "-",
+              "size": 638,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2021_06_16_232212_create_tests_comments_table.php": {
+              "type": "-",
+              "size": 704,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2021_06_16_232219_create_cultures_comments_table.php": {
+              "type": "-",
+              "size": 716,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2021_06_25_235409_create_suppliers_table.php": {
+              "type": "-",
+              "size": 868,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2021_06_25_235539_create_products_table.php": {
+              "type": "-",
+              "size": 770,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2021_06_25_235942_create_purchases_table.php": {
+              "type": "-",
+              "size": 1039,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2021_06_26_000131_create_purchase_products_table.php": {
+              "type": "-",
+              "size": 924,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2021_06_26_001001_create_purchase_payments_table.php": {
+              "type": "-",
+              "size": 820,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2021_06_27_125125_create_contract_prices_table.php": {
+              "type": "-",
+              "size": 756,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2021_07_09_025111_create_adjustments_table.php": {
+              "type": "-",
+              "size": 743,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2021_07_09_025123_create_adjustment_products_table.php": {
+              "type": "-",
+              "size": 930,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2021_07_09_034224_create_transfers_table.php": {
+              "type": "-",
+              "size": 750,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2021_07_09_034231_create_transfer_products_table.php": {
+              "type": "-",
+              "size": 933,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2021_07_09_123804_create_test_consumptions_table.php": {
+              "type": "-",
+              "size": 763,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2021_07_09_133358_create_product_consumptions_table.php": {
+              "type": "-",
+              "size": 880,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2021_07_17_033804_create_branch_products_table.php": {
+              "type": "-",
+              "size": 828,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2021_07_17_073127_add_sample_collection_date_to_groups_table.php": {
+              "type": "-",
+              "size": 650,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2021_07_22_040846_add_them_to_users_table.php": {
+              "type": "-",
+              "size": 614,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2021_07_22_055647_add_them_to_patients_table.php": {
+              "type": "-",
+              "size": 623,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2021_10_04_021711_add_discount_type_to_contracts_table.php": {
+              "type": "-",
+              "size": 707,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2021_10_22_022306_add_visit_address_to_visits_table.php": {
+              "type": "-",
+              "size": 631,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2021_10_26_082731_create_timezones_table.php": {
+              "type": "-",
+              "size": 684,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2021_10_27_040345_add_fields_to_patients_table.php": {
+              "type": "-",
+              "size": 790,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2021_10_27_045332_create_countries_table.php": {
+              "type": "-",
+              "size": 689,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2021_10_28_024423_add_fields_to_groups_table.php": {
+              "type": "-",
+              "size": 679,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2021_10_28_034114_add_avatar_to_users_table.php": {
+              "type": "-",
+              "size": 617,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2021_10_28_060759_add_to_branches_table.php": {
+              "type": "-",
+              "size": 942,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2021_10_29_070027_add_soft_deletes_to_users_table.php": {
+              "type": "-",
+              "size": 607,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2021_10_30_070706_create_jobs_table.php": {
+              "type": "-",
+              "size": 860,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2021_10_31_045402_add_last_activity_to_users_table.php": {
+              "type": "-",
+              "size": 630,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2021_10_31_051833_add_last_activity_to_patients_table.php": {
+              "type": "-",
+              "size": 639,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2021_10_31_103307_add_footer_to_branches_table.php": {
+              "type": "-",
+              "size": 635,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2022_06_05_192852_create_tips_and_offers_table.php": {
+              "type": "-",
+              "size": 932,
+              "lmtime": 1654719098925,
+              "modified": false
+            },
+            "2022_06_05_215025_create_sliders_table.php": {
+              "type": "-",
+              "size": 739,
+              "lmtime": 1654719116074,
+              "modified": false
+            }
+          }
+        },
         "package.json": {
           "type": "-",
           "size": 1192,
@@ -1226,6 +1895,94 @@
                   "lmtime": 0,
                   "modified": false
                 }
+              },
+              "sliders": {
+                "_action.blade.php": {
+                  "type": "-",
+                  "size": 462,
+                  "lmtime": 0,
+                  "modified": false
+                },
+                "_due.blade.php": {
+                  "type": "-",
+                  "size": 221,
+                  "lmtime": 0,
+                  "modified": false
+                },
+                "_export.blade.php": {
+                  "type": "-",
+                  "size": 2040,
+                  "lmtime": 0,
+                  "modified": false
+                },
+                "_form.blade.php": {
+                  "type": "-",
+                  "size": 2639,
+                  "lmtime": 1654719434948,
+                  "modified": false
+                },
+                "create.blade.php": {
+                  "type": "-",
+                  "size": 1582,
+                  "lmtime": 0,
+                  "modified": false
+                },
+                "edit.blade.php": {
+                  "type": "-",
+                  "size": 2697,
+                  "lmtime": 0,
+                  "modified": false
+                },
+                "index.blade.php": {
+                  "type": "-",
+                  "size": 2187,
+                  "lmtime": 1654720087526,
+                  "modified": false
+                }
+              },
+              "tips": {
+                "_action.blade.php": {
+                  "type": "-",
+                  "size": 447,
+                  "lmtime": 0,
+                  "modified": false
+                },
+                "_due.blade.php": {
+                  "type": "-",
+                  "size": 221,
+                  "lmtime": 0,
+                  "modified": false
+                },
+                "_export.blade.php": {
+                  "type": "-",
+                  "size": 2040,
+                  "lmtime": 0,
+                  "modified": false
+                },
+                "_form.blade.php": {
+                  "type": "-",
+                  "size": 4397,
+                  "lmtime": 1654719533628,
+                  "modified": false
+                },
+                "create.blade.php": {
+                  "type": "-",
+                  "size": 1592,
+                  "lmtime": 0,
+                  "modified": false
+                },
+                "edit.blade.php": {
+                  "type": "-",
+                  "size": 2719,
+                  "lmtime": 0,
+                  "modified": false
+                },
+                "index.blade.php": {
+                  "type": "-",
+                  "size": 2230,
+                  "lmtime": 1654720106004,
+                  "modified": true
+                }
               }
             },
             "pdf": {
@@ -1341,20 +2098,20 @@
         "routes": {
           "admin.php": {
             "type": "-",
-            "size": 16195,
+            "size": 16554,
             "lmtime": 1654379830727,
-            "modified": false
+            "modified": true
           },
           "ajax.php": {
             "type": "-",
-            "size": 8610,
+            "size": 8435,
             "lmtime": 0,
-            "modified": false
+            "modified": true
           },
           "api.php": {
             "type": "-",
-            "size": 1352,
-            "lmtime": 0,
+            "size": 1607,
+            "lmtime": 1654717232099,
             "modified": false
           },
           "channels.php": {
@@ -1371,9 +2128,9 @@
           },
           "patient.php": {
             "type": "-",
-            "size": 2381,
+            "size": 2324,
             "lmtime": 0,
-            "modified": false
+            "modified": true
           },
           "web.php": {
             "type": "-",

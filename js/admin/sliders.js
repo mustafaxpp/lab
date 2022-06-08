@@ -46,7 +46,8 @@
         "columns": [
             { data: "bulk_checkbox", searchable: false, sortable: false, orderable: false },
             { data: "id", orderable: true, sortable: true },
-            { data: "title", orderable: false, sortable: false },
+            { data: "title_ar", orderable: false, sortable: false },
+            { data: "title_en", orderable: false, sortable: false },
             {
                 "data": "image", "render": function (data, type, full, meta) {
                     return '<img src="' + url('uploads/sliders-avatar/' + data) + '" width="150px" height="80px">';

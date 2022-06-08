@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Models\StaticPage;
 use Illuminate\Http\Request;
-
+use App;
 class StaticPageController extends Controller
 {
     
@@ -28,22 +28,49 @@ class StaticPageController extends Controller
 
 
         $static_pages = [
-            'phone' => $phone,
-            'time_work_text' => $time_work_text,
-            'whatsapp' => $whatsapp,
-            'youtube' => $youtube,
-            'instagram' => $instagram,
-            'facebook' => $facebook,
-            'twitter' => $twitter,
-            'about_us' => $about_us,
-            'our_vision' => $our_vision,
-            'why_choose_us' => $why_choose_us,
-            'image' => $image,
+            'phone' => $phone->value,
+            'time_work_text' => $time_work_text->value,
+            'whatsapp' => $whatsapp->value,
+            'youtube' => $youtube->value,
+            'instagram' => $instagram->value,
+            'facebook' => $facebook->value,
+            'twitter' => $twitter->value,
+            'about_us' => $about_us->value,
+            'our_vision' => $our_vision->value,
+            'why_choose_us' => $why_choose_us->value,
+            'image' => url($image->value),
         ];
 
 
-        return Response::response(200,'success',['static_pages' => $static_pages ]);
+        return Response::response(200,'success',$static_pages);
 
+    }
+
+    // introduction
+    public function intro()
+    {
+
+
+
+        $static_pages = [
+            [
+                'title' => StaticPage::where('key','title_intro_1_'.App::getLocale())->first()['value'],
+                'desc' => StaticPage::where('key','desc_intro_1_'.App::getLocale())->first()['value'],
+                'image' => url(StaticPage::where('key','image_intro_1')->first()['value']),
+            ],
+            [
+                'title' => StaticPage::where('key','title_intro_2_'.App::getLocale())->first()['value'],
+                'desc' => StaticPage::where('key','desc_intro_2_'.App::getLocale())->first()['value'],
+                'image' => url(StaticPage::where('key','image_intro_2')->first()['value']),
+            ],
+            [
+                'title' => StaticPage::where('key','title_intro_3_'.App::getLocale())->first()['value'],
+                'desc' => StaticPage::where('key','desc_intro_3_'.App::getLocale())->first()['value'],
+                'image' => url(StaticPage::where('key','image_intro_3')->first()['value']),
+            ],
+        ];
+
+        return Response::response(200,'success',$static_pages);
     }
 
 }

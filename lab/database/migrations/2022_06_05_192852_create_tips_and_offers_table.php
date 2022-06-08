@@ -18,9 +18,11 @@ class CreateTipsAndOffersTable extends Migration
             // type
             $table->string('type');
             // title
-            $table->string('title');
+            $table->string('title_ar');
+            $table->string('title_en');
             // description
-            $table->text('description');
+            $table->text('description_ar');
+            $table->text('description_en');
             // image
             $table->string('image');
             $table->timestamps();

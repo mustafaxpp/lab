@@ -40,15 +40,19 @@ class TipsController extends Controller
     {
         $request->validate([
             'type' => 'required',
-            'title' => 'required',
-            'description' => 'required',
+            'title_ar' => 'required',
+            'title_en' => 'required',
+            'description_ar' => 'required',
+            'description_en' => 'required',
             'avatar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
         $tips = TipsAndOffer::create([
             'type' => $request->type,
-            'title' => $request->title,
-            'description' => $request->description,
+            'title_ar' => $request->title_ar,
+            'title_en' => $request->title_en,
+            'description_ar' => $request->description_ar,
+            'description_en' => $request->description_en,
         ]);
 
         if($request->hasFile('avatar'))
@@ -75,15 +79,19 @@ class TipsController extends Controller
     {
         $request->validate([
             'type' => 'required',
-            'title' => 'required',
-            'description' => 'required',
+            'title_ar' => 'required',
+            'title_en' => 'required',
+            'description_ar' => 'required',
+            'description_en' => 'required',
             'avatar' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
         $tip->update([
             'type' => $request->type,
-            'title' => $request->title,
-            'description' => $request->description,
+            'title_ar' => $request->title_ar,
+            'title_en' => $request->title_en,
+            'description_ar' => $request->description_ar,
+            'description_en' => $request->description_en,
         ]);
 
         if($request->hasFile('avatar'))
