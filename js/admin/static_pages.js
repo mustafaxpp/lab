@@ -41,10 +41,28 @@
         }
    });
 
-    //change avatar
-    $(document).on('change','#avatar',function(){
-        var file=document.getElementById('avatar').files[0];
+    //change image
+    $(document).on('change','#image',function(){
+        var file=document.getElementById('image').files[0];
         getBase64(file);
+    });
+
+    //change image_intro_1
+    $(document).on('change','#image_intro_1',function(){
+        var file=document.getElementById('image_intro_1').files[0];
+        getBase641(file);
+    });
+
+    //change image_intro_2
+    $(document).on('change','#image_intro_2',function(){
+        var file=document.getElementById('image_intro_2').files[0];
+        getBase642(file);
+    });
+
+    //change image_intro_3
+    $(document).on('change','#image_intro_3',function(){
+        var file=document.getElementById('image_intro_3').files[0];
+        getBase643(file);
     });
 
 })(jQuery);
@@ -54,8 +72,41 @@ function getBase64(file) {
     var reader = new FileReader();
     reader.readAsDataURL(file);
     data=reader.onload = function () {
-        $('#patient_avatar').attr('src',reader.result);
-        $('#patient_avatar').parent('a').attr('href',reader.result);
+        $('#image_preview').attr('src',reader.result);
+        $('#image_preview').parent('a').attr('href',reader.result);
+    };
+    reader.onerror = function (error) {
+      console.log('Error: ', error);
+    };
+}
+function getBase641(file) {
+    var reader = new FileReader();
+    reader.readAsDataURL(file);
+    data=reader.onload = function () {
+        $('#image_intro_1_preview').attr('src',reader.result);
+        $('#image_intro_1_preview').parent('a').attr('href',reader.result);
+    };
+    reader.onerror = function (error) {
+      console.log('Error: ', error);
+    };
+}
+function getBase642(file) {
+    var reader = new FileReader();
+    reader.readAsDataURL(file);
+    data=reader.onload = function () {
+        $('#image_intro_2_preview').attr('src',reader.result);
+        $('#image_intro_2_preview').parent('a').attr('href',reader.result);
+    };
+    reader.onerror = function (error) {
+      console.log('Error: ', error);
+    };
+}
+function getBase643(file) {
+    var reader = new FileReader();
+    reader.readAsDataURL(file);
+    data=reader.onload = function () {
+        $('#image_intro_3_preview').attr('src',reader.result);
+        $('#image_intro_3_preview').parent('a').attr('href',reader.result);
     };
     reader.onerror = function (error) {
       console.log('Error: ', error);

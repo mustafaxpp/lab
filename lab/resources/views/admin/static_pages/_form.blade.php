@@ -14,6 +14,15 @@
                     </div>
                 </div>
             </div>
+            @elseif($static_page->type == 'text')
+            <div class="col-lg-8">
+                <div class="form-group">
+                    <label for="">{{__($static_page->neckname)}}</label>
+                    <div class="input-group mb-3">
+                        <input type="{{ $static_page->type }}" class="form-control" placeholder="{{__($static_page->neckname)}}" value="{{ $static_page->value }}" name="{{ $static_page->key }}" id="{{ $static_page->key }}">
+                    </div>
+                </div>
+            </div>
             @elseif($static_page->type == 'textarea')
             <div class="col-lg-8">
                 <div class="form-group">
@@ -37,7 +46,7 @@
                             <div class="form-group">
                                 <div class="input-group">
                                     <div class="custom-file">
-                                        <input type="file" name="avatar" class="custom-file-input" id="avatar">
+                                        <input type="file" name="{{ $static_page->key }}" class="avatar custom-file-input" id="{{$static_page->key}}">
                                         <label class="custom-file-label">{{__('Choose Image')}}</label>
                                     </div>
                                 </div>
@@ -48,7 +57,7 @@
                         <div class="row">
                             <div class="col-lg-12 text-center">
                                 <a href="@if(!empty($static_page->value)){{url($static_page->value)}}@else{{url('img/avatar.png')}}@endif" data-toggle="lightbox" data-title="Avatar">
-                                    <img src="@if(!empty($static_page->value)){{url($static_page->value)}}@else{{url('img/avatar.png')}}@endif" class="img-thumbnail" id="patient_avatar" alt="">
+                                    <img src="@if(!empty($static_page->value)){{url($static_page->value)}}@else{{url('img/avatar.png')}}@endif" class="img-thumbnail" id="{{$static_page->key}}_preview" alt="">
                                 </a>
                             </div>
                         </div>
@@ -67,6 +76,7 @@
                 </div>
             </div>
             @endif
+
             @endforeach
 
 
