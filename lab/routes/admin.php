@@ -253,6 +253,7 @@ Route::group(['prefix'=>'admin','as'=>'admin.','namespace'=>'Admin','middleware'
     Route::resource('prescriptions','PrescriptionsController');
     // get_prescriptions
     Route::get('prescription/get_prescriptions','PrescriptionsController@ajax')->name('get_prescriptions');
+    Route::post('prescriptions/bulk/delete','PrescriptionsController@bulk_delete')->name('prescriptions.bulk_delete');
 
     //translations
     Route::resource('translations','TranslationsController');
