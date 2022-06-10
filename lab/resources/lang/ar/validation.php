@@ -177,5 +177,6 @@ return [
         'size'                  => 'الحجم',
         'confirm_password'      => 'تأكيد كلمة المرور',
         'lab_id'      => 'التعاقد',
+        'prescription_name'     => 'الروشته',
     ],
 ];

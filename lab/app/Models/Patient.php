@@ -100,4 +100,10 @@ class Patient extends Authenticatable
     {
         return "Patient was {$eventName}";
     }
+
+    // relation with prescriptions
+    public function prescriptions()
+    {
+        return $this->hasMany(Prescription::class,'patient_id','id');
+    }
 }

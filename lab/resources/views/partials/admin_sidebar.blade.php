@@ -173,6 +173,15 @@
         </p>
       </a>
     </li>
+    
+    <li class="nav-item">
+      <a href="{{route('admin.prescriptions.index')}}" class="nav-link" id="patients">
+        <i class="nav-icon fas fa-user-injured"></i>
+        <p>
+          {{__('Prescriptions')}}
+        </p>
+      </a>
+    </li>
     @endcan
 
     @can('view_doctor')

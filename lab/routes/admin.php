@@ -249,6 +249,11 @@ Route::group(['prefix'=>'admin','as'=>'admin.','namespace'=>'Admin','middleware'
     Route::get('slider/get_sliders','SlidersController@ajax')->name('get_sliders');
     Route::post('sliders/bulk/delete','SlidersController@bulk_delete')->name('sliders.bulk_delete');
 
+    // prescriptions
+    Route::resource('prescriptions','PrescriptionsController');
+    // get_prescriptions
+    Route::get('prescription/get_prescriptions','PrescriptionsController@ajax')->name('get_prescriptions');
+
     //translations
     Route::resource('translations','TranslationsController');
 });

@@ -146,6 +146,8 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'prescription_name'     => 'Prescription',
+    ],
 
 ];

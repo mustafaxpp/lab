@@ -123,7 +123,7 @@
                 <div class="col-lg-6">
                     <select name="filter_branch" id="filter_branch" class="filter_today_of_branch form-control btn btn-primary mb-5">
                         <option value="" selected>اختر الفرع</option>
-                        <option value="{{session('branch_name')}}" selected>{{session('branch_name')}}</option>
+                        <!-- <option value="{{session('branch_name')}0}" selected>{{session('branch_name')}}</option> -->
                         @foreach ($user_branches as $branch)
                             <option value="{{$branch['branch']['name']}}" >{{$branch['branch']['name']}}</option>
                         @endforeach

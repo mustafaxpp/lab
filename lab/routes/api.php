@@ -30,6 +30,7 @@ Route::get('introduction','Api\StaticPageController@intro');
 Route::get('tips','Api\TipController@index');
 //patient dashboard
 Route::group(['namespace'=>'Api','prefix'=>'patient','middleware'=>'auth:api'],function(){
+
     Route::get('dashboard','ProfileController@dashboard');
     Route::post('update_profile','ProfileController@update_profile');
     Route::get('group_tests','GroupTestsController@group_tests');
@@ -38,6 +39,18 @@ Route::group(['namespace'=>'Api','prefix'=>'patient','middleware'=>'auth:api'],f
     Route::get('tests','TestsLibraryController@tests');
     Route::get('cultures','TestsLibraryController@cultures');
     Route::get('packages','TestsLibraryController@packages');
+    // create prescription
+    Route::post('create-prescription','PrescriptionController@store');
+    // get all prescriptions
+    Route::get('prescriptions','PrescriptionController@index');
+});
+
+// group 
+Route::group(['namespace'=>'Auth','middleware'=>'auth:api'],function(){
+    // create password
+    Route::post('create-password','ApiController@create_password');
+    // secondLogin
+    Route::post('secondLogin','ApiController@secondLogin');
 });
 
 //get countries

@@ -24,9 +24,9 @@ var current_date = $('#system_date').val();
     var yyyy = today.getFullYear();
 
 
-    setTimeout(() => {
-        $('#groups_table').dataTable().fnFilter($('#filter_branch').val());
-    }, 1000);
+    // setTimeout(() => {
+    //     $('#groups_table').dataTable().fnFilter($('#filter_branch').val());
+    // }, 1000);
 
     //datepicker
     var date = new Date();
@@ -1731,8 +1731,6 @@ function calculate_total() {
 
     $('#due').val(due);
 }
-
-
 //delete group test
 function delete_row() {
     var confirm = window.confirm(trans('Are you sure to delete group test ?'));

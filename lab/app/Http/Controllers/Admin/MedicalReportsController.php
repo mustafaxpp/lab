@@ -58,8 +58,8 @@ class MedicalReportsController extends Controller
         if ($request->ajax()) {
             if (
                 auth()
-                    ->guard('admin')
-                    ->user()->lab_id != null
+                ->guard('admin')
+                ->user()->lab_id != null
             ) {
                 $model = Group::query()
                     ->with(
@@ -80,8 +80,8 @@ class MedicalReportsController extends Controller
                     });
             } elseif (
                 auth()
-                    ->guard('admin')
-                    ->user()->address != null
+                ->guard('admin')
+                ->user()->address != null
             ) {
                 $model = Group::query()
                     ->with(
@@ -263,6 +263,7 @@ class MedicalReportsController extends Controller
      */
     public function pdf(Request $request, $id)
     {
+        
         $group = Group::findOrFail($id);
 
         if (!$group->signed_by) {
@@ -320,6 +321,9 @@ class MedicalReportsController extends Controller
         ])
             ->where('id', $id)
             ->first();
+
+        // session put report_design
+        session()->put('report_design', $request['report_design']);
 
         //generate pdf
         $data = ['group' => $group, 'categories' => $categories];
@@ -763,11 +767,9 @@ class MedicalReportsController extends Controller
         ]);
 
         if (
-            !empty(
-                auth()
-                    ->guard('admin')
-                    ->user()->signature
-            )
+            !empty(auth()
+                ->guard('admin')
+                ->user()->signature)
         ) {
             //add signature
             $group->update([
@@ -1000,11 +1002,9 @@ class MedicalReportsController extends Controller
     public function bulk_sign_report(BulkActionRequest $request)
     {
         if (
-            !empty(
-                auth()
-                    ->guard('admin')
-                    ->user()->signature
-            )
+            !empty(auth()
+                ->guard('admin')
+                ->user()->signature)
         ) {
             $groups = Group::whereIn('id', $request['ids'])->get();
 

@@ -15,13 +15,13 @@ var antibiotic_count = $('#antibiotic_count').val();
     var thisval = $('#filter_branch');
 
     // selected option if thisval equal to filter_today_of_branch
-    if (filter_today_of_branch) {
-        thisval.val(filter_today_of_branch);
-    }
+    // if (filter_today_of_branch) {
+    //     thisval.val(filter_today_of_branch);
+    // }
 
-    setTimeout(() => {
-        $('#medical_reports_table').dataTable().fnFilter(filter_today_of_branch ? filter_today_of_branch : $('#filter_branch').val());
-    }, 1000);
+    // setTimeout(() => {
+    //     $('#medical_reports_table').dataTable().fnFilter(filter_today_of_branch ? filter_today_of_branch : $('#filter_branch').val());
+    // }, 1000);
 
 
     //Medical reports datatables
