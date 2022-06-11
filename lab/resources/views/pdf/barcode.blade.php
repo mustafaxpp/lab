@@ -68,10 +68,10 @@
 
                 </tr>
                 <tr>
-
+                    
                     <td align="center">
                         @foreach ($group['all_tests'] as $test)
-                            {{$test['test']['name']}} ,
+                            {{$test->test()->where('sample_type' , $group['all_tests'][$i]['test']['sample_type'])->first() ? $test->test()->where('sample_type' , $group['all_tests'][$i]['test']['sample_type'])->first()['name'] . ',' : '' }} 
                         @endforeach
                     </td>
 

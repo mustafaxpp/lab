@@ -263,7 +263,7 @@ class MedicalReportsController extends Controller
      */
     public function pdf(Request $request, $id)
     {
-        
+
         $group = Group::findOrFail($id);
 
         if (!$group->signed_by) {
@@ -417,42 +417,74 @@ class MedicalReportsController extends Controller
         $categories = Category::all();
 
         foreach ($categories as $category) {
-            $tests = GroupTest::whereHas('test', function ($query) use (
-                $category
-            ) {
-                return $query->where('category_id', $category['id']);
-            })
-                ->where('group_id', $group['id'])
-                ->whereIn('id', explode(',', $request['tests']))
-                ->get();
+
+            if ($request['tests']) {
+
+                $tests = GroupTest::whereHas('test', function ($query) use (
+                    $category
+                ) {
+                    return $query->where('category_id', $category['id']);
+                })
+                    ->where('group_id', $group['id'])
+                    ->whereIn('id', explode(',', $request['tests']))
+                    ->get();
+            } else {
+                $tests = GroupTest::whereHas('test', function ($query) use (
+                    $category
+                ) {
+                    return $query->where('category_id', $category['id']);
+                })
+                    ->where('group_id', $group['id'])
+                    ->get();
+            }
 
             $category['tests'] = $tests->sortBy(function ($test) {
                 return $test->test->components->count();
             });
+            if ($request['cultures']) {
 
-            $category['cultures'] = GroupCulture::whereHas('culture', function (
-                $query
-            ) use ($category) {
-                return $query->where('category_id', $category['id']);
-            })
-                ->where('group_id', $group['id'])
-                ->whereIn('id', explode(',', $request['cultures']))
-                ->get();
+                $category['cultures'] = GroupCulture::whereHas('culture', function (
+                    $query
+                ) use ($category) {
+                    return $query->where('category_id', $category['id']);
+                })
+                    ->where('group_id', $group['id'])
+                    ->whereIn('id', explode(',', $request['cultures']))
+                    ->get();
+            } else {
+                $category['cultures'] = GroupCulture::whereHas('culture', function (
+                    $query
+                ) use ($category) {
+                    return $query->where('category_id', $category['id']);
+                })
+                    ->where('group_id', $group['id'])
+                    ->get();
+            }
         }
 
         // explode(',', $request['tests'])
 
         //find group
-        $group = Group::with([
-            'all_tests' => function ($q) use ($request) {
-                return $q->whereIn('id', explode(',', $request['tests']));
-            },
-            'all_cultures' => function ($q) use ($request) {
-                return $q->whereIn('id', explode(',', $request['cultures']));
-            },
-        ])
-            ->where('id', $id)
-            ->first();
+        if ($request['tests'] || $request['cultures']) {
+
+            $group = Group::with([
+                'all_tests' => function ($q) use ($request) {
+                    return $q->whereIn('id', explode(',', $request['tests']));
+                },
+                'all_cultures' => function ($q) use ($request) {
+                    return $q->whereIn('id', explode(',', $request['cultures']));
+                },
+            ])
+                ->where('id', $id)
+                ->first();
+        } else {
+            $group = Group::with([
+                'all_tests',
+                'all_cultures'
+            ])
+                ->where('id', $id)
+                ->first();
+        }
 
         //generate pdf
         $data = ['group' => $group, 'categories' => $categories];
