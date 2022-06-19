@@ -42,4 +42,16 @@ class Branch extends Model
     {
         return "Antibiotic was {$eventName}";
     }
+
+    // return lat double 2 decimal places
+    public function getLatAttribute($value)
+    {
+        return number_format($value, 2, '.', '');
+    }
+
+    // return lng double 2 decimal places
+    public function getLngAttribute($value)
+    {
+        return number_format($value, 2, '.', '');
+    }
 }

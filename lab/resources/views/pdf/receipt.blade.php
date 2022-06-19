@@ -52,8 +52,10 @@
     }
 @endphp
 
+@if(isset($diff))
 <div class="receipt_title" align="center"> {{ $diff->format('Y-m-d') }} {{ __('Test Duration') }} : <b></b>
 </div>
+@endif
 
 
     <div class="invoice">

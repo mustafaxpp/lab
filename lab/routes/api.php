@@ -43,6 +43,10 @@ Route::group(['namespace'=>'Api','prefix'=>'patient','middleware'=>'auth:api'],f
     Route::post('create-prescription','PrescriptionController@store');
     // get all prescriptions
     Route::get('prescriptions','PrescriptionController@index');
+    // create booking
+    Route::post('create-booking','BookingController@store');
+    // get all bookings
+    Route::get('bookings','BookingController@index');
 });
 
 // group 

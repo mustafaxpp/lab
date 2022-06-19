@@ -49,6 +49,7 @@
               <th width="10px">#</th>
               <th>{{__('Name')}}</th>
               <th>{{__('SKU')}}</th>
+              <th>النوع</th>
               <th width="10px">{{__('Initial')}}</th>
               <th width="10px">{{__('Purchases')}}</th>
               <th width="10px">{{__('In')}}</th>

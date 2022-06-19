@@ -1,7 +1,12 @@
 {
   "ftp://176.9.24.56@alm3mllab": {
     "lab.alm3mllab.com": {
-      ".git": {},
+      ".gitignore": {
+        "type": "-",
+        "size": 40,
+        "lmtime": 0,
+        "modified": false
+      },
       ".htaccess": {
         "type": "-",
         "size": 2091,
@@ -21,25 +26,7 @@
         "modified": false
       },
       ".well-known": {},
-      "23-5.zip": {
-        "type": "-",
-        "size": 481614479,
-        "lmtime": 0,
-        "modified": false
-      },
-      "5-3-2022.zip": {
-        "type": "-",
-        "size": 2193416011,
-        "lmtime": 0,
-        "modified": false
-      },
       "assets": {},
-      "assets.zip": {
-        "type": "-",
-        "size": 129219143,
-        "lmtime": 0,
-        "modified": false
-      },
       "build": {},
       "cgi-bin": {},
       "css": {},
@@ -65,7 +52,6 @@
         "lmtime": 0,
         "modified": false
       },
-      "installer": {},
       "js": {
         "admin": {
           "accounting_report.js": {
@@ -436,15 +422,9 @@
           "modified": false
         }
       },
-      "lab.zip": {
+      "last-v.zip": {
         "type": "-",
-        "size": 481518601,
-        "lmtime": 0,
-        "modified": false
-      },
-      "last-update.zip": {
-        "type": "-",
-        "size": 154180479,
+        "size": 147064781,
         "lmtime": 0,
         "modified": false
       },

@@ -1,4 +1,4 @@
-<nav class="mt-2">
+//<nav class="mt-2">
   <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
     <li class="nav-item">
       <a href="{{route('admin.index')}}" class="nav-link" id="dashboard">
@@ -175,6 +175,15 @@
     </li>
     
     <li class="nav-item">
+      <a href="{{route('admin.bookings.index')}}" class="nav-link" id="patients">
+        <i class="nav-icon fas fa-user-injured"></i>
+        <p>
+          {{__('Bookings')}}
+        </p>
+      </a>
+    </li>
+
+    <li class="nav-item">
       <a href="{{route('admin.prescriptions.index')}}" class="nav-link" id="patients">
         <i class="nav-icon fas fa-user-injured"></i>
         <p>
@@ -183,6 +192,88 @@
       </a>
     </li>
     @endcan
+
+
+
+ @canAny(['view_supplier','view_products','view_purchases','view_adjustments','view_transfers'])
+    <li class="nav-item has-treeview" id="inventory">
+      <a href="#" class="nav-link" id="inventory_link">
+        <i class="nav-icon fas fa-cubes"></i>
+        <p>
+          {{__('Inventory')}}
+          <i class="right fas fa-angle-left"></i>
+        </p>
+      </a>
+      <ul class="nav nav-treeview">
+
+        @can('view_supplier')
+        <li class="nav-item">
+          <a href="{{route('admin.inventory.suppliers.index')}}" class="nav-link" id="suppliers">
+            <i class="far fa-circle nav-icon"></i>
+            <p>
+              {{__('Suppliers')}}
+            </p>
+          </a>
+        </li>
+        @endcan
+
+        @can('view_product')
+        <li class="nav-item">
+          <a href="{{route('admin.inventory.products.index')}}" class="nav-link" id="products">
+            <i class="far fa-circle nav-icon"></i>
+            <p>
+              {{__('Products')}}
+            </p>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a href="{{route('admin.fixed_assets.index')}}" class="nav-link" id="products">
+            <i class="far fa-circle nav-icon"></i>
+            <p>
+              أصول ثابته
+            </p>
+          </a>
+        </li>
+        @endcan
+
+        @can('view_purchase')
+        <li class="nav-item">
+          <a href="{{route('admin.inventory.purchases.index')}}" class="nav-link" id="purchases">
+            <i class="far fa-circle nav-icon"></i>
+            <p>
+              {{__('Purchases')}}
+            </p>
+          </a>
+        </li>
+        @endcan
+
+        @can('view_adjustment')
+        <li class="nav-item">
+          <a href="{{route('admin.inventory.adjustments.index')}}" class="nav-link" id="adjustments">
+            <i class="far fa-circle nav-icon"></i>
+            <p>
+              {{__('Adjustments')}}
+            </p>
+          </a>
+        </li>
+        @endcan
+
+        @can('view_transfer')
+        <li class="nav-item">
+          <a href="{{route('admin.inventory.transfers.index')}}" class="nav-link" id="transfers">
+            <i class="far fa-circle nav-icon"></i>
+            <p>
+              {{__('Transfers')}}
+            </p>
+          </a>
+        </li>
+        @endcan
+
+      </ul>
+    </li>
+    @endcan
+
 
     @can('view_doctor')
     <li class="nav-item">

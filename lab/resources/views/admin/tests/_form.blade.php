@@ -398,3 +398,63 @@
 <input type="hidden" name="" id="count_reference_ranges" value="{{$count_reference_ranges}}">
 <input type="hidden" name="" id="count_comments" value="{{$count_comments}}">
 
+
+@php 
+    $consumption_count=0
+@endphp
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card card-primary card-outline">
+            <div class="card-header">
+                <h5 class="card-title">
+                    {{__('Consumptions')}}
+                </h5>
+                <button type="button" class="btn btn-primary float-right add_consumption">
+                   <i class="fa fa-plus"></i>
+                </button>
+            </div>
+            <div class="card-body p-0">
+                <table class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th>{{__('Product')}}</th>
+                            <th width="100px">{{__('Quantity')}}</th>
+                            <th width="10px"></th>
+                        </tr>
+                    </thead>
+                    <tbody class="test_consumptions">
+                      @if(isset($test))
+                        @foreach($test['consumptions'] as $consumption)
+                            @php 
+                                $consumption_count++;
+                            @endphp
+                            <tr class="consumption_row">
+                                <td>
+                                    <div class="form-group">
+                                        <select class="form-control product_id" id="consumption_product_{{$consumption_count}}" name="consumptions[{{$consumption_count}}][product_id]" required>
+                                            <option value="{{$consumption['product_id']}}" selected>{{$consumption['product']['name']}}</option>
+                                        </select>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="form-group">
+                                        <input type="number" class="form-control" name="consumptions[{{$consumption_count}}][quantity]" placeholder="{{__('Quantity')}}" value="{{$consumption['quantity']}}" required>
+                                    </div>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-sm btn-danger delete_consumption">
+                                        <i class="fa fa-trash"></i>
+                                    </button>
+                                </td> 
+                            </tr>
+                        @endforeach
+                      @endif  
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<input type="hidden" id="consumption_count" value="{{$consumption_count}}">
+

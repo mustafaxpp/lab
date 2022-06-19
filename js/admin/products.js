@@ -53,6 +53,7 @@
             {data:"id",sortable:true,orderable:true},
             {data:"name",sortable:true,orderable:true},
             {data:"sku",sortable:true,orderable:true},
+            {data:"type",sortable:true,orderable:true},
             {data:"initial_quantity",sortable:false,orderable:false},
             {data:"purchase_quantity",sortable:false,orderable:false},
             {data:"in_quantity",sortable:false,orderable:false},

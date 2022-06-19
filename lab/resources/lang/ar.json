@@ -117,7 +117,7 @@
     "Select Sensitivity": "حدد الحساسية",
     "High": "عالي",
     "Moderate": "متوسط",
-    "Resident": "ضعيف",
+    "Resistant": "ضعيف",
     "Are you sure to delete role ?": "هل أنت متأكد من حذف الوظيفه؟",
     "Are you sure to delete test ?": "هل أنت متأكد من حذف الاختبار؟",
     "Are you sure to delete user ?": "هل أنت متأكد من حذف المستخدم؟",
@@ -720,6 +720,7 @@
     "Prescription" : "روشتة",
     "Edit Prescription" : "تعديل روشتة",
     "Prescriptions Table" : "جدول الروشتات",
+    "Fixed Assets" : "أصول ثابتة",
     "Include History": " سجل المريض"
 
 }

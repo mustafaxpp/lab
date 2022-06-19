@@ -35,6 +35,7 @@ class ProductRequest extends FormRequest
                     'required',
                     Rule::unique('products')->ignore($this->product)->whereNull('deleted_at')
                 ],
+                'type'=>'required',
             ];
         }
         else{
@@ -47,6 +48,7 @@ class ProductRequest extends FormRequest
                     'required',
                     Rule::unique('products')->whereNull('deleted_at')
                 ],
+                'type'=>'required',
             ];
         }
         

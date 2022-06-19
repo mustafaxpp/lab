@@ -257,4 +257,15 @@ Route::group(['prefix'=>'admin','as'=>'admin.','namespace'=>'Admin','middleware'
 
     //translations
     Route::resource('translations','TranslationsController');
+    // bookings
+    Route::resource('bookings','BookingController');
+    Route::get('booking/get_bookings','BookingController@ajax')->name('get_bookings');
+    Route::post('bookings/bulk/delete','BookingController@bulk_delete')->name('bookings.bulk_delete');
+    
+    // route
+    Route::resource('fixed_assets','FixedAssetController');
+    // fixed_asset/get_fixed_assets
+    Route::get('fixed_asset/get_fixed_assets','FixedAssetController@ajax')->name('get_fixed_assets');
+    Route::post('fixed_assets/bulk/delete','FixedAssetController@bulk_delete')->name('fixed_assets.bulk_delete');
+
 });

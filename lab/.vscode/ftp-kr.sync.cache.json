@@ -68,12 +68,6 @@
           "lmtime": 0,
           "modified": false
         },
-        ".env.example": {
-          "type": "-",
-          "size": 778,
-          "lmtime": 0,
-          "modified": false
-        },
         ".gitattributes": {
           "type": "-",
           "size": 111,
@@ -86,18 +80,13 @@
           "lmtime": 0,
           "modified": false
         },
-        ".rnd": {
-          "type": "-",
-          "size": 1024,
-          "lmtime": 0,
-          "modified": false
-        },
         ".styleci.yml": {
           "type": "-",
           "size": 174,
           "lmtime": 0,
           "modified": false
         },
+        ".vscode": {},
         "README.md": {
           "type": "-",
           "size": 4465,
@@ -303,6 +292,12 @@
                 "modified": false
               },
               "Api": {
+                "BookingController.php": {
+                  "type": "-",
+                  "size": 2041,
+                  "lmtime": 1655565446974,
+                  "modified": false
+                },
                 "BranchesController.php": {
                   "type": "-",
                   "size": 398,
@@ -323,8 +318,14 @@
                 },
                 "OfferController.php": {
                   "type": "-",
-                  "size": 364,
+                  "size": 831,
                   "lmtime": 1654717454048,
+                  "modified": true
+                },
+                "PrescriptionController.php": {
+                  "type": "-",
+                  "size": 1753,
+                  "lmtime": 0,
                   "modified": false
                 },
                 "ProfileController.php": {
@@ -341,19 +342,25 @@
                 },
                 "SliderController.php": {
                   "type": "-",
-                  "size": 328,
+                  "size": 750,
                   "lmtime": 1654718406731,
-                  "modified": false
+                  "modified": true
                 },
                 "StaticPageController.php": {
                   "type": "-",
-                  "size": 1589,
+                  "size": 2755,
                   "lmtime": 1654716739687,
-                  "modified": false
+                  "modified": true
                 },
                 "TestsLibraryController.php": {
                   "type": "-",
-                  "size": 1417,
+                  "size": 1407,
+                  "lmtime": 1655594019184,
+                  "modified": false
+                },
+                "TipController.php": {
+                  "type": "-",
+                  "size": 810,
                   "lmtime": 0,
                   "modified": false
                 },
@@ -373,8 +380,8 @@
                 },
                 "ApiController.php": {
                   "type": "-",
-                  "size": 4668,
-                  "lmtime": 1652823444872,
+                  "size": 7328,
+                  "lmtime": 1654920169714,
                   "modified": false
                 },
                 "PatientController.php": {
@@ -1010,12 +1017,6 @@
             }
           }
         },
-        "app.zip": {
-          "type": "-",
-          "size": 177961,
-          "lmtime": 0,
-          "modified": false
-        },
         "artisan": {
           "type": "-",
           "size": 1686,
@@ -1100,9 +1101,9 @@
             },
             "2020_06_29_023147_create_currencies_table.php": {
               "type": "-",
-              "size": 588,
+              "size": 585,
               "lmtime": 0,
-              "modified": false
+              "modified": true
             },
             "2020_06_29_023147_create_doctors_table.php": {
               "type": "-",
@@ -1172,9 +1173,9 @@
             },
             "2020_06_29_023147_create_users_table.php": {
               "type": "-",
-              "size": 733,
+              "size": 726,
               "lmtime": 0,
-              "modified": false
+              "modified": true
             },
             "2020_07_14_164944_create_chats_table.php": {
               "type": "-",
@@ -1602,10 +1603,22 @@
               "lmtime": 0,
               "modified": false
             },
+            "2022_05_31_001329_alter_table_patients.php": {
+              "type": "-",
+              "size": 1096,
+              "lmtime": 0,
+              "modified": false
+            },
             "2022_06_05_192852_create_tips_and_offers_table.php": {
               "type": "-",
               "size": 932,
               "lmtime": 1654719098925,
+              "modified": false
+            },
+            "2022_06_05_205959_create_static_pages_table.php": {
+              "type": "-",
+              "size": 847,
+              "lmtime": 0,
               "modified": false
             },
             "2022_06_05_215025_create_sliders_table.php": {
@@ -1613,14 +1626,26 @@
               "size": 739,
               "lmtime": 1654719116074,
               "modified": false
+            },
+            "2022_06_10_144307_create_prescriptions_table.php": {
+              "type": "-",
+              "size": 929,
+              "lmtime": 0,
+              "modified": false
+            },
+            "2022_06_13_190912_create_bookings_table.php": {
+              "type": "-",
+              "size": 1569,
+              "lmtime": 1655565503328,
+              "modified": false
             }
           }
         },
         "package.json": {
           "type": "-",
-          "size": 1192,
+          "size": 1191,
           "lmtime": 0,
-          "modified": false
+          "modified": true
         },
         "phpunit.xml": {
           "type": "-",
@@ -1628,57 +1653,56 @@
           "lmtime": 0,
           "modified": false
         },
-        "public": {},
         "resources": {
           "views": {
             "admin": {
               "medical_reports": {
                 "_action.blade.php": {
                   "type": "-",
-                  "size": 3233,
+                  "size": 4718,
                   "lmtime": 0,
-                  "modified": false
+                  "modified": true
                 },
                 "_patient_modal.blade.php": {
                   "type": "-",
-                  "size": 6694,
+                  "size": 6563,
                   "lmtime": 1654309377945,
-                  "modified": false
+                  "modified": true
                 },
                 "_signed.blade.php": {
                   "type": "-",
-                  "size": 214,
+                  "size": 210,
                   "lmtime": 0,
-                  "modified": false
+                  "modified": true
                 },
                 "_status.blade.php": {
                   "type": "-",
-                  "size": 201,
+                  "size": 197,
                   "lmtime": 0,
-                  "modified": false
+                  "modified": true
                 },
                 "_tests.blade.php": {
                   "type": "-",
-                  "size": 319,
+                  "size": 312,
                   "lmtime": 0,
-                  "modified": false
+                  "modified": true
                 },
                 "edit.blade.php": {
                   "type": "-",
-                  "size": 31428,
+                  "size": 30733,
                   "lmtime": 1654310594559,
-                  "modified": false
+                  "modified": true
                 },
                 "index.blade.php": {
                   "type": "-",
-                  "size": 9646,
+                  "size": 9461,
                   "lmtime": 1654040719234,
-                  "modified": false
+                  "modified": true
                 },
                 "show.blade.php": {
                   "type": "-",
-                  "size": 35046,
-                  "lmtime": 1653951900036,
+                  "size": 39118,
+                  "lmtime": 1654871068762,
                   "modified": false
                 }
               },
@@ -1986,10 +2010,88 @@
               }
             },
             "pdf": {
+              "accounting.blade.php": {
+                "type": "-",
+                "size": 13340,
+                "lmtime": 0,
+                "modified": false
+              },
+              "barcode.blade.php": {
+                "type": "-",
+                "size": 2572,
+                "lmtime": 0,
+                "modified": false
+              },
+              "bulk_barcode.blade.php": {
+                "type": "-",
+                "size": 1515,
+                "lmtime": 0,
+                "modified": false
+              },
+              "bulk_working_paper.blade.php": {
+                "type": "-",
+                "size": 6715,
+                "lmtime": 0,
+                "modified": false
+              },
+              "damaged_report.blade.php": {
+                "type": "-",
+                "size": 32193,
+                "lmtime": 0,
+                "modified": false
+              },
+              "doctor_report.blade.php": {
+                "type": "-",
+                "size": 8582,
+                "lmtime": 0,
+                "modified": false
+              },
+              "newreceipt_2.blade.php": {
+                "type": "-",
+                "size": 5906,
+                "lmtime": 0,
+                "modified": false
+              },
+              "purchase_report.blade.php": {
+                "type": "-",
+                "size": 7883,
+                "lmtime": 0,
+                "modified": false
+              },
+              "receipt.blade.php": {
+                "type": "-",
+                "size": 6400,
+                "lmtime": 0,
+                "modified": false
+              },
+              "receipt_2.blade.php": {
+                "type": "-",
+                "size": 5906,
+                "lmtime": 0,
+                "modified": false
+              },
               "report.blade.php": {
                 "type": "-",
-                "size": 31283,
-                "lmtime": 1653863127118,
+                "size": 25208,
+                "lmtime": 1654918789083,
+                "modified": false
+              },
+              "report_2.blade.php": {
+                "type": "-",
+                "size": 37495,
+                "lmtime": 0,
+                "modified": false
+              },
+              "supplier_report.blade.php": {
+                "type": "-",
+                "size": 7564,
+                "lmtime": 0,
+                "modified": false
+              },
+              "working_paper.blade.php": {
+                "type": "-",
+                "size": 5565,
+                "lmtime": 0,
                 "modified": false
               }
             },
@@ -2034,63 +2136,63 @@
               },
               "admin_sidebar.blade.php": {
                 "type": "-",
-                "size": 15071,
-                "lmtime": 0,
+                "size": 15904,
+                "lmtime": 1655665499931,
                 "modified": false
               },
               "footer.blade.php": {
                 "type": "-",
-                "size": 127,
+                "size": 124,
                 "lmtime": 0,
-                "modified": false
+                "modified": true
               },
               "head.blade.php": {
                 "type": "-",
-                "size": 4610,
+                "size": 4531,
                 "lmtime": 0,
-                "modified": false
+                "modified": true
               },
               "lab_sidebar.blade.php": {
                 "type": "-",
-                "size": 1449,
+                "size": 1402,
                 "lmtime": 0,
-                "modified": false
+                "modified": true
               },
               "nav.blade.php": {
                 "type": "-",
-                "size": 4804,
+                "size": 5927,
                 "lmtime": 0,
-                "modified": false
+                "modified": true
               },
               "patient_sidebar.blade.php": {
                 "type": "-",
-                "size": 1728,
+                "size": 1672,
                 "lmtime": 0,
-                "modified": false
+                "modified": true
               },
               "scripts.blade.php": {
                 "type": "-",
-                "size": 4781,
+                "size": 4682,
                 "lmtime": 0,
-                "modified": false
+                "modified": true
               },
               "sidebar.blade.php": {
                 "type": "-",
-                "size": 1892,
+                "size": 1849,
                 "lmtime": 0,
-                "modified": false
+                "modified": true
               },
               "socials.blade.php": {
                 "type": "-",
-                "size": 591,
+                "size": 572,
                 "lmtime": 0,
-                "modified": false
+                "modified": true
               },
               "validation_errors.blade.php": {
                 "type": "-",
-                "size": 774,
+                "size": 739,
                 "lmtime": 0,
-                "modified": false
+                "modified": true
               }
             }
           }

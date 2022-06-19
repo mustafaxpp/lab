@@ -21,6 +21,7 @@ class ApiController extends Controller
     public function login(Request $request)
     {
 
+        
         $validation = Response::validation($request, ['code' => 'required']); //validations
 
         if (!empty($validation)) {
@@ -36,7 +37,6 @@ class ApiController extends Controller
                 'patient' => $patient,
                 'is_password' => $patient->password ? true : false,
             ];
-
             //create patient token
             $token = $patient->createToken('Laravel Password Grant Client')->accessToken;
             $patient['api_token'] = $token;
@@ -165,6 +165,8 @@ class ApiController extends Controller
                 Rule::in(['male', 'female']),
             ],
             'dob' => 'required',
+            'password' => 'required|min:6',
+            'confirm_password' => 'required|min:6|same:password',
             'phone' => [
                 'nullable',
                 Rule::unique('patients')->whereNull('deleted_at')
@@ -197,6 +199,7 @@ class ApiController extends Controller
             'country_id' => $request['country_id'],
             'phone' => $request['phone'],
             'email' => $request['email'],
+            'password' => bcrypt($request['password']),
             'gender' => $request['gender'],
             'dob' => $request['dob'],
             'address' => $request['address'],

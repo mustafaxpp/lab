@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateTestsTable extends Migration {
 
@@ -14,7 +15,7 @@ class CreateTestsTable extends Migration {
 	{
 		Schema::create('tests', function(Blueprint $table)
 		{
-            $table->increments('id');
+            $table->id();
 			$table->integer('parent_id')->nullable();
 			$table->string('name')->nullable();
 			$table->string('shortcut')->nullable();

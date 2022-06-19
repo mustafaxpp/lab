@@ -22,6 +22,20 @@
             <textarea name="description" class="form-control" id="" cols="2" rows="2">@if(isset($supllier)){{$product['description']}}@else{{old('description')}}@endif</textarea>
         </div>
     </div>
+    
+    <!-- type select -->
+    <div class="col-lg-12">
+        <div class="form-group">
+            <label for="description">اختر النوع</label>
+            <select name="type" id="type" class="form-control" required>
+                <option value="">اختر النوع</option>
+                <option value="قطعه" {{ isset($supllier) && $supllier->type == 'قطعة' ? selected : '' }}>قطعه</option>
+                <option value="اخري" {{ isset($supllier) && $supllier->type == 'اخري' ? selected : '' }}>اخري</option>
+            </select>
+        </div>
+    </div>
+
+
    
 </div>
 

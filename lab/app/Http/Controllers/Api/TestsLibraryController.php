@@ -23,7 +23,7 @@ class TestsLibraryController extends Controller
            $tests->where('name','like','%'.$request['query'].'%');
         }
 
-        $tests=$tests->take(10)->get();
+        $tests=$tests->get();
 
         return Response::response(200,'success',['tests'=>$tests]);
     }

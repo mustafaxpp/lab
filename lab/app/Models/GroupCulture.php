@@ -35,7 +35,7 @@ class GroupCulture extends Model
 
     public function resident_antibiotics()
     {
-        return $this->hasMany(GroupCultureResult::class,'group_culture_id','id')->where('sensitivity',__('Resident'));
+        return $this->hasMany(GroupCultureResult::class,'group_culture_id','id')->where('sensitivity',__('Resistant'));
     }
 
     public function culture_options()

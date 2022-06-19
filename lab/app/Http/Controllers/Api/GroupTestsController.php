@@ -21,6 +21,21 @@ class GroupTestsController extends Controller
     {
         $groups=Group::where('patient_id',$request->user()->id)->select('id','total','discount','paid','due','created_at','done','report_pdf','receipt_pdf')->get();
 
-        return Response::response(200,'success',['groups'=>$groups]);
+        $data = [];
+        foreach ($groups as $group) {
+            $data[] = [
+                'id' => $group->id,
+                'total' => (int)$group->total,
+                'discount' => (int)$group->discount,
+                'paid' => (int)$group->paid,
+                'due' => $group->due,
+                'created_at' => $group->created_at,
+                'done' => $group->done,
+                'report_pdf' => $group->report_pdf,
+                'receipt_pdf' => $group->receipt_pdf,
+            ];
+        }
+
+        return Response::response(200,'success',['groups'=>$data]);
     }
 }

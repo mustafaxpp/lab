@@ -3,8 +3,9 @@ var count = $('#count').val();
 var option_count = 0;
 var count_reference_ranges = $('#count_reference_ranges').val();
 var count_comments = $('#count_comments').val();
+var consumption_count=$('#consumption_count').val();
 
-(function($) {
+(function ($) {
 
     "use strict";
 
@@ -21,30 +22,30 @@ var count_comments = $('#count_comments').val();
             "<'row'<'col-sm-12'tr>>" +
             "<'row'<'col-sm-4'i><'col-sm-8'p>>",
         buttons: [{
-                extend: 'copyHtml5',
-                text: '<i class="fas fa-copy"></i> ' + trans("Copy"),
-                titleAttr: 'Copy'
-            },
-            {
-                extend: 'excelHtml5',
-                text: '<i class="fas fa-file-excel"></i> ' + trans("Excel"),
-                titleAttr: 'Excel'
-            },
-            {
-                extend: 'csvHtml5',
-                text: '<i class="fas fa-file-csv"></i> ' + trans("CVS"),
-                titleAttr: 'CSV'
-            },
-            {
-                extend: 'pdfHtml5',
-                text: '<i class="fas fa-file-pdf"></i> ' + trans("PDF"),
-                titleAttr: 'PDF'
-            },
-            {
-                extend: 'colvis',
-                text: '<i class="fas fa-eye"></i>',
-                titleAttr: 'colvis'
-            }
+            extend: 'copyHtml5',
+            text: '<i class="fas fa-copy"></i> ' + trans("Copy"),
+            titleAttr: 'Copy'
+        },
+        {
+            extend: 'excelHtml5',
+            text: '<i class="fas fa-file-excel"></i> ' + trans("Excel"),
+            titleAttr: 'Excel'
+        },
+        {
+            extend: 'csvHtml5',
+            text: '<i class="fas fa-file-csv"></i> ' + trans("CVS"),
+            titleAttr: 'CSV'
+        },
+        {
+            extend: 'pdfHtml5',
+            text: '<i class="fas fa-file-pdf"></i> ' + trans("PDF"),
+            titleAttr: 'PDF'
+        },
+        {
+            extend: 'colvis',
+            text: '<i class="fas fa-eye"></i>',
+            titleAttr: 'colvis'
+        }
 
         ],
         "processing": true,
@@ -95,7 +96,7 @@ var count_comments = $('#count_comments').val();
 
     //components
 
-    $('.add_component').on('click', function() {
+    $('.add_component').on('click', function () {
         count++;
         $('.components .items').append(`
             <tr id="component_` + count + `" num="` + count + `">
@@ -169,7 +170,7 @@ var count_comments = $('#count_comments').val();
     });
 
     //add title
-    $('.add_title').on('click', function() {
+    $('.add_title').on('click', function () {
         count++;
         $('.components .items').append(`
           <tr num="` + count + `" id="component_` + count + `">
@@ -192,31 +193,31 @@ var count_comments = $('#count_comments').val();
     });
 
     //delete test component
-    $(document).on('click', '.delete_row', function() {
+    $(document).on('click', '.delete_row', function () {
         var test_id = $(this).closest('tr').attr('test_id');
         var el = $(this);
 
         swal({
-                title: trans("Are you sure to delete component ?"),
-                type: "warning",
-                showCancelButton: true,
-                confirmButtonClass: "btn-danger",
-                confirmButtonText: trans("Delete"),
-                cancelButtonText: trans("Cancel"),
-                closeOnConfirm: true
-            },
-            function() {
+            title: trans("Are you sure to delete component ?"),
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonClass: "btn-danger",
+            confirmButtonText: trans("Delete"),
+            cancelButtonText: trans("Cancel"),
+            closeOnConfirm: true
+        },
+            function () {
                 if (test_id !== undefined) {
                     $.ajax({
                         url: ajax_url('delete_test/' + test_id),
-                        beforeSend: function() {
+                        beforeSend: function () {
                             $('.preloader').show();
                             $('.loader').show();
                         },
-                        success: function() {
+                        success: function () {
                             $(el).parent().parent().remove();
                         },
-                        complete: function() {
+                        complete: function () {
                             $('.preloader').hide();
                             $('.loader').hide();
                         }
@@ -230,7 +231,7 @@ var count_comments = $('#count_comments').val();
     });
 
     //check if selected components
-    $('#test_form').on('submit', function() {
+    $('#test_form').on('submit', function () {
         var count_components = $('.components tbody tr').length;
 
         if (count_components == 0) {
@@ -241,25 +242,25 @@ var count_comments = $('#count_comments').val();
     });
 
     //delete test
-    $(document).on('click', '.delete_test', function(e) {
+    $(document).on('click', '.delete_test', function (e) {
         e.preventDefault();
         var el = $(this);
         swal({
-                title: trans("Are you sure to delete test ?"),
-                type: "warning",
-                showCancelButton: true,
-                confirmButtonClass: "btn-danger",
-                confirmButtonText: trans("Delete"),
-                cancelButtonText: trans("Cancel"),
-                closeOnConfirm: false
-            },
-            function() {
+            title: trans("Are you sure to delete test ?"),
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonClass: "btn-danger",
+            confirmButtonText: trans("Delete"),
+            cancelButtonText: trans("Cancel"),
+            closeOnConfirm: false
+        },
+            function () {
                 $(el).parent().submit();
             });
     });
 
     //select type
-    $(document).on('change', '.select_type', function() {
+    $(document).on('change', '.select_type', function () {
         option_count++;
         var type = $(this).val();
         var component_num = $(this).parent().parent().parent().parent().attr('num');
@@ -297,30 +298,30 @@ var count_comments = $('#count_comments').val();
     });
 
     //delete select option
-    $(document).on("click", ".delete_option", function() {
+    $(document).on("click", ".delete_option", function () {
         var option_id = $(this).closest('tr').attr('option_id');
         var option = $(this);
         swal({
-                title: trans("Are you sure to delete option ?"),
-                type: "warning",
-                showCancelButton: true,
-                confirmButtonClass: "btn-danger",
-                confirmButtonText: trans("Delete"),
-                cancelButtonText: trans("Cancel"),
-                closeOnConfirm: true
-            },
-            function() {
+            title: trans("Are you sure to delete option ?"),
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonClass: "btn-danger",
+            confirmButtonText: trans("Delete"),
+            cancelButtonText: trans("Cancel"),
+            closeOnConfirm: true
+        },
+            function () {
                 if (option_id !== undefined) {
                     $.ajax({
                         url: ajax_url('delete_option/' + option_id),
-                        beforeSend: function() {
+                        beforeSend: function () {
                             $('.preloader').show();
                             $('.loader').show();
                         },
-                        success: function() {
+                        success: function () {
                             $(option).parent().parent().remove();
                         },
-                        complete: function() {
+                        complete: function () {
                             $('.preloader').hide();
                             $('.loader').hide();
                         }
@@ -332,7 +333,7 @@ var count_comments = $('#count_comments').val();
     });
 
     //add option 
-    $(document).on('click', '.add_option', function() {
+    $(document).on('click', '.add_option', function () {
         option_count++;
         var component_num = $(this).parent().parent().parent().parent().parent().parent().parent().attr('num');
         var html = `<tr>
@@ -349,7 +350,7 @@ var count_comments = $('#count_comments').val();
     });
 
     //separated component
-    $(document).on('change', '.check_separated', function() {
+    $(document).on('change', '.check_separated', function () {
         var checked = $(this).prop('checked');
         var num = $(this).attr('num');
         if (checked) {
@@ -378,7 +379,7 @@ var count_comments = $('#count_comments').val();
     });
 
     //add new reference range
-    $(document).on('click', '.add_range', function() {
+    $(document).on('click', '.add_range', function () {
         count_reference_ranges++;
         var component_num = $(this).closest('tr').closest('table').closest('tr').attr('num');
 
@@ -424,7 +425,7 @@ var count_comments = $('#count_comments').val();
     });
 
     //delete reference range
-    $(document).on('click', '.delete_range', function() {
+    $(document).on('click', '.delete_range', function () {
         $(this).closest('tr').remove();
     });
 
@@ -433,14 +434,14 @@ var count_comments = $('#count_comments').val();
         width: "100%",
         placeholder: trans("Category"),
         ajax: {
-            beforeSend: function() {
+            beforeSend: function () {
                 $('.preloader').show();
                 $('.loader').show();
             },
             url: ajax_url('get_categories'),
-            processResults: function(data) {
+            processResults: function (data) {
                 return {
-                    results: $.map(data, function(item) {
+                    results: $.map(data, function (item) {
                         return {
                             text: item.name,
                             id: item.id
@@ -448,7 +449,7 @@ var count_comments = $('#count_comments').val();
                     })
                 };
             },
-            complete: function() {
+            complete: function () {
                 $('.preloader').hide();
                 $('.loader').hide();
             }
@@ -456,7 +457,7 @@ var count_comments = $('#count_comments').val();
     });
 
     //add comment
-    $(document).on('click', '.add_comment', function() {
+    $(document).on('click', '.add_comment', function () {
         count_comments++;
 
         // send request ajax
@@ -466,10 +467,10 @@ var count_comments = $('#count_comments').val();
             data: {
                 id: $(this).data('id'),
             },
-            success: function(data) {
+            success: function (data) {
 
                 var option = [];
-                data.forEach(function(item) {
+                data.forEach(function (item) {
                     option += '<option value="' + item.id + '">' + item.name + '</option>';
                 });
 
@@ -513,7 +514,7 @@ var count_comments = $('#count_comments').val();
     });
 
     //add component
-    $(document).on('click', '.add_componentid', function() {
+    $(document).on('click', '.add_componentid', function () {
         count_comments++;
 
         var This = $(this);
@@ -525,10 +526,10 @@ var count_comments = $('#count_comments').val();
             data: {
                 id: $(this).data('id'),
             },
-            success: function(data) {
+            success: function (data) {
 
                 var option = [];
-                data.forEach(function(item) {
+                data.forEach(function (item) {
                     option += '<option value="' + item.id + '">' + item.name + '</option>';
                 });
                 console.log(This);
@@ -569,12 +570,12 @@ var count_comments = $('#count_comments').val();
 
 
     //delete comment
-    $(document).on('click', '.delete_comment', function() {
+    $(document).on('click', '.delete_comment', function () {
         $(this).closest('tr').remove();
     });
 
     //delete component
-    $(document).on('click', '.delete_componentid', function() {
+    $(document).on('click', '.delete_componentid', function () {
         $(this).closest('tr').remove();
     });
 
@@ -583,14 +584,14 @@ var count_comments = $('#count_comments').val();
         width: "100%",
         placeholder: trans("Select product"),
         ajax: {
-            beforeSend: function() {
+            beforeSend: function () {
                 $('.preloader').show();
                 $('.loader').show();
             },
             url: ajax_url('get_products_select2'),
-            processResults: function(data) {
+            processResults: function (data) {
                 return {
-                    results: $.map(data, function(item) {
+                    results: $.map(data, function (item) {
                         return {
                             text: item.name,
                             id: item.id
@@ -598,28 +599,27 @@ var count_comments = $('#count_comments').val();
                     })
                 };
             },
-            complete: function() {
+            complete: function () {
                 $('.preloader').hide();
                 $('.loader').hide();
             }
         }
     });
 
-    //add consumption
-    $(document).on('click', '.add_consumption', function() {
-        consumption_count++;
-        var test_id = $(this).attr('test_id');
-        $(this).parent().parent().find('.test_consumptions').append(`
+  //add consumption
+  $(document).on('click','.add_consumption',function(){
+    consumption_count++;
+    $(this).parent().parent().find('.test_consumptions').append(`
       <tr class="consumption_row">
         <td>
           <div class="form-group">
-            <select class="form-control" id="consumption_product_` + consumption_count + `" name="consumption[` + test_id + `][` + consumption_count + `][product_id]" required>
+            <select class="form-control" id="consumption_product_`+consumption_count+`" name="consumptions[`+consumption_count+`][product_id]" required>
             </select>
           </div>
         </td>
         <td>
           <div class="form-group">
-            <input type="number" class="form-control" name="consumption[` + test_id + `][` + consumption_count + `][quantity]" placeholder="` + trans("Quantity") + `" value="0" required>
+            <input type="number" class="form-control" name="consumptions[`+consumption_count+`][quantity]" placeholder="`+trans("Quantity")+`" value="0" required>
           </div>
         </td>
         <td>
@@ -630,36 +630,38 @@ var count_comments = $('#count_comments').val();
       </tr>
     `);
 
-        $('#consumption_product_' + consumption_count).select2({
-            width: "100%",
-            placeholder: trans("Select product"),
-            ajax: {
-                beforeSend: function() {
-                    $('.preloader').show();
-                    $('.loader').show();
-                },
-                url: ajax_url('get_products_select2'),
-                processResults: function(data) {
-                    return {
-                        results: $.map(data, function(item) {
-                            return {
-                                text: item.name,
-                                id: item.id
-                            }
-                        })
-                    };
-                },
-                complete: function() {
-                    $('.preloader').hide();
-                    $('.loader').hide();
-                }
+    $('#consumption_product_'+consumption_count).select2({
+      width:"100%",
+      placeholder:trans("Select product"),
+      ajax: {
+         beforeSend:function()
+         {
+            $('.preloader').show();
+            $('.loader').show();
+         },
+         url: ajax_url('get_products_select2'),
+         processResults: function (data) {
+               return {
+                     results: $.map(data, function (item) {
+                        return {
+                           text: item.name,
+                           id: item.id
+                        }
+                     })
+               };
+            },
+            complete:function()
+            {
+               $('.preloader').hide();
+               $('.loader').hide();
             }
-        });
+         }
     });
+  });
 
-    //delete consumption
-    $(document).on('click', '.delete_consumption', function() {
-        $(this).closest('.consumption_row').remove();
-    });
+  //delete consumption
+  $(document).on('click','.delete_consumption',function(){
+    $(this).closest('.consumption_row').remove();
+  });
 
 })(jQuery);

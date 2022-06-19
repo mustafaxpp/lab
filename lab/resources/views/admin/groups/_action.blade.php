@@ -126,7 +126,10 @@ $group = \App\Models\Group::find($group['id']);
                   <div class="col-lg-12">
                      <div class="form-group">
                         <label for="number">{{__('Number of samples')}}</label>
-                        <input type="number" id="number" name="number" placeholder="{{__('Number of samples')}}" class="form-control" value="1" min="1" max="{{ $group->all_tests()->count() }}" required>
+                        <input type="number" id="number" name="number" placeholder="{{__('Number of samples')}}" class="form-control" value="1" min="1" max="{{ 
+                           // get test and groupBy sample type use map 
+                           $group->all_tests()->count()
+                        }}" required>
                      </div>
                   </div>
                </div>
