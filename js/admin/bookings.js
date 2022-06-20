@@ -46,13 +46,14 @@
         "columns": [
             { data: "bulk_checkbox", searchable: false, sortable: false, orderable: false },
             { data: "id", orderable: true, sortable: true },
+            { data: "type", orderable: true, sortable: true },
             { data: "patient.name", orderable: false, sortable: false },
             { data: "address", orderable: false, sortable: false },
             { data: "branche.name", orderable: false, sortable: false },
-            { data: "test.name", orderable: false, sortable: false },
-            { data: "culture.name", orderable: false, sortable: false },
+            { data: "test_id", orderable: false, sortable: false },
+            { data: "culture_id", orderable: false, sortable: false },
             { data: "package.name", orderable: false, sortable: false },
-            { data: "action", searchable: false, orderable: false, sortable: false }//action
+            { data: "action", searchable: false, orderable: false, sortable: false } // action
         ],
         "language": {
             "sEmptyTable": trans("No data available in table"),

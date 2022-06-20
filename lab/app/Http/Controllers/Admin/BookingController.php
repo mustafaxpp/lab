@@ -4,11 +4,14 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Booking;
+use App\Models\Culture;
+use App\Models\Test;
 use Illuminate\Http\Request;
 use DataTables;
+
 class BookingController extends Controller
 {
-    
+
     public function index()
     {
         return view('admin.bookings.index');
@@ -16,16 +19,37 @@ class BookingController extends Controller
 
     public function ajax(Request $request)
     {
-        $model = Booking::with('branche','test','culture','package' , 'patient');
+        $model = Booking::with('branche', 'package', 'patient');
 
         return DataTables::eloquent($model)
             ->addColumn('action', function ($booking) {
                 return view('admin.bookings._action', compact('booking'));
             })
+            ->addColumn('test_id', function ($item) {
+                // foreach json_decode 
+                $test_ids = json_decode($item->test_id);
+                $test = [];
+                foreach ($test_ids as $test_id) {
+                    $te = Test::find($test_id);
+                    $test[] = $te->name . '-';
+                }
+
+                return $test;
+            })
+            ->addColumn('culture_id', function ($item) {
+                // foreach json_decode 
+                $culture_ids = json_decode($item->culture_id);
+                $culture = [];
+                foreach ($culture_ids as $culture_id) {
+                    $cul = Culture::find($culture_id);
+                    $culture[] = $cul->name . '-';
+                }
+
+                return $culture;
+            })
             ->addColumn('bulk_checkbox', function ($item) {
                 return view('partials._bulk_checkbox', compact('item'));
-            })
-            ->toJson();
+            })->toJson();
     }
 
     // create
@@ -115,6 +139,4 @@ class BookingController extends Controller
         session()->flash('success', 'deleted successfully');
         return redirect()->route('admin.bookings.index');
     }
-
-
 }

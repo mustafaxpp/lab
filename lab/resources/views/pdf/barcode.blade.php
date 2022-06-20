@@ -37,7 +37,7 @@
             <table width="100%" style="width:100%;text-algin:center">
                 <tr>
                     <td align="center">
-                        <img src="data:image/png;base64,{{DNS1D::getBarcodePNG($group['barcode'], $barcode_settings['type'])}}" alt="barcode" class="margin" width="100%" />
+                        <img src="data:image/png;base64,{{DNS1D::getBarcodePNG($group['id'], $barcode_settings['type'])}}" alt="barcode" class="margin" width="100%" />
                         <b>
                             {{$group['barcode']}}
                         </b>

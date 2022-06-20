@@ -27,11 +27,11 @@ class CreateBookingsTable extends Migration
             $table->foreign('branche_id')->references('id')->on('branches')->onDelete('cascade');
 
             // test_id
-            $table->unsignedBigInteger('test_id');
+            $table->text('test_id');
             // $table->foreign('test_id')->references('id')->on('tests')->onDelete('cascade');
 
             // culture_id
-            $table->unsignedBigInteger('culture_id');
+            $table->text('culture_id');
             // $table->foreign('culture_id')->references('id')->on('cultures')->onDelete('cascade');
 
             // package_id

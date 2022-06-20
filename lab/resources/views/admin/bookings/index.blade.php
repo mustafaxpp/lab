@@ -47,6 +47,7 @@
                 <input type="checkbox" class="check_all" name="" id="">
               </th>
               <th width="10px">#</th>
+              <th>النوع</th>
               <th>{{__('Patient')}}</th>
               <th>{{__('Address')}}</th>
               <th>{{__('Branche')}}</th>

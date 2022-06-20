@@ -27,15 +27,6 @@ class Booking extends Model
         return $this->belongsTo(Branch::class , 'branche_id' , 'id');
     }
 
-    public function test()
-    {
-        return $this->belongsTo(Test::class , 'test_id' , 'id');
-    }
-
-    public function culture()
-    {
-        return $this->belongsTo(Culture::class , 'culture_id' , 'id');
-    }
 
     public function package()
     {

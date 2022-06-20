@@ -5,6 +5,7 @@
 /vendor
 .env
 .env.backup
+.vscode/ftp-kr.diff.BookingController.php
 .phpunit.result.cache
 Homestead.json
 Homestead.yaml
