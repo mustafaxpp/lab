@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\PointSale;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Passport\Console\ClientCommand;
 use Laravel\Passport\Console\InstallCommand;
@@ -30,6 +31,15 @@ class AppServiceProvider extends ServiceProvider
         Schema::defaultStringLength(191);
 
         Passport::routes();
+
+        // get pointsale where date equals today
+        $point_sale = PointSale::whereDate('created_at', now())->first();
+
+        // return data view
+        view()->composer('*', function ($view) use ($point_sale) {
+            // pointsale
+            $view->with('point_sale', $point_sale);
+        });
         
         /*ADD THIS LINES*/
         $this->commands([

@@ -473,6 +473,7 @@ var current_date = $('#system_date').val();
                 $('#contract_id').val(patient.contract_id).trigger('change');
                 //contract
                 if (patient.contract !== null) {
+                    $('#contract_title').prop('disabled', false);
                     $('#contract_title').val(patient.contract.title);
                 } else {
                     $('#contract_title').val('');
@@ -567,7 +568,9 @@ var current_date = $('#system_date').val();
                 $('#answer_other').val(patient.answer_other);
                 //contract
                 if (patient.contract !== null) {
-                    $('#contract_title').val(patient.contract.title);
+                    // enable contract
+                    $('#contract_title').prop('disabled', false);
+                    $('#contract_title').val(patient.contract_id);
                     $('.apply_contract').addClass('disabled');
                     $('.cancel_contract').removeClass('disabled');
                 } else {
@@ -591,6 +594,40 @@ var current_date = $('#system_date').val();
                 }
             },
         });
+    });
+
+    $(document).on('change', '#contract_title', function() {
+        var patient_id = $('#code').val();
+        var contract_id = $(this).val();
+        var url = $('#contract_title').attr('data-url');
+        
+        // send request ajax
+        $.ajax({
+            url: url,
+            type: 'GET',
+            data: {
+                patient_id: patient_id,
+                contract_id: contract_id,
+            },
+            beforeSend: function() {
+                $('.preloader').show();
+                $('.loader').show();
+            },
+            success: function(data) {
+                if (data.status == 'success') {
+                    toastr.success(data.message);
+                    $('.apply_contract').addClass('disabled');
+                    $('.cancel_contract').removeClass('disabled');
+                } else {
+                    toastr.error(data.message);
+                }
+            },
+            complete: function() {
+                $('.preloader').hide();
+                $('.loader').hide();
+            }
+        });
+
     });
 
     //contract change
@@ -1178,6 +1215,7 @@ var current_date = $('#system_date').val();
                     $('#edit_answer_other').val(patient.answer_other);
                     //contract
                     if (patient.contract !== null) {
+                        $('#contract_title').prop('disabled', false);
                         $('#edit_patient_contract_id').append(`
                      <option value="` + patient.contract_id + `" selected>` + patient.contract.title + `</option>
                   `);

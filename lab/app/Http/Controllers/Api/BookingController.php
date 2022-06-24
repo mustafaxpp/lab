@@ -17,8 +17,8 @@ class BookingController extends Controller
         $request->validate([
             'address' => 'required_if:type,home',
             'branche_id' => 'required',
-            'test_id.*' => 'required',
-            'culture_id.*' => 'required',
+            // 'test_id.*' => 'required',
+            // 'culture_id.*' => 'required',
             'package_id' => 'required',
             'type' => 'required',
         ]);

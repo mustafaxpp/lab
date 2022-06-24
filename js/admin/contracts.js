@@ -50,6 +50,8 @@
         {data:"bulk_checkbox",searchable:false,sortable:false,orderable:false},
         {data:"id",sortable:true,orderable:true},
         {data:"title",sortable:true,orderable:true},
+        {data:"region",sortable:true,orderable:true},
+        {data:"government",sortable:true,orderable:true},
         {data:"action",searchable:false,orderable:false,sortable:false}//action
       ],
       "language": {

@@ -25,6 +25,8 @@ class ContractRequest extends FormRequest
     {
         return [
             'title'=>'required',
+            'government' => 'required',
+            'region' => 'required',
             // 'discount'=>'required|numeric|min:0|max:100'
         ];
     }

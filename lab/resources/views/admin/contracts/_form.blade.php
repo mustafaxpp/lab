@@ -18,6 +18,24 @@
     </div>
 </div>
 
+<div class="row">
+    <div class="col-lg-12">
+        <div class="form-group">
+            <label for="government">المحافظة</label>
+            <input name="government" id="government" value="@if(!empty($contract)){{$contract['government']}}@endif" class="form-control">
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="form-group">
+            <label for="region">المنطقة</label>
+            <input name="region" id="region" value="@if(!empty($contract)){{$contract['region']}}@endif" class="form-control" >
+        </div>
+    </div>
+</div>
+
 <div class="card card-primary">
     <div class="card-header">
         <h5 class="card-title">

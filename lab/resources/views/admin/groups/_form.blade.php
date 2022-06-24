@@ -139,7 +139,12 @@
                                 {{__('Apply')}}
                             </button>
                             <input type="hidden" name="contract_id" id="contract_id" @if(isset($group)&&isset($group['contract'])&&!$group->contract->trashed()) value="{{$group['contract']['id']}}" @endif readonly>
-                            <input type="text" class="form-control" id="contract_title" @if(isset($group)&&isset($group['contract'])&&!$group->contract->trashed()) value="{{$group['contract']['title']}}" @endif readonly>
+                            <!-- <input type="text" class="form-control" id="contract_title" @if(isset($group)&&isset($group['contract'])&&!$group->contract->trashed()) value="{{$group['contract']['title']}}" @endif readonly> -->
+                            <select name="" id="contract_title" disabled data-url="{{ route('admin.update_patient_contract_id') }}" class="form-control">
+                                @foreach($contracts as $contract)
+                                <option value="{{ $contract->id }}">{{ $contract->title }}</option>
+                                @endforeach
+                            </select>
                         </div>
                     </div>
                     <div class="col-lg-3">

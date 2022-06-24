@@ -14,16 +14,16 @@ use DataTables;
 
 class ContractsController extends Controller
 {
-    
-     /**
+
+    /**
      * assign roles
      */
     public function __construct()
     {
-        $this->middleware('can:view_contract',     ['only' => ['index', 'show','ajax']]);
+        $this->middleware('can:view_contract',     ['only' => ['index', 'show', 'ajax']]);
         $this->middleware('can:create_contract',   ['only' => ['create', 'store']]);
         $this->middleware('can:edit_contract',     ['only' => ['edit', 'update']]);
-        $this->middleware('can:delete_contract',   ['only' => ['destroy','bulk_delete']]);
+        $this->middleware('can:delete_contract',   ['only' => ['destroy', 'bulk_delete']]);
     }
 
     /**
@@ -37,26 +37,26 @@ class ContractsController extends Controller
     }
 
     /**
-    * get antibiotics datatable
-    *
-    * @access public
-    * @var  @Request $request
-    */
+     * get antibiotics datatable
+     *
+     * @access public
+     * @var  @Request $request
+     */
     public function ajax(Request $request)
     {
-        $model=Contract::query();
+        $model = Contract::query();
 
         return DataTables::eloquent($model)
-        ->editColumn('discount',function($contract){
-            return $contract['discount'].' %';
-        })
-        ->addColumn('action',function($contract){
-            return view('admin.contracts._action',compact('contract'));
-        })
-        ->addColumn('bulk_checkbox',function($item){
-            return view('partials._bulk_checkbox',compact('item'));
-        })
-        ->toJson();
+            ->editColumn('discount', function ($contract) {
+                return $contract['discount'] . ' %';
+            })
+            ->addColumn('action', function ($contract) {
+                return view('admin.contracts._action', compact('contract'));
+            })
+            ->addColumn('bulk_checkbox', function ($item) {
+                return view('partials._bulk_checkbox', compact('item'));
+            })
+            ->toJson();
     }
 
     /**
@@ -66,11 +66,11 @@ class ContractsController extends Controller
      */
     public function create()
     {
-        $tests=Test::where('parent_id',0)->orWhere('separated',true)->get();
-        $cultures=Culture::all();
-        $packages=Package::all();
+        $tests = Test::where('parent_id', 0)->orWhere('separated', true)->get();
+        $cultures = Culture::all();
+        $packages = Package::all();
 
-        return view('admin.contracts.create',compact('tests','cultures','packages'));
+        return view('admin.contracts.create', compact('tests', 'cultures', 'packages'));
     }
 
     /**
@@ -81,52 +81,48 @@ class ContractsController extends Controller
      */
     public function store(ContractRequest $request)
     {
-       $contract=Contract::create([
-        'title'=>$request['title'],
-        'description'=>$request['description'],
-        'discount_type'=>$request['discount_type'],
-        'discount_percentage'=>$request['discount_percentage']
-       ]);
+        $contract = Contract::create([
+            'title' => $request['title'],
+            'description' => $request['description'],
+            'discount_type' => $request['discount_type'],
+            'discount_percentage' => $request['discount_percentage'],
+            'government' => $request['government'],
+            'region' => $request['region'],
+        ]);
 
-       if($request->has('tests'))
-       {
-           foreach($request['tests'] as $id=>$price)
-           {
-               $contract->tests()->create([
-                   'priceable_type'=>'App\Models\Test',
-                   'priceable_id'=>$id,
-                   'price'=>$price
-               ]);
-           }
-       }
+        if ($request->has('tests')) {
+            foreach ($request['tests'] as $id => $price) {
+                $contract->tests()->create([
+                    'priceable_type' => 'App\Models\Test',
+                    'priceable_id' => $id,
+                    'price' => $price
+                ]);
+            }
+        }
 
-       if($request->has('cultures'))
-       {
-           foreach($request['cultures'] as $id=>$price)
-           {
-               $contract->cultures()->create([
-                   'priceable_type'=>'App\Models\Culture',
-                   'priceable_id'=>$id,
-                   'price'=>$price
-               ]);
-           }
-       }
+        if ($request->has('cultures')) {
+            foreach ($request['cultures'] as $id => $price) {
+                $contract->cultures()->create([
+                    'priceable_type' => 'App\Models\Culture',
+                    'priceable_id' => $id,
+                    'price' => $price
+                ]);
+            }
+        }
 
-       if($request->has('packages'))
-       {
-           foreach($request['packages'] as $id=>$price)
-           {
-               $contract->packages()->create([
-                   'priceable_type'=>'App\Models\Package',
-                   'priceable_id'=>$id,
-                   'price'=>$price
-               ]);
-           }
-       }
+        if ($request->has('packages')) {
+            foreach ($request['packages'] as $id => $price) {
+                $contract->packages()->create([
+                    'priceable_type' => 'App\Models\Package',
+                    'priceable_id' => $id,
+                    'price' => $price
+                ]);
+            }
+        }
 
-       session()->flash('success',__('Contract created successfully'));
+        session()->flash('success', __('Contract created successfully'));
 
-       return redirect()->route('admin.contracts.index');
+        return redirect()->route('admin.contracts.index');
     }
 
     /**
@@ -137,7 +133,6 @@ class ContractsController extends Controller
      */
     public function show($id)
     {
-       
     }
 
     /**
@@ -148,9 +143,9 @@ class ContractsController extends Controller
      */
     public function edit($id)
     {
-        $contract=Contract::findOrFail($id);
+        $contract = Contract::findOrFail($id);
 
-        return view('admin.contracts.edit',compact('contract'));
+        return view('admin.contracts.edit', compact('contract'));
     }
 
     /**
@@ -162,56 +157,52 @@ class ContractsController extends Controller
      */
     public function update(ContractRequest $request, $id)
     {
-       $contract=Contract::findOrFail($id);
-       $contract->update([
-           'title'=>$request['title'],
-           'description'=>$request['description'],
-           'discount_type'=>$request['discount_type'],
-           'discount_percentage'=>$request['discount_percentage']
-       ]);
+        $contract = Contract::findOrFail($id);
+        $contract->update([
+            'title' => $request['title'],
+            'description' => $request['description'],
+            'discount_type' => $request['discount_type'],
+            'discount_percentage' => $request['discount_percentage'],
+            'government' => $request['government'],
+            'region' => $request['region'],
+        ]);
 
-       $contract->tests()->delete();
-       if($request->has('tests'))
-       {
-           foreach($request['tests'] as $id=>$price)
-           {
-               $contract->tests()->create([
-                   'priceable_type'=>'App\Models\Test',
-                   'priceable_id'=>$id,
-                   'price'=>$price
-               ]);
-           }
-       }
+        $contract->tests()->delete();
+        if ($request->has('tests')) {
+            foreach ($request['tests'] as $id => $price) {
+                $contract->tests()->create([
+                    'priceable_type' => 'App\Models\Test',
+                    'priceable_id' => $id,
+                    'price' => $price
+                ]);
+            }
+        }
 
-       $contract->cultures()->delete();
-       if($request->has('cultures'))
-       {
-           foreach($request['cultures'] as $id=>$price)
-           {
-               $contract->cultures()->create([
-                   'priceable_type'=>'App\Models\Culture',
-                   'priceable_id'=>$id,
-                   'price'=>$price
-               ]);
-           }
-       }
+        $contract->cultures()->delete();
+        if ($request->has('cultures')) {
+            foreach ($request['cultures'] as $id => $price) {
+                $contract->cultures()->create([
+                    'priceable_type' => 'App\Models\Culture',
+                    'priceable_id' => $id,
+                    'price' => $price
+                ]);
+            }
+        }
 
-       $contract->packages()->delete();
-       if($request->has('packages'))
-       {
-           foreach($request['packages'] as $id=>$price)
-           {
-               $contract->packages()->create([
-                   'priceable_type'=>'App\Models\Package',
-                   'priceable_id'=>$id,
-                   'price'=>$price
-               ]);
-           }
-       }
+        $contract->packages()->delete();
+        if ($request->has('packages')) {
+            foreach ($request['packages'] as $id => $price) {
+                $contract->packages()->create([
+                    'priceable_type' => 'App\Models\Package',
+                    'priceable_id' => $id,
+                    'price' => $price
+                ]);
+            }
+        }
 
-       session()->flash('success',__('Contract updated successfully'));
+        session()->flash('success', __('Contract updated successfully'));
 
-       return redirect()->route('admin.contracts.index');
+        return redirect()->route('admin.contracts.index');
     }
 
     /**
@@ -222,11 +213,11 @@ class ContractsController extends Controller
      */
     public function destroy($id)
     {
-        $contract=Contract::findOrFail($id);
+        $contract = Contract::findOrFail($id);
         $contract->prices()->delete();
         $contract->delete();
 
-        session()->flash('success',__('Contract deleted successfully'));
+        session()->flash('success', __('Contract deleted successfully'));
 
         return redirect()->route('admin.contracts.index');
     }
@@ -239,14 +230,13 @@ class ContractsController extends Controller
      */
     public function bulk_delete(BulkActionRequest $request)
     {
-        foreach($request['ids'] as $id)
-        {
-            $contract=Contract::findOrFail($id);
+        foreach ($request['ids'] as $id) {
+            $contract = Contract::findOrFail($id);
             $contract->prices()->delete();
             $contract->delete();
         }
 
-        session()->flash('success',__('Bulk deleted successfully'));
+        session()->flash('success', __('Bulk deleted successfully'));
 
         return redirect()->route('admin.contracts.index');
     }

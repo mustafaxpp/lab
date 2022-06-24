@@ -56,259 +56,307 @@
         "admin": {
           "accounting_report.js": {
             "type": "-",
-            "size": 5385,
+            "size": 5195,
             "lmtime": 0,
-            "modified": false
+            "modified": true
           },
           "activity_logs.js": {
             "type": "-",
-            "size": 2783,
+            "size": 2699,
             "lmtime": 0,
-            "modified": false
+            "modified": true
           },
           "adjustments.js": {
             "type": "-",
-            "size": 8709,
+            "size": 8461,
             "lmtime": 0,
-            "modified": false
+            "modified": true
           },
           "antibiotics.js": {
             "type": "-",
-            "size": 3399,
+            "size": 3302,
             "lmtime": 0,
-            "modified": false
+            "modified": true
           },
           "backups.js": {
             "type": "-",
-            "size": 662,
+            "size": 636,
             "lmtime": 0,
+            "modified": true
+          },
+          "bookings.js": {
+            "type": "-",
+            "size": 5594,
+            "lmtime": 1655763558685,
             "modified": false
           },
           "branches.js": {
             "type": "-",
-            "size": 4716,
+            "size": 4559,
             "lmtime": 0,
-            "modified": false
+            "modified": true
           },
           "bulk_action.js": {
             "type": "-",
-            "size": 7279,
+            "size": 7115,
             "lmtime": 0,
-            "modified": false
+            "modified": true
           },
           "categories.js": {
             "type": "-",
-            "size": 3352,
+            "size": 3256,
             "lmtime": 0,
-            "modified": false
+            "modified": true
           },
           "chat.js": {
             "type": "-",
-            "size": 20627,
+            "size": 20135,
             "lmtime": 0,
-            "modified": false
+            "modified": true
           },
           "contracts.js": {
             "type": "-",
-            "size": 12323,
-            "lmtime": 0,
+            "size": 12437,
+            "lmtime": 1655937362441,
             "modified": false
           },
           "culture_options.js": {
             "type": "-",
-            "size": 4299,
+            "size": 4173,
             "lmtime": 0,
-            "modified": false
+            "modified": true
           },
           "cultures.js": {
             "type": "-",
-            "size": 7728,
+            "size": 7485,
             "lmtime": 0,
-            "modified": false
+            "modified": true
           },
           "cultures_prices.js": {
             "type": "-",
-            "size": 4296,
+            "size": 4182,
             "lmtime": 0,
-            "modified": false
+            "modified": true
           },
           "dashboard.js": {
             "type": "-",
-            "size": 12769,
+            "size": 12332,
             "lmtime": 0,
-            "modified": false
+            "modified": true
           },
           "doctor_report.js": {
             "type": "-",
-            "size": 967,
+            "size": 928,
             "lmtime": 0,
-            "modified": false
+            "modified": true
           },
           "doctors.js": {
             "type": "-",
-            "size": 3727,
+            "size": 3623,
             "lmtime": 0,
-            "modified": false
+            "modified": true
           },
           "expense_categories.js": {
             "type": "-",
-            "size": 3692,
+            "size": 3593,
             "lmtime": 0,
-            "modified": false
+            "modified": true
           },
           "expenses.js": {
             "type": "-",
-            "size": 7203,
+            "size": 6981,
+            "lmtime": 0,
+            "modified": true
+          },
+          "fixed_assets.js": {
+            "type": "-",
+            "size": 5556,
             "lmtime": 0,
             "modified": false
           },
           "groups.js": {
             "type": "-",
-            "size": 65816,
+            "size": 64068,
             "lmtime": 1654307111167,
+            "modified": true
+          },
+          "header.jpg": {
+            "type": "-",
+            "size": 691596,
+            "lmtime": 0,
             "modified": false
           },
           "inventory_report.js": {
             "type": "-",
-            "size": 1143,
+            "size": 1103,
             "lmtime": 0,
-            "modified": false
+            "modified": true
           },
           "labs.js": {
             "type": "-",
-            "size": 13487,
+            "size": 13161,
             "lmtime": 0,
-            "modified": false
+            "modified": true
           },
           "main.js": {
             "type": "-",
-            "size": 16974,
+            "size": 16418,
             "lmtime": 0,
-            "modified": false
+            "modified": true
           },
           "medical_reports.js": {
             "type": "-",
-            "size": 25900,
+            "size": 25491,
             "lmtime": 1654348928442,
-            "modified": false
+            "modified": true
           },
           "packages.js": {
             "type": "-",
-            "size": 5419,
+            "size": 5260,
             "lmtime": 0,
-            "modified": false
+            "modified": true
           },
           "packages_prices.js": {
             "type": "-",
-            "size": 4220,
+            "size": 4107,
             "lmtime": 0,
-            "modified": false
+            "modified": true
           },
           "patients.js": {
             "type": "-",
-            "size": 10620,
+            "size": 10287,
             "lmtime": 0,
-            "modified": false
+            "modified": true
           },
           "payment_methods.js": {
             "type": "-",
-            "size": 3658,
+            "size": 3562,
+            "lmtime": 0,
+            "modified": true
+          },
+          "prescriptions.js": {
+            "type": "-",
+            "size": 5343,
             "lmtime": 0,
             "modified": false
           },
           "product_alerts.js": {
             "type": "-",
-            "size": 3267,
+            "size": 3180,
             "lmtime": 0,
-            "modified": false
+            "modified": true
           },
           "product_report.js": {
             "type": "-",
-            "size": 2051,
+            "size": 1981,
             "lmtime": 0,
-            "modified": false
+            "modified": true
           },
           "products.js": {
             "type": "-",
-            "size": 4157,
+            "size": 4106,
             "lmtime": 0,
-            "modified": false
+            "modified": true
           },
           "profile.js": {
             "type": "-",
-            "size": 2225,
+            "size": 2154,
             "lmtime": 0,
-            "modified": false
+            "modified": true
           },
           "purchase_report.js": {
             "type": "-",
-            "size": 2032,
+            "size": 1960,
             "lmtime": 0,
-            "modified": false
+            "modified": true
           },
           "purchases.js": {
             "type": "-",
-            "size": 14414,
+            "size": 13960,
             "lmtime": 0,
-            "modified": false
+            "modified": true
           },
           "roles.js": {
             "type": "-",
-            "size": 4216,
+            "size": 4096,
             "lmtime": 0,
-            "modified": false
+            "modified": true
           },
           "settings.js": {
             "type": "-",
-            "size": 3966,
+            "size": 3835,
+            "lmtime": 0,
+            "modified": true
+          },
+          "sliders.js": {
+            "type": "-",
+            "size": 5351,
+            "lmtime": 0,
+            "modified": false
+          },
+          "static_pages.js": {
+            "type": "-",
+            "size": 3211,
             "lmtime": 0,
             "modified": false
           },
           "supplier_report.js": {
             "type": "-",
-            "size": 985,
+            "size": 946,
             "lmtime": 0,
-            "modified": false
+            "modified": true
           },
           "suppliers.js": {
             "type": "-",
-            "size": 3970,
+            "size": 3868,
             "lmtime": 0,
-            "modified": false
+            "modified": true
           },
           "tests.js": {
             "type": "-",
-            "size": 25445,
+            "size": 24442,
             "lmtime": 1653134914826,
             "modified": true
           },
           "tests_prices.js": {
             "type": "-",
-            "size": 4206,
+            "size": 4092,
+            "lmtime": 0,
+            "modified": true
+          },
+          "tips.js": {
+            "type": "-",
+            "size": 5401,
             "lmtime": 0,
             "modified": false
           },
           "transfers.js": {
             "type": "-",
-            "size": 8643,
+            "size": 8393,
             "lmtime": 0,
-            "modified": false
+            "modified": true
           },
           "translations.js": {
             "type": "-",
-            "size": 461,
+            "size": 443,
             "lmtime": 0,
-            "modified": false
+            "modified": true
           },
           "users.js": {
             "type": "-",
-            "size": 4535,
+            "size": 4402,
             "lmtime": 0,
-            "modified": false
+            "modified": true
           },
           "visits.js": {
             "type": "-",
-            "size": 20454,
+            "size": 19770,
+            "lmtime": 0,
+            "modified": true
+          },
+          "watermark_1.png": {
+            "type": "-",
+            "size": 62749,
             "lmtime": 0,
             "modified": false
           }
@@ -421,6 +469,12 @@
           "lmtime": 0,
           "modified": false
         }
+      },
+      "lab-main.zip": {
+        "type": "-",
+        "size": 25865730,
+        "lmtime": 0,
+        "modified": false
       },
       "last-v.zip": {
         "type": "-",

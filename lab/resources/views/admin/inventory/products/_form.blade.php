@@ -53,7 +53,7 @@
                         <tr>
                             <th>{{__('Branch')}}</th>
                             <th width="150px">{{__('Initial quantity')}}</th>
-                            <th width="150px">{{__('Stock alert')}}</th>
+                            {{--<th width="150px">{{__('Stock alert')}}</th>--}}
                         </tr>
                     </thead>
                     <tbody>
@@ -66,9 +66,9 @@
                                     <td>
                                         <input type="number" class="form-control" name="branch[{{$branch['branch_id']}}][initial_quantity]" id="branch_initial_quantity_{{$branch['branch_id']}}" value="{{$branch['initial_quantity']}}" required>
                                     </td>
-                                    <td>
-                                        <input type="number" class="form-control"  name="branch[{{$branch['branch_id']}}][alert_quantity]" id="branch_alert_quantity_{{$branch['branch_id']}}" value="{{$branch['alert_quantity']}}" required>
-                                    </td>
+                                    {{--<td>--}}
+                                        <input type="hidden" class="form-control"  name="branch[{{$branch['branch_id']}}][alert_quantity]" id="branch_alert_quantity_{{$branch['branch_id']}}" value="{{$branch['alert_quantity']}}" required>
+                                    {{--</td>--}}
                                 </tr>
                             @endforeach
                         @else
@@ -80,9 +80,9 @@
                                     <td>
                                         <input type="number" class="form-control"  name="branch[{{$branch['id']}}][initial_quantity]" id="branch_initial_quantity_{{$branch['id']}}" value="0" required>
                                     </td>
-                                    <td>
-                                        <input type="number" class="form-control"  name="branch[{{$branch['id']}}][alert_quantity]" id="branch_alert_quantity_{{$branch['id']}}" value="0" required>
-                                    </td>
+                                    {{--<td>--}}
+                                        <input type="hidden" class="form-control"  name="branch[{{$branch['id']}}][alert_quantity]" id="branch_alert_quantity_{{$branch['id']}}" value="0" required>
+                                    {{--</td>--}}
                                 </tr>
                             @endforeach
                         @endif

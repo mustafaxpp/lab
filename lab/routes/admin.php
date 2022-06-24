@@ -212,17 +212,17 @@ Route::group(['prefix'=>'admin','as'=>'admin.','namespace'=>'Admin','middleware'
     //inventory module
     Route::group(['prefix'=>'inventory','as'=>'inventory.','namespace'=>'Inventory'],function(){
         Route::resource('suppliers','SuppliersController');
-        Route::post('suppliers/bulk/delete','SuppliersController@bulk_delete')->name('suppliers.bulk_delete');
         Route::resource('products','ProductsController');
-        Route::post('products/bulk/delete','ProductsController@bulk_delete')->name('products.bulk_delete');
         Route::resource('purchases','PurchasesController');
-        Route::post('purchases/bulk/delete','PurchasesController@bulk_delete')->name('purchases.bulk_delete');
         Route::resource('adjustments','AdjustmentsController');
-        Route::post('adjustments/bulk/delete','AdjustmentsController@bulk_delete')->name('adjustments.bulk_delete');
         Route::resource('transfers','TransfersController');
-        Route::post('transfers/bulk/delete','TransfersController@bulk_delete')->name('transfers.bulk_delete');
         Route::get('product_alerts','ProductsController@product_alerts');
     });
+    Route::post('adjustments/bulk/delete','Inventory\AdjustmentsController@bulk_delete')->name('adjustments.bulk_delete');
+    Route::post('purchases/bulk/delete','Inventory\PurchasesController@bulk_delete')->name('purchases.bulk_delete');
+    Route::post('suppliers/bulk/delete','Inventory\SuppliersController@bulk_delete')->name('suppliers.bulk_delete');
+    Route::post('transfers/bulk/delete','Inventory\TransfersController@bulk_delete')->name('transfers.bulk_delete');
+    Route::post('products/bulk/delete','Inventory\ProductsController@bulk_delete')->name('products.bulk_delete');
 
     //Reports module
     Route::group(['prefix'=>'reports','as'=>'reports.'],function(){
@@ -235,6 +235,12 @@ Route::group(['prefix'=>'admin','as'=>'admin.','namespace'=>'Admin','middleware'
         Route::get('product','ReportsController@product')->name('product');
         Route::get('branch_products','ReportsController@branch_products')->name('branch_products');
     });
+
+    // update_patient_contract_id
+    Route::get('update_patient_contract_id','GroupsController@updatePatientContractId')->name('update_patient_contract_id');
+
+    // add_point_sale
+    Route::put('add_point_sale','IndexController@addPointSale')->name('add_point_sale');
 
     // tips and offers module
     Route::resource('tips','TipsController');

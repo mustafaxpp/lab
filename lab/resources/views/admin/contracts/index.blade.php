@@ -47,6 +47,8 @@
               </th>
               <th width="10px">#</th>
               <th>{{__('Title')}}</th>
+              <th>المنطقة</th>
+              <th>المحافظة</th>
               <th width="100px">{{__('Action')}}</th>
             </tr>
           </thead>

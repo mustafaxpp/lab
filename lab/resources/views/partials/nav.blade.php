@@ -44,6 +44,44 @@
             @endif
         @endcan
 
+        <li>
+            <!-- modal button -->
+            <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModalnew">
+                <i class="fas fa-plus"></i> نقطه بيع
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade1" id="exampleModalnew" tabindex="-1" role="dialog" aria-labelledby="exampleModalnewLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalnewLabel">اضف نقطه بيع</h5><br><br>
+                            <p>مجموع البيع اليوم : {{ $point_sale ? $point_sale->total_sale : '0:00' }}</p>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="{{ route('admin.add_point_sale') }}" method="post" enctype="multipart/form-data">
+                                @csrf
+                                @method('PUT')
+                                <div class="form-group">
+                                    <label for="price">{{ __('Price') }}</label>
+                                    <input type="number" class="form-control" value="{{ $point_sale ? $point_sale->point_sale : '0:00' }}" id="point_sale" name="point_sale"
+                                        placeholder="{{ __('Price') }}">
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">{{ __('Close') }}</button>
+                                    <button type="submit" class="btn btn-primary">{{ __('Save') }}</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </li>
     </ul>
     <!-- \Left navbar links -->
 

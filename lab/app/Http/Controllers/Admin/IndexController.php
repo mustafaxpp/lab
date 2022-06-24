@@ -16,6 +16,7 @@ use App\Models\Expense;
 use App\Models\Contract;
 use App\Models\UserBranch;
 use App\Models\Branch;
+use App\Models\PointSale;
 use Spatie\Activitylog\Models\Activity;
 
 class IndexController extends Controller
@@ -74,5 +75,34 @@ class IndexController extends Controller
             
             return redirect()->back('admin.index');
         }
+    }
+
+    // addPointSale
+    public function addPointSale(Request $request)
+    {
+        $request->validate([
+            'point_sale' => 'required|numeric',
+        ]);
+
+        // update point sale
+        $point_sale = PointSale::whereDate('created_at', today())->first();
+
+        if($point_sale)
+        {
+            $point_sale->update([
+                'total_sale' => $point_sale->total_sale + $request->point_sale,
+                'point_sale' => $request->point_sale,
+            ]);
+        }
+        else
+        {
+            PointSale::create([
+                'total_sale' => $request->point_sale,
+                'point_sale' => $request->point_sale,
+            ]);
+        }
+
+        session()->flash('success',__('Point sale added successfully'));
+        return redirect()->back();
     }
 }

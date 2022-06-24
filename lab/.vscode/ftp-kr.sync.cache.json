@@ -115,6 +115,12 @@
                   "lmtime": 0,
                   "modified": false
                 },
+                "BookingController.php": {
+                  "type": "-",
+                  "size": 4102,
+                  "lmtime": 1655763368556,
+                  "modified": false
+                },
                 "BranchesController.php": {
                   "type": "-",
                   "size": 6971,
@@ -135,8 +141,8 @@
                 },
                 "ContractsController.php": {
                   "type": "-",
-                  "size": 6833,
-                  "lmtime": 0,
+                  "size": 7149,
+                  "lmtime": 1655936937480,
                   "modified": false
                 },
                 "CultureOptionsController.php": {
@@ -169,10 +175,16 @@
                   "lmtime": 0,
                   "modified": false
                 },
+                "FixedAssetController.php": {
+                  "type": "-",
+                  "size": 3655,
+                  "lmtime": 0,
+                  "modified": false
+                },
                 "GroupsController.php": {
                   "type": "-",
-                  "size": 28088,
-                  "lmtime": 1654308244126,
+                  "size": 27874,
+                  "lmtime": 1656075586622,
                   "modified": false
                 },
                 "IndexController.php": {
@@ -190,7 +202,7 @@
                 },
                 "MedicalReportsController.php": {
                   "type": "-",
-                  "size": 37241,
+                  "size": 38393,
                   "lmtime": 1654349023246,
                   "modified": true
                 },
@@ -209,6 +221,12 @@
                 "PaymentMethodsController.php": {
                   "type": "-",
                   "size": 4104,
+                  "lmtime": 0,
+                  "modified": false
+                },
+                "PrescriptionsController.php": {
+                  "type": "-",
+                  "size": 2551,
                   "lmtime": 0,
                   "modified": false
                 },
@@ -256,7 +274,7 @@
                 },
                 "TestsController.php": {
                   "type": "-",
-                  "size": 27901,
+                  "size": 27751,
                   "lmtime": 1653498090598,
                   "modified": true
                 },
@@ -294,8 +312,8 @@
               "Api": {
                 "BookingController.php": {
                   "type": "-",
-                  "size": 2041,
-                  "lmtime": 1655565446974,
+                  "size": 2290,
+                  "lmtime": 1655753435406,
                   "modified": false
                 },
                 "BranchesController.php": {
@@ -306,9 +324,9 @@
                 },
                 "GroupTestsController.php": {
                   "type": "-",
-                  "size": 701,
+                  "size": 1224,
                   "lmtime": 0,
-                  "modified": false
+                  "modified": true
                 },
                 "HomeController.php": {
                   "type": "-",
@@ -451,8 +469,8 @@
                 },
                 "ContractRequest.php": {
                   "type": "-",
-                  "size": 572,
-                  "lmtime": 0,
+                  "size": 648,
+                  "lmtime": 1655936987409,
                   "modified": false
                 },
                 "CreateUserRequest.php": {
@@ -523,9 +541,9 @@
                 },
                 "PatientRequest.php": {
                   "type": "-",
-                  "size": 4223,
+                  "size": 4215,
                   "lmtime": 0,
-                  "modified": false
+                  "modified": true
                 },
                 "PaymentMethodRequest.php": {
                   "type": "-",
@@ -535,9 +553,9 @@
                 },
                 "ProductRequest.php": {
                   "type": "-",
-                  "size": 1275,
+                  "size": 1347,
                   "lmtime": 0,
-                  "modified": false
+                  "modified": true
                 },
                 "PurchaseRequest.php": {
                   "type": "-",
@@ -651,11 +669,17 @@
               "lmtime": 0,
               "modified": false
             },
+            "Booking.php": {
+              "type": "-",
+              "size": 874,
+              "lmtime": 1655752697857,
+              "modified": false
+            },
             "Branch.php": {
               "type": "-",
-              "size": 956,
+              "size": 1254,
               "lmtime": 0,
-              "modified": false
+              "modified": true
             },
             "BranchProduct.php": {
               "type": "-",
@@ -747,6 +771,12 @@
               "lmtime": 0,
               "modified": false
             },
+            "FixedAsset.php": {
+              "type": "-",
+              "size": 507,
+              "lmtime": 0,
+              "modified": false
+            },
             "Group.php": {
               "type": "-",
               "size": 2008,
@@ -755,9 +785,9 @@
             },
             "GroupCulture.php": {
               "type": "-",
-              "size": 1161,
+              "size": 1162,
               "lmtime": 0,
-              "modified": false
+              "modified": true
             },
             "GroupCultureOption.php": {
               "type": "-",
@@ -827,9 +857,9 @@
             },
             "Patient.php": {
               "type": "-",
-              "size": 2086,
+              "size": 2240,
               "lmtime": 0,
-              "modified": false
+              "modified": true
             },
             "PaymentMethod.php": {
               "type": "-",
@@ -840,6 +870,12 @@
             "Permission.php": {
               "type": "-",
               "size": 236,
+              "lmtime": 0,
+              "modified": false
+            },
+            "Prescription.php": {
+              "type": "-",
+              "size": 325,
               "lmtime": 0,
               "modified": false
             },
@@ -893,9 +929,9 @@
             },
             "Slider.php": {
               "type": "-",
-              "size": 218,
+              "size": 324,
               "lmtime": 1654720923358,
-              "modified": false
+              "modified": true
             },
             "StaticPage.php": {
               "type": "-",
@@ -953,9 +989,9 @@
             },
             "TipsAndOffer.php": {
               "type": "-",
-              "size": 311,
+              "size": 539,
               "lmtime": 1654719190051,
-              "modified": false
+              "modified": true
             },
             "Transfer.php": {
               "type": "-",
@@ -1016,6 +1052,12 @@
               "modified": false
             }
           }
+        },
+        "app-23-6-2022.zip": {
+          "type": "-",
+          "size": 123190727,
+          "lmtime": 0,
+          "modified": false
         },
         "artisan": {
           "type": "-",
@@ -1635,8 +1677,8 @@
             },
             "2022_06_13_190912_create_bookings_table.php": {
               "type": "-",
-              "size": 1569,
-              "lmtime": 1655565503328,
+              "size": 1541,
+              "lmtime": 1655752600190,
               "modified": false
             }
           }
@@ -1709,45 +1751,45 @@
               "groups": {
                 "_action.blade.php": {
                   "type": "-",
-                  "size": 4866,
+                  "size": 6209,
                   "lmtime": 1653060207523,
-                  "modified": false
+                  "modified": true
                 },
                 "_due.blade.php": {
                   "type": "-",
-                  "size": 223,
+                  "size": 215,
                   "lmtime": 0,
-                  "modified": false
+                  "modified": true
                 },
                 "_form.blade.php": {
                   "type": "-",
-                  "size": 36021,
-                  "lmtime": 1654309399977,
+                  "size": 36363,
+                  "lmtime": 1656071614662,
                   "modified": false
                 },
                 "_status.blade.php": {
                   "type": "-",
-                  "size": 201,
+                  "size": 197,
                   "lmtime": 0,
-                  "modified": false
+                  "modified": true
                 },
                 "create.blade.php": {
                   "type": "-",
-                  "size": 3621,
+                  "size": 3480,
                   "lmtime": 1654307152441,
-                  "modified": false
+                  "modified": true
                 },
                 "edit.blade.php": {
                   "type": "-",
-                  "size": 2151,
+                  "size": 2088,
                   "lmtime": 1654307222849,
-                  "modified": false
+                  "modified": true
                 },
                 "index.blade.php": {
                   "type": "-",
-                  "size": 12041,
+                  "size": 11792,
                   "lmtime": 1654040664101,
-                  "modified": false
+                  "modified": true
                 },
                 "modals": {
                   "doctor_modal.blade.php": {
@@ -1783,9 +1825,9 @@
                 },
                 "show.blade.php": {
                   "type": "-",
-                  "size": 17184,
+                  "size": 18373,
                   "lmtime": 0,
-                  "modified": false
+                  "modified": true
                 }
               },
               "doctors": {
@@ -2007,6 +2049,86 @@
                   "lmtime": 1654720106004,
                   "modified": true
                 }
+              },
+              "bookings": {
+                "index.blade.php": {
+                  "type": "-",
+                  "size": 2255,
+                  "lmtime": 1655763606986,
+                  "modified": false
+                }
+              },
+              "inventory": {
+                "products": {
+                  "_action.blade.php": {
+                    "type": "-",
+                    "size": 480,
+                    "lmtime": 0,
+                    "modified": false
+                  },
+                  "_form.blade.php": {
+                    "type": "-",
+                    "size": 4535,
+                    "lmtime": 1655934449464,
+                    "modified": false
+                  },
+                  "create.blade.php": {
+                    "type": "-",
+                    "size": 1795,
+                    "lmtime": 0,
+                    "modified": false
+                  },
+                  "edit.blade.php": {
+                    "type": "-",
+                    "size": 1828,
+                    "lmtime": 0,
+                    "modified": false
+                  },
+                  "index.blade.php": {
+                    "type": "-",
+                    "size": 2333,
+                    "lmtime": 0,
+                    "modified": false
+                  },
+                  "product_alerts.blade.php": {
+                    "type": "-",
+                    "size": 2190,
+                    "lmtime": 0,
+                    "modified": false
+                  }
+                }
+              },
+              "contracts": {
+                "_action.blade.php": {
+                  "type": "-",
+                  "size": 625,
+                  "lmtime": 0,
+                  "modified": false
+                },
+                "_form.blade.php": {
+                  "type": "-",
+                  "size": 10261,
+                  "lmtime": 1656067883399,
+                  "modified": false
+                },
+                "create.blade.php": {
+                  "type": "-",
+                  "size": 1815,
+                  "lmtime": 0,
+                  "modified": false
+                },
+                "edit.blade.php": {
+                  "type": "-",
+                  "size": 1738,
+                  "lmtime": 0,
+                  "modified": false
+                },
+                "index.blade.php": {
+                  "type": "-",
+                  "size": 2110,
+                  "lmtime": 1655937252546,
+                  "modified": false
+                }
               }
             },
             "pdf": {
@@ -2200,9 +2322,9 @@
         "routes": {
           "admin.php": {
             "type": "-",
-            "size": 16554,
-            "lmtime": 1654379830727,
-            "modified": true
+            "size": 17782,
+            "lmtime": 1655935219695,
+            "modified": false
           },
           "ajax.php": {
             "type": "-",
@@ -2212,9 +2334,9 @@
           },
           "api.php": {
             "type": "-",
-            "size": 1607,
+            "size": 2300,
             "lmtime": 1654717232099,
-            "modified": false
+            "modified": true
           },
           "channels.php": {
             "type": "-",
@@ -2233,6 +2355,12 @@
             "size": 2324,
             "lmtime": 0,
             "modified": true
+          },
+          "routes.zip": {
+            "type": "-",
+            "size": 7355,
+            "lmtime": 0,
+            "modified": false
           },
           "web.php": {
             "type": "-",
