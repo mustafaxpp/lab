@@ -189,7 +189,7 @@
                                             <i class="fas fa-file-contract"></i>
                                         </span>
                                     </div>
-                                    <select name="contract_id" id="patient_contract_id" class="form-control">
+                                    <select name="contract_id" id="patient_contract_id" data-url="{{ route('admin.get_contract_user') }}" class="form-control">
                                         <option value="" selected disabled>{{ __('Select contract') }}</option>
                                     </select>
                                 </div>
@@ -278,6 +278,15 @@
                             </div>
                         </div>
                         {{-- End   Questions --}}
+                        <div class="col-lg-12">
+                        <div class="form-group">
+                            <label> موظفين التعاقد </label>
+                            <!-- select -->
+                            <select class="form-control" disabled name="modal_contract_user_id" id="modal_contract_user_id">
+                                <option value="" selected disabled>اختر موظف التعاقد</option>
+                            </select>
+                        </div>
+                    </div>
                     </div>
                 </div>
                 <div class="modal-footer justify-content-between">

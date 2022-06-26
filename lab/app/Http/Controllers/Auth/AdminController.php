@@ -10,6 +10,7 @@ use App\Http\Requests\Admin\LoginRequest;
 use App\Http\Requests\Lab\RegisterLabRequest;
 use App\Mail\ResetPassword;
 use App\Models\User;
+use App\Models\Govrenment;
 use App\Models\Setting;
 use App\Models\UserBranch;
 use Hash;
@@ -34,8 +35,9 @@ class AdminController extends Controller
     public function register()
     {
         $info = setting('info');
+        $governments = Govrenment::all();
 
-        return view('auth.admin.register-lab',compact('info'));
+        return view('auth.admin.register-lab',compact('info' , 'governments'));
     }
 
     public function register_submit(RegisterLabRequest $request)
@@ -45,6 +47,7 @@ class AdminController extends Controller
 
         $data['password'] = bcrypt($request->password);
         $data['type'] = 'lab';
+        $data['region_id'] = $request->region_id;
         
         $user = User::create($data);
         

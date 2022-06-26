@@ -26,7 +26,8 @@ class LabRequest extends FormRequest
         return [
             'name' => 'required',
             'email' => 'required|email|unique:users,email,'.request()->item,
-            'lab_id' => 'required|unique:users,lab_id,'.request()->item,
+            // 'lab_id' => 'required|unique:users,lab_id,'.request()->item,
+            'lab_id' => 'required',
         ];
     }
 }

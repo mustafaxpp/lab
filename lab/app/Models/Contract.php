@@ -44,4 +44,9 @@ class Contract extends Model
         return "Contract was {$eventName}";
     }
 
+    // contractUsers
+    public function contractUsers()
+    {
+        return $this->hasMany(User::class,'lab_id','id');
+    }
 }

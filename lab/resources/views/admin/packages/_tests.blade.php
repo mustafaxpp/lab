@@ -1,12 +1,17 @@
 <ul class="p-1">
-@foreach($package['tests'] as $test)
+    @if(isset($package['tests']))
+    @foreach($package['tests'] as $test)
     <li>
-        {{$test['test']['name']}}
+        {{isset($test['test']) ? $test['test']['name'] : ''}}
     </li>
-@endforeach
-@foreach($package['cultures'] as $culture)
+    @endforeach
+    @endif
+
+    @if(isset($package['cultures']))
+    @foreach($package['cultures'] as $culture)
     <li>
-        {{$culture['culture']['name']}}
+        {{isset($culture['culture']) ? $culture['culture']['name'] : ''}}
     </li>
-@endforeach
+    @endforeach
+    @endif
 </ul>

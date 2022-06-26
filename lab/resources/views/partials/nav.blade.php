@@ -21,7 +21,7 @@
 
         @can('admin')
       
-            @if (auth()->guard('admin')->user()->roles[0]->role_id != 6)
+            @if (auth()->guard('admin')->user()->roles()->count() > 0 && auth()->guard('admin')->user()->roles[0]->role_id != 6)
                 <li class="nav-item dropdown">
                     <button class="btn btn-info btn-sm dropdown-toggle ml-1" type="button" id="dropdownMenuButton"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

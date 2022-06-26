@@ -109,6 +109,8 @@ class AjaxController extends Controller
         $attr['diabetic'] = $request->diabetic ? 1 : 0;
         $attr['liver_patient'] = $request->liver_patient ? 1 : 0;
         $attr['pregnant'] = $request->pregnant ? 1 : 0;
+        $attr['contract_user_id'] = $request->modal_contract_user_id;
+
         $attr['answer_other'] = $request->answer_other ? $request->answer_other : null;
 
         $patient=Patient::create($attr);

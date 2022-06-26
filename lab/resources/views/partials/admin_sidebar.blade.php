@@ -161,6 +161,18 @@
         <p>{{__('Add Contract To Lab')}}</p>
       </a>
     </li>
+    <li class="nav-item">
+      <a href="{{route('admin.governments.index')}}" class="nav-link" id="governments">
+        <i class="fas fa-file-contract nav-icon"></i>
+        <p>المحافظات</p>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a href="{{route('admin.regions.index')}}" class="nav-link" id="regions">
+        <i class="fas fa-file-contract nav-icon"></i>
+        <p>المناطق</p>
+      </a>
+    </li>
     @endcan
 
 

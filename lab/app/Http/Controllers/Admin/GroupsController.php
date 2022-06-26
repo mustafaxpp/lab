@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Group;
 use App\Models\Test;
+use App\Models\User;
 use App\Models\Culture;
 use App\Models\GroupTest;
 use App\Models\GroupCulture;
@@ -119,8 +120,10 @@ class GroupsController extends Controller
     {
 
         $contracts = Contract::all();
+        $contract_employees = User::where('lab_id', '!=' , null )->get();
 
-        return view('admin.groups.create' , compact('contracts'));
+
+        return view('admin.groups.create' , compact('contracts' , 'contract_employees'));
     }
 
     /**
@@ -304,8 +307,9 @@ class GroupsController extends Controller
         $packages = Package::all();
         $contracts = Contract::all();
 
+        $contract_employees = User::where('lab_id', '!=' , null )->get();
 
-        return view('admin.groups.edit', compact('group', 'tests', 'cultures', 'packages' , 'contracts'));
+        return view('admin.groups.edit', compact('group', 'contract_employees' , 'tests', 'cultures', 'packages' , 'contracts'));
     }
 
 
@@ -886,5 +890,16 @@ class GroupsController extends Controller
         }
 
         return redirect()->back()->with('success', __('Check test updated successfully'));
+    }
+
+    // getContractUser
+    public function getContractUser(Request $request)
+    {
+        $contract = Contract::findOrFail($request->contract_id);
+
+        // get users
+        $users = $contract->contractUsers;
+
+        return response()->json($users);
     }
 }

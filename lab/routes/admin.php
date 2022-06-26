@@ -238,7 +238,8 @@ Route::group(['prefix'=>'admin','as'=>'admin.','namespace'=>'Admin','middleware'
 
     // update_patient_contract_id
     Route::get('update_patient_contract_id','GroupsController@updatePatientContractId')->name('update_patient_contract_id');
-
+    // get_contract_user
+    Route::get('get_contract_user','GroupsController@getContractUser')->name('get_contract_user');
     // add_point_sale
     Route::put('add_point_sale','IndexController@addPointSale')->name('add_point_sale');
 
@@ -274,4 +275,20 @@ Route::group(['prefix'=>'admin','as'=>'admin.','namespace'=>'Admin','middleware'
     Route::get('fixed_asset/get_fixed_assets','FixedAssetController@ajax')->name('get_fixed_assets');
     Route::post('fixed_assets/bulk/delete','FixedAssetController@bulk_delete')->name('fixed_assets.bulk_delete');
 
+    // governments
+    Route::resource('governments','GovernmentController');
+    // get_governments
+    Route::get('government/get_governments','GovernmentController@ajax')->name('get_governments');
+    // route bulk/delete
+    Route::post('governments/bulk/delete','GovernmentController@bulk_delete')->name('governments.bulk_delete');
+    // regions
+    Route::resource('regions','RegionController');
+    // get_regions
+    Route::get('region/get_regions','RegionController@ajax')->name('get_regions');
+    // route bulk/delete
+    Route::post('regions/bulk/delete','RegionController@bulk_delete')->name('regions.bulk_delete');
+
 });
+
+// route get_regions
+Route::get('get_region','Admin\RegionController@get_region_by_government')->name('get_region');

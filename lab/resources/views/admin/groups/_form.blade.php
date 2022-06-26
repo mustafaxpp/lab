@@ -1,18 +1,18 @@
 <!-- Patient Info -->
- <div class="card card-primary">
+<div class="card card-primary">
     <div class="card-header">
         <h3 class="card-title">
             {{__('Patient Info')}}
         </h3>
         @can('create_patient')
-            <button type="button" class="btn btn-primary btn-sm add_patient float-right"  data-toggle="modal" data-target="#patient_modal">
-                <i class="fa fa-exclamation-triangle"></i>  {{__('Not Listed ?')}}
-            </button>
+        <button type="button" class="btn btn-primary btn-sm add_patient float-right" data-toggle="modal" data-target="#patient_modal">
+            <i class="fa fa-exclamation-triangle"></i> {{__('Not Listed ?')}}
+        </button>
         @endcan
         @can('edit_patient')
-            <button type="button" class="btn btn-warning btn-sm mr-1 float-right" id="edit_patient">
-                <i class="fa fa-edit"></i>  {{__('Edit patient')}}
-            </button>
+        <button type="button" class="btn btn-warning btn-sm mr-1 float-right" id="edit_patient">
+            <i class="fa fa-edit"></i> {{__('Edit patient')}}
+        </button>
         @endcan
     </div>
     <div class="card-body">
@@ -28,7 +28,7 @@
                         <div class="row">
                             <div class="col-lg-12 text-center">
                                 <a href="@if(isset($group)&&!empty($group['patient']['avatar'])){{url('uploads/patient-avatar/'.$group['patient']['avatar'])}}@else{{url('img/avatar.png')}}@endif" data-toggle="lightbox" data-title="Avatar">
-                                    <img src="@if(isset($group)&&!empty($group['patient']['avatar'])){{url('uploads/patient-avatar/'.$group['patient']['avatar'])}}@else{{url('img/avatar.png')}}@endif"  class="img-thumbnail" id="patient_avatar" alt="">
+                                    <img src="@if(isset($group)&&!empty($group['patient']['avatar'])){{url('uploads/patient-avatar/'.$group['patient']['avatar'])}}@else{{url('img/avatar.png')}}@endif" class="img-thumbnail" id="patient_avatar" alt="">
                                 </a>
                             </div>
                         </div>
@@ -47,7 +47,7 @@
                             <label>{{__('Code')}}</label>
                             <select id="code" name="patient_id" class="form-control" required>
                                 @if(isset($group)&&isset($group['patient']))
-                                    <option value="{{$group['patient']['id']}}" selected>{{$group['patient']['code']}}</option>
+                                <option value="{{$group['patient']['id']}}" selected>{{$group['patient']['code']}}</option>
                                 @endif
                             </select>
                         </div>
@@ -57,7 +57,7 @@
                             <label>{{__('Name')}}</label>
                             <select id="name" name="patient_id" class="form-control" required>
                                 @if(isset($group)&&isset($group['patient']))
-                                    <option value="{{$group['patient']['id']}}" selected>{{$group['patient']['name']}}</option>
+                                <option value="{{$group['patient']['id']}}" selected>{{$group['patient']['name']}}</option>
                                 @endif
                             </select>
                         </div>
@@ -95,7 +95,7 @@
                     <div class="col-lg-3">
                         <div class="form-group">
                             <label>{{__('Phone')}}</label>
-                            <input class="form-control" id="phone" @if(isset($group)&&isset($group['patient'])) value="{{$group['patient']['phone']}}" @endif  readonly>
+                            <input class="form-control" id="phone" @if(isset($group)&&isset($group['patient'])) value="{{$group['patient']['phone']}}" @endif readonly>
                         </div>
                     </div>
                     <div class="col-lg-3">
@@ -120,11 +120,11 @@
                         <div class="form-group">
                             <label>{{__('Doctor')}}</label>
                             @can('create_doctor')
-                                <button type="button" class="btn btn-primary btn-sm float-right"  data-toggle="modal" data-target="#doctor_modal"><i class="fa fa-exclamation-triangle"></i> {{__('Not Listed ?')}}</button>
+                            <button type="button" class="btn btn-primary btn-sm float-right" data-toggle="modal" data-target="#doctor_modal"><i class="fa fa-exclamation-triangle"></i> {{__('Not Listed ?')}}</button>
                             @endcan
                             <select class="form-control" name="doctor_id" id="doctor">
                                 @if(isset($group)&&isset($group['doctor']))
-                                    <option value="{{$group['doctor']['id']}}" selected>{{$group['doctor']['name']}}</option>
+                                <option value="{{$group['doctor']['id']}}" selected>{{$group['doctor']['name']}}</option>
                                 @endif
                             </select>
                         </div>
@@ -160,7 +160,19 @@
                         <div class="form-group">
                             <label> Branch </label>
 
-                            <input type="text" class="form-control" name="" id=""  value="{{session('branch_name')}}" disabled>
+                            <input type="text" class="form-control" name="" id="" value="{{session('branch_name')}}" disabled>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <div class="form-group">
+                            <label> موظفين التعاقد </label>
+                            <!-- select -->
+                            <select class="form-control" name="contract_user_id" id="contract_user_id">
+                                @foreach($contract_employees as $contract_employee)
+                                <option value="{{$contract_employee->id}}" @if(isset($group) && $contract_employee->id == $group['contract_user_id']) selected @endif>{{$contract_employee->name}}</option>
+                                @endforeach
+                            </select>
                         </div>
                     </div>
 
@@ -171,9 +183,9 @@
                         <div class="form-group">
                             <div class="input-group mb-3">
                                 <div class="form-check">
-                                    <input class="form-check-input @if(isset($group)&&isset($group['patient'])) checked @endif" name="fluid_patient" id="fluid_patient"  type="checkbox" value="" id="flexCheckDefault">
+                                    <input class="form-check-input @if(isset($group)&&isset($group['patient'])) checked @endif" name="fluid_patient" id="fluid_patient" type="checkbox" value="" id="flexCheckDefault">
                                     <label class="form-check-label" for="flexCheckDefault">
-                                    {{__('Hemophilia')}}
+                                        {{__('Hemophilia')}}
                                     </label>
                                 </div>
                             </div>
@@ -185,9 +197,9 @@
                         <div class="form-group">
                             <div class="input-group mb-3">
                                 <div class="form-check">
-                                    <input class="form-check-input" name="diabetic" id="diabetic" {{ isset($group['patient']) && $group['patient']['diabetic'] == 1 ? 'checked' : '' }}  type="checkbox" value="" id="flexCheckDefault">
+                                    <input class="form-check-input" name="diabetic" id="diabetic" {{ isset($group['patient']) && $group['patient']['diabetic'] == 1 ? 'checked' : '' }} type="checkbox" value="" id="flexCheckDefault">
                                     <label class="form-check-label" for="flexCheckDefault">
-                                    {{__('Diabetic')}}
+                                        {{__('Diabetic')}}
                                     </label>
                                 </div>
                             </div>
@@ -199,9 +211,9 @@
                         <div class="form-group">
                             <div class="input-group mb-3">
                                 <div class="form-check">
-                                    <input class="form-check-input" name="liver_patient" id="liver_patient" {{ isset($group['patient']) && $group['patient']['liver_patient'] == 1 ? 'checked' : '' }}  type="checkbox" id="flexCheckDefault">
+                                    <input class="form-check-input" name="liver_patient" id="liver_patient" {{ isset($group['patient']) && $group['patient']['liver_patient'] == 1 ? 'checked' : '' }} type="checkbox" id="flexCheckDefault">
                                     <label class="form-check-label" for="flexCheckDefault">
-                                    {{__('Liver Patient')}}
+                                        {{__('Liver Patient')}}
                                     </label>
                                 </div>
                             </div>
@@ -215,7 +227,7 @@
                                 <div class="form-check">
                                     <input class="form-check-input" name="pregnant" {{ isset($group['patient']) && $group['patient']['pregnant'] == 1 ? 'checked' : '' }} id="pregnant" type="checkbox" value="" id="flexCheckDefault">
                                     <label class="form-check-label" for="flexCheckDefault">
-                                    {{__('Pregnant')}}
+                                        {{__('Pregnant')}}
                                     </label>
                                 </div>
                             </div>
@@ -229,7 +241,7 @@
                             </div>
                         </div>
                     </div>
-                {{-- End   Questions --}}
+                    {{-- End   Questions --}}
 
                 </div>
             </div>
@@ -269,26 +281,26 @@
                     </thead>
                     <tbody id="selected_tests">
                         @if(isset($group))
-                            @foreach($group['tests'] as $test)
-                            <tr class="selected_test" id="test_{{$test['test_id']}}" default_price="{{$test['test']['test_price']['price']}}">
-                                <td>
-                                   {{$test['test']['name']}}
-                                   <input type="hidden" class="tests_id" name="tests[{{$test['test_id']}}][id]" value="{{$test['test_id']}}">
-                                </td>
-                                <td>
-                                    {{$test['test']['category']['name']}}
-                                </td>
-                                <td class="test_price">
-                                    {{$test['price']}}
-                                </td>
-                                <td>
-                                   <button type="button" class="btn btn-danger btn-sm delete_selected_row">
-                                      <i class="fa fa-trash"></i>
-                                   </button>
-                                </td>
-                                <input type="hidden" class="price" name="tests[{{$test['test_id']}}][price]" value="{{$test['price']}}">
-                             </tr>
-                            @endforeach
+                        @foreach($group['tests'] as $test)
+                        <tr class="selected_test" id="test_{{$test['test_id']}}" default_price="{{$test['test']['test_price']['price']}}">
+                            <td>
+                                {{$test['test']['name']}}
+                                <input type="hidden" class="tests_id" name="tests[{{$test['test_id']}}][id]" value="{{$test['test_id']}}">
+                            </td>
+                            <td>
+                                {{$test['test']['category']['name']}}
+                            </td>
+                            <td class="test_price">
+                                {{$test['price']}}
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-danger btn-sm delete_selected_row">
+                                    <i class="fa fa-trash"></i>
+                                </button>
+                            </td>
+                            <input type="hidden" class="price" name="tests[{{$test['test_id']}}][price]" value="{{$test['price']}}">
+                        </tr>
+                        @endforeach
                         @endif
                     </tbody>
                 </table>
@@ -324,26 +336,26 @@
                     </thead>
                     <tbody id="selected_cultures">
                         @if(isset($group))
-                            @foreach($group['cultures'] as $culture)
-                            <tr class="selected_culture" id="culture_{{$culture['culture_id']}}" default_price="{{$culture['culture']['culture_price']['price']}}">
-                                <td>
-                                    {{$culture['culture']['name']}}
-                                    <input type="hidden" class="cultures_id" name="cultures[{{$culture['culture_id']}}][id]" value="{{$culture['culture_id']}}">
-                                </td>
-                                <td>
-                                    {{$culture['culture']['category']['name']}}
-                                </td>
-                                <td class="culture_price">
-                                    {{$culture['price']}}
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-danger btn-sm delete_selected_row">
-                                        <i class="fa fa-trash"></i>
-                                    </button>
-                                </td>
-                                <input type="hidden" class="price" name="cultures[{{$culture['culture_id']}}][price]" value="{{$culture['price']}}">
-                            </tr>
-                            @endforeach
+                        @foreach($group['cultures'] as $culture)
+                        <tr class="selected_culture" id="culture_{{$culture['culture_id']}}" default_price="{{$culture['culture']['culture_price']['price']}}">
+                            <td>
+                                {{$culture['culture']['name']}}
+                                <input type="hidden" class="cultures_id" name="cultures[{{$culture['culture_id']}}][id]" value="{{$culture['culture_id']}}">
+                            </td>
+                            <td>
+                                {{$culture['culture']['category']['name']}}
+                            </td>
+                            <td class="culture_price">
+                                {{$culture['price']}}
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-danger btn-sm delete_selected_row">
+                                    <i class="fa fa-trash"></i>
+                                </button>
+                            </td>
+                            <input type="hidden" class="price" name="cultures[{{$culture['culture_id']}}][price]" value="{{$culture['price']}}">
+                        </tr>
+                        @endforeach
                         @endif
                     </tbody>
                 </table>
@@ -376,23 +388,23 @@
                     </thead>
                     <tbody id="selected_packages">
                         @if(isset($group))
-                            @foreach($group['packages'] as $package)
-                            <tr class="selected_package" id="package_{{$package['package_id']}}" default_price="{{$package['package']['package_price']['price']}}">
-                                <td>
-                                   {{$package['package']['name']}}
-                                    <input type="hidden" class="packages_id" name="packages[{{$package['package_id']}}][id]" value="{{$package['package_id']}}">
-                                </td>
-                                <td class="package_price">
-                                    {{$package['price']}}
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-danger btn-sm delete_selected_row">
-                                        <i class="fa fa-trash"></i>
-                                    </button>
-                                </td>
-                                <input type="hidden" class="price" name="packages[{{$package['package_id']}}][price]" value="{{$package['price']}}">
-                            </tr>
-                            @endforeach
+                        @foreach($group['packages'] as $package)
+                        <tr class="selected_package" id="package_{{$package['package_id']}}" default_price="{{$package['package']['package_price']['price']}}">
+                            <td>
+                                {{$package['package']['name']}}
+                                <input type="hidden" class="packages_id" name="packages[{{$package['package_id']}}][id]" value="{{$package['package_id']}}">
+                            </td>
+                            <td class="package_price">
+                                {{$package['price']}}
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-danger btn-sm delete_selected_row">
+                                    <i class="fa fa-trash"></i>
+                                </button>
+                            </td>
+                            <input type="hidden" class="price" name="packages[{{$package['package_id']}}][price]" value="{{$package['price']}}">
+                        </tr>
+                        @endforeach
                         @endif
                     </tbody>
                 </table>
@@ -409,130 +421,130 @@
             <div class="card-header">
                 <h5 class="card-title">
                     {{__('Tests')}}
-                </h5>
-            </div>
-            <div class="card-body tests">
-                <table class="table table-striped table-sm invoice-datatable" width="100%">
-                    <thead>
-                        <tr>
-                            <th>Order</th>
-                            <th width="10px">#</th>
-                            <th>{{__('Test Name')}}</th>
-                            <th>{{__('Category')}}</th>
-                            <th>{{__('Price')}}</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach($tests as $test)
-                            <tr>
-                                <td class="order">
+</h5>
+</div>
+<div class="card-body tests">
+    <table class="table table-striped table-sm invoice-datatable" width="100%">
+        <thead>
+            <tr>
+                <th>Order</th>
+                <th width="10px">#</th>
+                <th>{{__('Test Name')}}</th>
+                <th>{{__('Category')}}</th>
+                <th>{{__('Price')}}</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($tests as $test)
+            <tr>
+                <td class="order">
 
-                                </td>
-                                <td>
-                                    <input type="checkbox"  class="test" id="test_{{$test['id']}}" value="{{$test['id']}}" price="{{$test['test_price']['price']}}" default_price="{{$test['test_price']['price']}}">
-                                </td>
-                                <td>
-                                    <label for="test_{{$test['id']}}">{{$test['name']}}</label>
-                                </td>
-                                <td>
-                                    {{$test['category']['name']}}
-                                </td>
-                                <td class="table_price">
-                                    {{formated_price($test['test_price']['price'])}}
-                                </td>
+                </td>
+                <td>
+                    <input type="checkbox" class="test" id="test_{{$test['id']}}" value="{{$test['id']}}" price="{{$test['test_price']['price']}}" default_price="{{$test['test_price']['price']}}">
+                </td>
+                <td>
+                    <label for="test_{{$test['id']}}">{{$test['name']}}</label>
+                </td>
+                <td>
+                    {{$test['category']['name']}}
+                </td>
+                <td class="table_price">
+                    {{formated_price($test['test_price']['price'])}}
+                </td>
 
-                            </tr>
-                        @endforeach
-                    </tbody>
-                </table>
-            </div>
+            </tr>
+            @endforeach
+        </tbody>
+    </table>
+</div>
+</div>
+</div>
+
+<div class="col-lg-12">
+    <div class="card card-danger">
+        <div class="card-header">
+            <h5 class="card-title text-center">
+                {{__('Cultures')}}
+            </h5>
+        </div>
+        <div class="card-body cultures">
+            <table class="table table-striped table-sm invoice-datatable" width="100%">
+                <thead>
+                    <tr>
+                        <td>Order</td>
+                        <th width="10px">#</th>
+                        <th>{{__('Culture Name')}}</th>
+                        <th>{{__('Category')}}</th>
+                        <th>{{__('Price')}}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach($cultures as $culture)
+                    <tr>
+                        <td class="order">
+
+                        </td>
+                        <td>
+                            <input type="checkbox" class="culture" id="culture_{{$culture['id']}}" value="{{$culture['id']}}" price="{{$culture['culture_price']['price']}}" default_price="{{$culture['culture_price']['price']}}">
+                        </td>
+                        <td>
+                            <label for="culture_{{$culture['id']}}">{{$culture['name']}}</label>
+                        </td>
+                        <td>
+                            {{$culture['category']['name']}}
+                        </td>
+                        <td class="table_price">
+                            {{formated_price($culture['culture_price']['price'])}}
+                        </td>
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
         </div>
     </div>
+</div>
 
-    <div class="col-lg-12">
-       <div class="card card-danger">
-           <div class="card-header">
-               <h5 class="card-title text-center">
-                   {{__('Cultures')}}
-               </h5>
-           </div>
-           <div class="card-body cultures">
-                <table class="table table-striped table-sm invoice-datatable" width="100%">
-                    <thead>
-                        <tr>
-                            <td>Order</td>
-                            <th width="10px">#</th>
-                            <th>{{__('Culture Name')}}</th>
-                            <th>{{__('Category')}}</th>
-                            <th>{{__('Price')}}</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach($cultures as $culture)
-                            <tr>
-                                <td class="order">
+<div class="col-lg-12">
+    <div class="card card-danger">
+        <div class="card-header">
+            <h5 class="card-title text-center">
+                {{__('Packages')}}
+            </h5>
+        </div>
+        <div class="card-body packages">
+            <table class="table table-striped table-sm invoice-datatable" width="100%">
+                <thead>
+                    <tr>
+                        <td>Order</td>
+                        <th width="10px">#</th>
+                        <th>{{__('Package name')}}</th>
+                        <th>{{__('Price')}}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach($packages as $package)
+                    <tr>
+                        <td class="order">
 
-                                </td>
-                                <td>
-                                    <input type="checkbox" class="culture" id="culture_{{$culture['id']}}" value="{{$culture['id']}}" price="{{$culture['culture_price']['price']}}" default_price="{{$culture['culture_price']['price']}}">
-                                </td>
-                                <td>
-                                    <label for="culture_{{$culture['id']}}">{{$culture['name']}}</label>
-                                </td>
-                                <td>
-                                    {{$culture['category']['name']}}
-                                </td>
-                                <td class="table_price">
-                                    {{formated_price($culture['culture_price']['price'])}}
-                                </td>
-                            </tr>
-                        @endforeach
-                    </tbody>
-                </table>
-           </div>
-       </div>
-    </div>
-
-    <div class="col-lg-12">
-        <div class="card card-danger">
-            <div class="card-header">
-                <h5 class="card-title text-center">
-                    {{__('Packages')}}
-                </h5>
-            </div>
-            <div class="card-body packages">
-                 <table class="table table-striped table-sm invoice-datatable" width="100%">
-                     <thead>
-                         <tr>
-                             <td>Order</td>
-                             <th width="10px">#</th>
-                             <th>{{__('Package name')}}</th>
-                             <th>{{__('Price')}}</th>
-                         </tr>
-                     </thead>
-                     <tbody>
-                         @foreach($packages as $package)
-                             <tr>
-                                <td class="order">
-
-                                </td>
-                                <td>
-                                    <input type="checkbox" class="package" id="package_{{$package['id']}}" value="{{$package['id']}}" price="{{$package['package_price']['price']}}" default_price="{{$package['package_price']['price']}}">
-                                </td>
-                                <td>
-                                    <label for="package_{{$package['id']}}">{{$package['name']}}</label>
-                                </td>
-                                <td class="table_price">
-                                    {{formated_price($package['package_price']['price'])}}
-                                </td>
-                             </tr>
-                         @endforeach
-                     </tbody>
-                 </table>
-            </div>
+                        </td>
+                        <td>
+                            <input type="checkbox" class="package" id="package_{{$package['id']}}" value="{{$package['id']}}" price="{{$package['package_price']['price']}}" default_price="{{$package['package_price']['price']}}">
+                        </td>
+                        <td>
+                            <label for="package_{{$package['id']}}">{{$package['name']}}</label>
+                        </td>
+                        <td class="table_price">
+                            {{formated_price($package['package_price']['price'])}}
+                        </td>
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
         </div>
     </div>
- </div>
+</div>
+</div>
 <!-- \End test --> --}}
 
 <div class="row">
@@ -553,7 +565,7 @@
                                 <tr>
                                     <td width="100px">{{__('Subtotal')}}</td>
                                     <td width="300px">
-                                        <input type="number" id="subtotal" name="subtotal"  @if(isset($group)) value="{{$group['subtotal']}}" @else value="0"  @endif readonly class="form-control">
+                                        <input type="number" id="subtotal" name="subtotal" @if(isset($group)) value="{{$group['subtotal']}}" @else value="0" @endif readonly class="form-control">
                                     </td>
                                     <td>
                                         {{get_currency()}}
@@ -563,21 +575,21 @@
                                 <tr>
                                     <td>{{__('Discount')}}</td>
                                     <td>
-                                        <input type="number" class="form-control" id="discount" name="discount"  @if(isset($group)) value="{{$group['discount']}}" @else value="0"  @endif>
+                                        <input type="number" class="form-control" id="discount" name="discount" @if(isset($group)) value="{{$group['discount']}}" @else value="0" @endif>
                                     </td>
                                     <td>
-                                       <!-- {{get_currency()}}-->
-                                       %
+                                        <!-- {{get_currency()}}-->
+                                        %
                                     </td>
                                     <td>
-                                        <input type="number" class="form-control" id="discount_value" name="discount_value"  @if(isset($group)) value="{{$group['discount_value']}}" @else value="0"  @endif>
+                                        <input type="number" class="form-control" id="discount_value" name="discount_value" @if(isset($group)) value="{{$group['discount_value']}}" @else value="0" @endif>
                                     </td>
                                 </tr>
 
                                 <tr>
                                     <td>{{__('Total')}}</td>
                                     <td>
-                                        <input type="number" id="total" name="total" class="form-control" @if(isset($group)) value="{{$group['total']}}" @else value="0"  @endif  readonly>
+                                        <input type="number" id="total" name="total" class="form-control" @if(isset($group)) value="{{$group['total']}}" @else value="0" @endif readonly>
                                     </td>
                                     <td>
                                         {{get_currency()}}
@@ -586,7 +598,7 @@
                                 <tr>
                                     <td>{{__('Paid')}}</td>
                                     <td>
-                                        <input type="number" id="paid" name="paid" min="0" class="form-control" @if(isset($group)) value="{{$group['paid']}}" @else value="0"  @endif  readonly required>
+                                        <input type="number" id="paid" name="paid" min="0" class="form-control" @if(isset($group)) value="{{$group['paid']}}" @else value="0" @endif readonly required>
                                     </td>
                                     <td>
                                         {{get_currency()}}
@@ -595,7 +607,7 @@
                                 <tr>
                                     <td>{{__('Due')}}</td>
                                     <td>
-                                        <input type="number" id="due" name="due" class="form-control" @if(isset($group)) value="{{$group['due']}}" @else value="0"  @endif   readonly>
+                                        <input type="number" id="due" name="due" class="form-control" @if(isset($group)) value="{{$group['due']}}" @else value="0" @endif readonly>
                                     </td>
                                     <td>
                                         {{get_currency()}}
@@ -635,7 +647,7 @@
                 <div class="row">
                     <div class="col-lg-12 table-responsive">
                         @php
-                            $payments_count=0;
+                        $payments_count=0;
                         @endphp
                         <table class="table table-striped table-bordered" id="payments_table">
                             <thead>
@@ -646,30 +658,30 @@
                             </thead>
                             <tbody>
                                 @if(isset($group))
-                                    @foreach($group['payments'] as $payment)
-                                    <tr>
-                                        <td>
-                                            <input type="text" class="form-control new_datepicker" name="payments[{{$payments_count}}][date]" value="{{$payment['date']}}" placeholder="{{__('Date')}}" required>
-                                        </td>
-                                        <td>
-                                            <input type="number" class="form-control amount" name="payments[{{$payments_count}}][amount]" value="{{$payment['amount']}}" id="" required>
-                                        </td>
-                                        <td>
-                                            <select name="payments[{{$payments_count}}][payment_method_id]" id="" class="form-control payment_method_id" required>
-                                                <option value="" disabled selected>{{__('Select payment method')}}</option>
-                                                <option value="{{$payment['payment_method_id']}}" selected>{{$payment['payment_method']['name']}}</option>
-                                            </select>
-                                        </td>
-                                        <td>
-                                            <button type="button" class="btn btn-danger delete_payment">
-                                                <i class="fa fa-times"></i>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    @php
-                                        $payments_count++;
-                                    @endphp
-                                    @endforeach
+                                @foreach($group['payments'] as $payment)
+                                <tr>
+                                    <td>
+                                        <input type="text" class="form-control new_datepicker" name="payments[{{$payments_count}}][date]" value="{{$payment['date']}}" placeholder="{{__('Date')}}" required>
+                                    </td>
+                                    <td>
+                                        <input type="number" class="form-control amount" name="payments[{{$payments_count}}][amount]" value="{{$payment['amount']}}" id="" required>
+                                    </td>
+                                    <td>
+                                        <select name="payments[{{$payments_count}}][payment_method_id]" id="" class="form-control payment_method_id" required>
+                                            <option value="" disabled selected>{{__('Select payment method')}}</option>
+                                            <option value="{{$payment['payment_method_id']}}" selected>{{$payment['payment_method']['name']}}</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-danger delete_payment">
+                                            <i class="fa fa-times"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                @php
+                                $payments_count++;
+                                @endphp
+                                @endforeach
                                 @endif
                             </tbody>
                         </table>

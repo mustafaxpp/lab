@@ -745,6 +745,43 @@ var current_date = $('#system_date').val();
         }
     });
 
+    //contract change
+    $(document).on('change', '#patient_contract_id', function() {
+        var contract_id = $(this).val();
+        var url = $(this).attr('data-url');
+
+        // send request ajax
+        $.ajax({
+            url: url,
+            type: 'GET',
+            data: {
+                contract_id: contract_id,
+            },
+            beforeSend: function() {
+                $('.preloader').show();
+                $('.loader').show();
+            },
+            success: function(contract) {
+
+                // loop contract
+                $('#modal_contract_user_id').prop('disabled', false);
+
+                var $contract_array = [];
+                $.each(contract, function(key, value) {
+                    $contract_array += '<option value="' + value.id + '">' + value.name + '</option>';
+                });
+
+                $('#modal_contract_user_id').html($contract_array);
+                
+
+            },
+            complete: function() {
+                $('.preloader').hide();
+                $('.loader').hide();
+            }
+        });
+    });
+
     //cancel contract
     $(document).on('click', '.cancel_contract', function() {
         if ($('#contract_id').val() !== '') {
